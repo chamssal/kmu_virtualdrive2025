@@ -1,0 +1,38 @@
+# CMake generated Testfile for 
+# Source directory: /home/foscar/kmu_virtualdrive2025/src
+# Build directory: /home/foscar/kmu_virtualdrive2025/build
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+subdirs("gtest")
+subdirs("navigation/navigation/navigation")
+subdirs("openslam_gmapping")
+subdirs("racecar/racecar")
+subdirs("slam_gmapping/slam_gmapping")
+subdirs("ackermann_msgs")
+subdirs("vesc/vesc")
+subdirs("wecar_msgs")
+subdirs("navigation/navigation/map_server")
+subdirs("racecar/ackermann_cmd_mux")
+subdirs("slam_gmapping/gmapping")
+subdirs("navigation/navigation/amcl")
+subdirs("navigation/navigation/fake_localization")
+subdirs("robot_localization")
+subdirs("learning_tf")
+subdirs("vesc/vesc_ackermann")
+subdirs("vesc/vesc_driver")
+subdirs("navigation/navigation/voxel_grid")
+subdirs("navigation/navigation/costmap_2d")
+subdirs("navigation/navigation/nav_core")
+subdirs("navigation/navigation/base_local_planner")
+subdirs("navigation/navigation/carrot_planner")
+subdirs("navigation/navigation/clear_costmap_recovery")
+subdirs("navigation/navigation/dwa_local_planner")
+subdirs("navigation/navigation/move_slow_and_clear")
+subdirs("navigation/navigation/navfn")
+subdirs("navigation/navigation/global_planner")
+subdirs("navigation/navigation/rotate_recovery")
+subdirs("navigation/navigation/move_base")
+subdirs("wecar_ros")
+subdirs("wego")
+subdirs("wego_2d_nav")

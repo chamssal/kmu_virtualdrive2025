@@ -1,0 +1,46 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/foscar/kmu_virtualdrive2025/devel/include/**",
+        "/home/foscar/iscc_lidar_team/hwamok_lidar/devel/include/**",
+        "/home/foscar/hwamok_lidar/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/foscar/kmu_virtualdrive2025/src/navigation/navigation/amcl/include/**",
+        "/home/foscar/kmu_virtualdrive2025/src/navigation/navigation/base_local_planner/include/**",
+        "/home/foscar/kmu_virtualdrive2025/src/navigation/navigation/carrot_planner/include/**",
+        "/home/foscar/kmu_virtualdrive2025/src/navigation/navigation/clear_costmap_recovery/include/**",
+        "/home/foscar/kmu_virtualdrive2025/src/navigation/navigation/costmap_2d/include/**",
+        "/home/foscar/kmu_virtualdrive2025/src/navigation/navigation/dwa_local_planner/include/**",
+        "/home/foscar/kmu_virtualdrive2025/src/navigation/navigation/global_planner/include/**",
+        "/home/foscar/hwamok_lidar/src/lidar_object_detector/include/**",
+        "/home/foscar/iscc_lidar_team/hwamok_lidar/src/lidar_trafficcone_detection/include/**",
+        "/home/foscar/kmu_virtualdrive2025/src/navigation/navigation/map_server/include/**",
+        "/home/foscar/kmu_virtualdrive2025/src/navigation/navigation/move_base/include/**",
+        "/home/foscar/kmu_virtualdrive2025/src/navigation/navigation/move_slow_and_clear/include/**",
+        "/home/foscar/kmu_virtualdrive2025/src/navigation/navigation/nav_core/include/**",
+        "/home/foscar/kmu_virtualdrive2025/src/navigation/navigation/navfn/include/**",
+        "/home/foscar/kmu_virtualdrive2025/src/openslam_gmapping/include/**",
+        "/home/foscar/kmu_virtualdrive2025/src/navigation/navigation/rotate_recovery/include/**",
+        "/home/foscar/iscc_lidar_team/hwamok_lidar/src/static_obstacle_detection/include/**",
+        "/home/foscar/hwamok_lidar/src/velodyne/velodyne_driver/include/**",
+        "/home/foscar/hwamok_lidar/src/velodyne/velodyne_laserscan/include/**",
+        "/home/foscar/hwamok_lidar/src/velodyne/velodyne_pcl/include/**",
+        "/home/foscar/hwamok_lidar/src/velodyne/velodyne_pointcloud/include/**",
+        "/home/foscar/kmu_virtualdrive2025/src/navigation/navigation/voxel_grid/include/**",
+        "/home/foscar/iscc_lidar_team/hwamok_lidar/src/waypoint_maker/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
