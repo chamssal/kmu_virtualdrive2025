@@ -1,0 +1,8 @@
+prefix=/home/foscar/kmu_virtualdrive2025/devel
+
+Name: vesc_ackermann
+Description: Description of vesc_ackermann
+Version: 1.1.0
+Cflags: -I/home/foscar/kmu_virtualdrive2025/src/vesc/vesc_ackermann/include
+Libs: -L${prefix}/lib 
+Requires: ackermann_msgs geometry_msgs nav_msgs nodelet pluginlib std_msgs tf vesc_msgs
