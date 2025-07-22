@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="wego_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="base_link"/>
+  <link name="velodyne"/>
+  <link name="imu"/>
+
+  <joint name="base_to_velodyne" type="fixed">
+    <parent link="base_link"/>
+    <child link="velodyne"/>
+    <origin xyz="0.11 0 0.13" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="base_to_imu" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu"/>
+    <origin xyz="0 0 0.12" rpy="0 0 0"/>
+  </joint>
+</robot>
+
