@@ -1,0 +1,10 @@
+digraph G {
+"base_link" -> "imu"[label="Broadcaster: /base_link_to_imu\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1753345899.762 sec old)\nBuffer length: 0.000 sec\n"];
+"odom" -> "base_link"[label="Broadcaster: /ekf_se_odom\nAverage rate: 36.452 Hz\nMost recent transform: 1753345899.731 ( 0.031 sec old)\nBuffer length: 4.938 sec\n"];
+"base_link" -> "velodyne"[label="Broadcaster: /base_link_to_lidar\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1753345899.762 sec old)\nBuffer length: 0.000 sec\n"];
+"map" -> "odom"[label="Broadcaster: /slam_gmapping\nAverage rate: 30.199 Hz\nMost recent transform: 1753345899.822 ( -0.060 sec old)\nBuffer length: 4.967 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1753345899.762"[ shape=plaintext ] ;
+ }->"map";
+}

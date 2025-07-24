@@ -2,7 +2,7 @@ prefix=/home/foscar/kmu_virtualdrive2025/install
 
 Name: vesc_ackermann
 Description: Description of vesc_ackermann
-Version: 1.1.0
+Version: 0.0.1
 Cflags: -I${prefix}/include
 Libs: -L${prefix}/lib 
-Requires: ackermann_msgs geometry_msgs nav_msgs nodelet pluginlib std_msgs tf vesc_msgs
+Requires: nodelet pluginlib roscpp nav_msgs std_msgs geometry_msgs tf ackermann_msgs vesc_msgs

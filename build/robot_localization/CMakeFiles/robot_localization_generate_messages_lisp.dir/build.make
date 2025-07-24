@@ -76,8 +76,8 @@ robot_localization/CMakeFiles/robot_localization_generate_messages_lisp: /home/f
 
 /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/FromLL.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/FromLL.lisp: /home/foscar/kmu_virtualdrive2025/src/robot_localization/srv/FromLL.srv
-/home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/FromLL.lisp: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/FromLL.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/FromLL.lisp: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from robot_localization/FromLL.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/robot_localization && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/foscar/kmu_virtualdrive2025/src/robot_localization/srv/FromLL.srv -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p robot_localization -o /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv
 
@@ -88,20 +88,20 @@ robot_localization/CMakeFiles/robot_localization_generate_messages_lisp: /home/f
 
 /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/SetDatum.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/SetDatum.lisp: /home/foscar/kmu_virtualdrive2025/src/robot_localization/srv/SetDatum.srv
-/home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/SetDatum.lisp: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/SetDatum.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/SetDatum.lisp: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/SetDatum.lisp: /opt/ros/noetic/share/geographic_msgs/msg/GeoPose.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from robot_localization/SetDatum.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/robot_localization && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/foscar/kmu_virtualdrive2025/src/robot_localization/srv/SetDatum.srv -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p robot_localization -o /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv
 
 /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/SetPose.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/SetPose.lisp: /home/foscar/kmu_virtualdrive2025/src/robot_localization/srv/SetPose.srv
-/home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/SetPose.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/SetPose.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/SetPose.lisp: /opt/ros/noetic/share/geometry_msgs/msg/PoseWithCovariance.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/SetPose.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/SetPose.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/SetPose.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/SetPose.lisp: /opt/ros/noetic/share/geometry_msgs/msg/PoseWithCovarianceStamped.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/SetPose.lisp: /opt/ros/noetic/share/geometry_msgs/msg/PoseWithCovariance.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv/SetPose.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Lisp code from robot_localization/SetPose.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/robot_localization && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/foscar/kmu_virtualdrive2025/src/robot_localization/srv/SetPose.srv -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p robot_localization -o /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/robot_localization/srv
 

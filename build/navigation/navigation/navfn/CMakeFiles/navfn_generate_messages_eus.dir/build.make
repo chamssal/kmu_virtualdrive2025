@@ -78,9 +78,9 @@ navigation/navigation/navfn/CMakeFiles/navfn_generate_messages_eus: /home/foscar
 /home/foscar/kmu_virtualdrive2025/devel/share/roseus/ros/navfn/srv/MakeNavPlan.l: /home/foscar/kmu_virtualdrive2025/src/navigation/navigation/navfn/srv/MakeNavPlan.srv
 /home/foscar/kmu_virtualdrive2025/devel/share/roseus/ros/navfn/srv/MakeNavPlan.l: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/roseus/ros/navfn/srv/MakeNavPlan.l: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/roseus/ros/navfn/srv/MakeNavPlan.l: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/roseus/ros/navfn/srv/MakeNavPlan.l: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/roseus/ros/navfn/srv/MakeNavPlan.l: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/roseus/ros/navfn/srv/MakeNavPlan.l: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from navfn/MakeNavPlan.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/navigation/navigation/navfn && ../../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/foscar/kmu_virtualdrive2025/src/navigation/navigation/navfn/srv/MakeNavPlan.srv -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p navfn -o /home/foscar/kmu_virtualdrive2025/devel/share/roseus/ros/navfn/srv
 

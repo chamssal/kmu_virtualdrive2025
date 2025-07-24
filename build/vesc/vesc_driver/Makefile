@@ -199,118 +199,6 @@ vesc_driver_nodelet/fast:
 	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/build.make vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/build
 .PHONY : vesc_driver_nodelet/fast
 
-# Convenience name for target.
-vesc/vesc_driver/CMakeFiles/roslint_vesc_driver.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vesc/vesc_driver/CMakeFiles/roslint_vesc_driver.dir/rule
-.PHONY : vesc/vesc_driver/CMakeFiles/roslint_vesc_driver.dir/rule
-
-# Convenience name for target.
-roslint_vesc_driver: vesc/vesc_driver/CMakeFiles/roslint_vesc_driver.dir/rule
-.PHONY : roslint_vesc_driver
-
-# fast build rule for target.
-roslint_vesc_driver/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_driver/CMakeFiles/roslint_vesc_driver.dir/build.make vesc/vesc_driver/CMakeFiles/roslint_vesc_driver.dir/build
-.PHONY : roslint_vesc_driver/fast
-
-# Convenience name for target.
-vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver.dir/rule
-.PHONY : vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver.dir/rule
-
-# Convenience name for target.
-run_tests_vesc_driver: vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver.dir/rule
-.PHONY : run_tests_vesc_driver
-
-# fast build rule for target.
-run_tests_vesc_driver/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver.dir/build.make vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver.dir/build
-.PHONY : run_tests_vesc_driver/fast
-
-# Convenience name for target.
-vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver.dir/rule
-.PHONY : vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver.dir/rule
-
-# Convenience name for target.
-_run_tests_vesc_driver: vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver.dir/rule
-.PHONY : _run_tests_vesc_driver
-
-# fast build rule for target.
-_run_tests_vesc_driver/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver.dir/build.make vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver.dir/build
-.PHONY : _run_tests_vesc_driver/fast
-
-# Convenience name for target.
-vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver_roslint.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver_roslint.dir/rule
-.PHONY : vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver_roslint.dir/rule
-
-# Convenience name for target.
-run_tests_vesc_driver_roslint: vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver_roslint.dir/rule
-.PHONY : run_tests_vesc_driver_roslint
-
-# fast build rule for target.
-run_tests_vesc_driver_roslint/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver_roslint.dir/build.make vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver_roslint.dir/build
-.PHONY : run_tests_vesc_driver_roslint/fast
-
-# Convenience name for target.
-vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver_roslint.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver_roslint.dir/rule
-.PHONY : vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver_roslint.dir/rule
-
-# Convenience name for target.
-_run_tests_vesc_driver_roslint: vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver_roslint.dir/rule
-.PHONY : _run_tests_vesc_driver_roslint
-
-# fast build rule for target.
-_run_tests_vesc_driver_roslint/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver_roslint.dir/build.make vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver_roslint.dir/build
-.PHONY : _run_tests_vesc_driver_roslint/fast
-
-# Convenience name for target.
-vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver_roslint_package.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver_roslint_package.dir/rule
-.PHONY : vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver_roslint_package.dir/rule
-
-# Convenience name for target.
-run_tests_vesc_driver_roslint_package: vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver_roslint_package.dir/rule
-.PHONY : run_tests_vesc_driver_roslint_package
-
-# fast build rule for target.
-run_tests_vesc_driver_roslint_package/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver_roslint_package.dir/build.make vesc/vesc_driver/CMakeFiles/run_tests_vesc_driver_roslint_package.dir/build
-.PHONY : run_tests_vesc_driver_roslint_package/fast
-
-# Convenience name for target.
-vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver_roslint_package.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver_roslint_package.dir/rule
-.PHONY : vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver_roslint_package.dir/rule
-
-# Convenience name for target.
-_run_tests_vesc_driver_roslint_package: vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver_roslint_package.dir/rule
-.PHONY : _run_tests_vesc_driver_roslint_package
-
-# fast build rule for target.
-_run_tests_vesc_driver_roslint_package/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver_roslint_package.dir/build.make vesc/vesc_driver/CMakeFiles/_run_tests_vesc_driver_roslint_package.dir/build
-.PHONY : _run_tests_vesc_driver_roslint_package/fast
-
-# Convenience name for target.
-vesc/vesc_driver/CMakeFiles/clean_test_results_vesc_driver.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vesc/vesc_driver/CMakeFiles/clean_test_results_vesc_driver.dir/rule
-.PHONY : vesc/vesc_driver/CMakeFiles/clean_test_results_vesc_driver.dir/rule
-
-# Convenience name for target.
-clean_test_results_vesc_driver: vesc/vesc_driver/CMakeFiles/clean_test_results_vesc_driver.dir/rule
-.PHONY : clean_test_results_vesc_driver
-
-# fast build rule for target.
-clean_test_results_vesc_driver/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_driver/CMakeFiles/clean_test_results_vesc_driver.dir/build.make vesc/vesc_driver/CMakeFiles/clean_test_results_vesc_driver.dir/build
-.PHONY : clean_test_results_vesc_driver/fast
-
 src/vesc_driver.o: src/vesc_driver.cpp.o
 .PHONY : src/vesc_driver.o
 
@@ -480,14 +368,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... _run_tests_vesc_driver"
-	@echo "... _run_tests_vesc_driver_roslint"
-	@echo "... _run_tests_vesc_driver_roslint_package"
-	@echo "... clean_test_results_vesc_driver"
-	@echo "... roslint_vesc_driver"
-	@echo "... run_tests_vesc_driver"
-	@echo "... run_tests_vesc_driver_roslint"
-	@echo "... run_tests_vesc_driver_roslint_package"
 	@echo "... vesc_driver_node"
 	@echo "... vesc_driver_nodelet"
 	@echo "... src/vesc_driver.o"

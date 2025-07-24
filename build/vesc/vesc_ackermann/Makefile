@@ -213,118 +213,6 @@ vesc_ackermann_nodelet/fast:
 	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/build.make vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/build
 .PHONY : vesc_ackermann_nodelet/fast
 
-# Convenience name for target.
-vesc/vesc_ackermann/CMakeFiles/roslint_vesc_ackermann.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vesc/vesc_ackermann/CMakeFiles/roslint_vesc_ackermann.dir/rule
-.PHONY : vesc/vesc_ackermann/CMakeFiles/roslint_vesc_ackermann.dir/rule
-
-# Convenience name for target.
-roslint_vesc_ackermann: vesc/vesc_ackermann/CMakeFiles/roslint_vesc_ackermann.dir/rule
-.PHONY : roslint_vesc_ackermann
-
-# fast build rule for target.
-roslint_vesc_ackermann/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_ackermann/CMakeFiles/roslint_vesc_ackermann.dir/build.make vesc/vesc_ackermann/CMakeFiles/roslint_vesc_ackermann.dir/build
-.PHONY : roslint_vesc_ackermann/fast
-
-# Convenience name for target.
-vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann.dir/rule
-.PHONY : vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann.dir/rule
-
-# Convenience name for target.
-run_tests_vesc_ackermann: vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann.dir/rule
-.PHONY : run_tests_vesc_ackermann
-
-# fast build rule for target.
-run_tests_vesc_ackermann/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann.dir/build.make vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann.dir/build
-.PHONY : run_tests_vesc_ackermann/fast
-
-# Convenience name for target.
-vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann.dir/rule
-.PHONY : vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann.dir/rule
-
-# Convenience name for target.
-_run_tests_vesc_ackermann: vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann.dir/rule
-.PHONY : _run_tests_vesc_ackermann
-
-# fast build rule for target.
-_run_tests_vesc_ackermann/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann.dir/build.make vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann.dir/build
-.PHONY : _run_tests_vesc_ackermann/fast
-
-# Convenience name for target.
-vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann_roslint.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann_roslint.dir/rule
-.PHONY : vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann_roslint.dir/rule
-
-# Convenience name for target.
-run_tests_vesc_ackermann_roslint: vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann_roslint.dir/rule
-.PHONY : run_tests_vesc_ackermann_roslint
-
-# fast build rule for target.
-run_tests_vesc_ackermann_roslint/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann_roslint.dir/build.make vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann_roslint.dir/build
-.PHONY : run_tests_vesc_ackermann_roslint/fast
-
-# Convenience name for target.
-vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann_roslint.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann_roslint.dir/rule
-.PHONY : vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann_roslint.dir/rule
-
-# Convenience name for target.
-_run_tests_vesc_ackermann_roslint: vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann_roslint.dir/rule
-.PHONY : _run_tests_vesc_ackermann_roslint
-
-# fast build rule for target.
-_run_tests_vesc_ackermann_roslint/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann_roslint.dir/build.make vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann_roslint.dir/build
-.PHONY : _run_tests_vesc_ackermann_roslint/fast
-
-# Convenience name for target.
-vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann_roslint_package.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann_roslint_package.dir/rule
-.PHONY : vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann_roslint_package.dir/rule
-
-# Convenience name for target.
-run_tests_vesc_ackermann_roslint_package: vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann_roslint_package.dir/rule
-.PHONY : run_tests_vesc_ackermann_roslint_package
-
-# fast build rule for target.
-run_tests_vesc_ackermann_roslint_package/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann_roslint_package.dir/build.make vesc/vesc_ackermann/CMakeFiles/run_tests_vesc_ackermann_roslint_package.dir/build
-.PHONY : run_tests_vesc_ackermann_roslint_package/fast
-
-# Convenience name for target.
-vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann_roslint_package.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann_roslint_package.dir/rule
-.PHONY : vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann_roslint_package.dir/rule
-
-# Convenience name for target.
-_run_tests_vesc_ackermann_roslint_package: vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann_roslint_package.dir/rule
-.PHONY : _run_tests_vesc_ackermann_roslint_package
-
-# fast build rule for target.
-_run_tests_vesc_ackermann_roslint_package/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann_roslint_package.dir/build.make vesc/vesc_ackermann/CMakeFiles/_run_tests_vesc_ackermann_roslint_package.dir/build
-.PHONY : _run_tests_vesc_ackermann_roslint_package/fast
-
-# Convenience name for target.
-vesc/vesc_ackermann/CMakeFiles/clean_test_results_vesc_ackermann.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vesc/vesc_ackermann/CMakeFiles/clean_test_results_vesc_ackermann.dir/rule
-.PHONY : vesc/vesc_ackermann/CMakeFiles/clean_test_results_vesc_ackermann.dir/rule
-
-# Convenience name for target.
-clean_test_results_vesc_ackermann: vesc/vesc_ackermann/CMakeFiles/clean_test_results_vesc_ackermann.dir/rule
-.PHONY : clean_test_results_vesc_ackermann
-
-# fast build rule for target.
-clean_test_results_vesc_ackermann/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f vesc/vesc_ackermann/CMakeFiles/clean_test_results_vesc_ackermann.dir/build.make vesc/vesc_ackermann/CMakeFiles/clean_test_results_vesc_ackermann.dir/build
-.PHONY : clean_test_results_vesc_ackermann/fast
-
 src/ackermann_to_vesc.o: src/ackermann_to_vesc.cpp.o
 .PHONY : src/ackermann_to_vesc.o
 
@@ -488,14 +376,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... _run_tests_vesc_ackermann"
-	@echo "... _run_tests_vesc_ackermann_roslint"
-	@echo "... _run_tests_vesc_ackermann_roslint_package"
-	@echo "... clean_test_results_vesc_ackermann"
-	@echo "... roslint_vesc_ackermann"
-	@echo "... run_tests_vesc_ackermann"
-	@echo "... run_tests_vesc_ackermann_roslint"
-	@echo "... run_tests_vesc_ackermann_roslint_package"
 	@echo "... ackermann_to_vesc_node"
 	@echo "... vesc_ackermann_nodelet"
 	@echo "... vesc_to_odom_node"

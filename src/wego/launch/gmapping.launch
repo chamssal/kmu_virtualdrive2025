@@ -36,7 +36,7 @@
       <param name="lasamplerange" value="0.005"/>
       <param name="lasamplestep" value="0.005"/>
     </node>
-
+    <include file="$(find wego)/launch/navigation.launch"/>
     <include file="$(find wego)/launch/teleop.launch"/>
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find wego)/rviz/slam.rviz"/>
 

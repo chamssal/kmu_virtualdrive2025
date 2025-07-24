@@ -1231,12 +1231,13 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/ackermann_to_vesc.
 
 vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/ackermann_to_vesc_nodelet.cpp.o: /home/foscar/kmu_virtualdrive2025/src/vesc/vesc_ackermann/src/ackermann_to_vesc_nodelet.cpp \
   /usr/include/stdc-predef.h \
-  /opt/ros/noetic/include/nodelet/nodelet.h \
-  /opt/ros/noetic/include/nodelet/nodeletdecl.h \
-  /opt/ros/noetic/include/ros/macros.h \
-  /opt/ros/noetic/include/nodelet/exception.h \
-  /usr/include/c++/9/stdexcept \
-  /usr/include/c++/9/exception \
+  /usr/include/boost/shared_ptr.hpp \
+  /usr/include/boost/smart_ptr/shared_ptr.hpp \
+  /usr/include/boost/config.hpp \
+  /usr/include/boost/config/user.hpp \
+  /usr/include/boost/config/detail/select_compiler_config.hpp \
+  /usr/include/boost/config/compiler/gcc.hpp \
+  /usr/include/c++/9/cstddef \
   /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
   /usr/include/features.h \
@@ -1246,28 +1247,71 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/ackermann_to_vesc_
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/cpu_defines.h \
-  /usr/include/c++/9/bits/exception.h \
-  /usr/include/c++/9/bits/exception_ptr.h \
-  /usr/include/c++/9/bits/exception_defines.h \
-  /usr/include/c++/9/bits/cxxabi_init_exception.h \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
-  /usr/include/c++/9/typeinfo \
-  /usr/include/c++/9/bits/hash_bytes.h \
-  /usr/include/c++/9/new \
-  /usr/include/c++/9/bits/nested_exception.h \
-  /usr/include/c++/9/bits/move.h \
-  /usr/include/c++/9/bits/concept_check.h \
-  /usr/include/c++/9/type_traits \
-  /usr/include/c++/9/string \
-  /usr/include/c++/9/bits/stringfwd.h \
-  /usr/include/c++/9/bits/memoryfwd.h \
-  /usr/include/c++/9/bits/char_traits.h \
+  /usr/include/boost/config/detail/select_stdlib_config.hpp \
+  /usr/include/boost/config/stdlib/libstdcpp3.hpp \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/boost/config/detail/select_platform_config.hpp \
+  /usr/include/boost/config/platform/linux.hpp \
+  /usr/include/c++/9/cstdlib \
+  /usr/include/stdlib.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/sys/select.h \
+  /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/alloca.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/c++/9/bits/std_abs.h \
+  /usr/include/boost/config/detail/posix_features.hpp \
+  /usr/include/boost/config/detail/suffix.hpp \
+  /usr/include/boost/config/helper_macros.hpp \
+  /usr/include/boost/config/no_tr1/memory.hpp \
+  /usr/include/c++/9/memory \
   /usr/include/c++/9/bits/stl_algobase.h \
   /usr/include/c++/9/bits/functexcept.h \
+  /usr/include/c++/9/bits/exception_defines.h \
   /usr/include/c++/9/bits/cpp_type_traits.h \
   /usr/include/c++/9/ext/type_traits.h \
   /usr/include/c++/9/ext/numeric_traits.h \
   /usr/include/c++/9/bits/stl_pair.h \
+  /usr/include/c++/9/bits/move.h \
+  /usr/include/c++/9/bits/concept_check.h \
+  /usr/include/c++/9/type_traits \
   /usr/include/c++/9/bits/stl_iterator_base_types.h \
   /usr/include/c++/9/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/9/debug/assertions.h \
@@ -1275,12 +1319,29 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/ackermann_to_vesc_
   /usr/include/c++/9/bits/ptr_traits.h \
   /usr/include/c++/9/debug/debug.h \
   /usr/include/c++/9/bits/predefined_ops.h \
+  /usr/include/c++/9/bits/allocator.h \
+  /usr/include/x86_64-linux-gnu/c++/9/bits/c++allocator.h \
+  /usr/include/c++/9/ext/new_allocator.h \
+  /usr/include/c++/9/new \
+  /usr/include/c++/9/exception \
+  /usr/include/c++/9/bits/exception.h \
+  /usr/include/c++/9/bits/exception_ptr.h \
+  /usr/include/c++/9/bits/cxxabi_init_exception.h \
+  /usr/include/c++/9/typeinfo \
+  /usr/include/c++/9/bits/hash_bytes.h \
+  /usr/include/c++/9/bits/nested_exception.h \
+  /usr/include/c++/9/bits/memoryfwd.h \
+  /usr/include/c++/9/bits/stl_construct.h \
+  /usr/include/c++/9/ext/alloc_traits.h \
+  /usr/include/c++/9/bits/alloc_traits.h \
+  /usr/include/c++/9/bits/stl_uninitialized.h \
+  /usr/include/c++/9/bits/stl_tempbuf.h \
+  /usr/include/c++/9/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/9/iosfwd \
+  /usr/include/c++/9/bits/stringfwd.h \
   /usr/include/c++/9/bits/postypes.h \
   /usr/include/c++/9/cwchar \
   /usr/include/wchar.h \
-  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
-  /usr/include/x86_64-linux-gnu/bits/floatn.h \
-  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
@@ -1288,81 +1349,50 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/ackermann_to_vesc_
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
-  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/c++/9/cstdint \
-  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h \
-  /usr/include/stdint.h \
-  /usr/include/x86_64-linux-gnu/bits/types.h \
-  /usr/include/x86_64-linux-gnu/bits/timesize.h \
-  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
-  /usr/include/x86_64-linux-gnu/bits/time64.h \
-  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
-  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
-  /usr/include/c++/9/bits/allocator.h \
-  /usr/include/x86_64-linux-gnu/c++/9/bits/c++allocator.h \
-  /usr/include/c++/9/ext/new_allocator.h \
-  /usr/include/c++/9/bits/localefwd.h \
-  /usr/include/x86_64-linux-gnu/c++/9/bits/c++locale.h \
-  /usr/include/c++/9/clocale \
-  /usr/include/locale.h \
-  /usr/include/x86_64-linux-gnu/bits/locale.h \
-  /usr/include/c++/9/iosfwd \
-  /usr/include/c++/9/cctype \
-  /usr/include/ctype.h \
-  /usr/include/x86_64-linux-gnu/bits/endian.h \
-  /usr/include/x86_64-linux-gnu/bits/endianness.h \
-  /usr/include/c++/9/bits/ostream_insert.h \
-  /usr/include/c++/9/bits/cxxabi_forced.h \
-  /usr/include/c++/9/bits/stl_function.h \
-  /usr/include/c++/9/backward/binders.h \
-  /usr/include/c++/9/bits/range_access.h \
-  /usr/include/c++/9/initializer_list \
-  /usr/include/c++/9/bits/basic_string.h \
   /usr/include/c++/9/ext/atomicity.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
-  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
   /usr/include/x86_64-linux-gnu/bits/sched.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
   /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
   /usr/include/time.h \
   /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/timex.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
-  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
-  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
-  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
-  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
-  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
-  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
-  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/atomic_word.h \
-  /usr/include/c++/9/ext/alloc_traits.h \
-  /usr/include/c++/9/bits/alloc_traits.h \
+  /usr/include/c++/9/ext/concurrence.h \
+  /usr/include/c++/9/bits/stl_function.h \
+  /usr/include/c++/9/backward/binders.h \
+  /usr/include/c++/9/bits/uses_allocator.h \
+  /usr/include/c++/9/bits/unique_ptr.h \
+  /usr/include/c++/9/utility \
+  /usr/include/c++/9/bits/stl_relops.h \
+  /usr/include/c++/9/initializer_list \
+  /usr/include/c++/9/tuple \
+  /usr/include/c++/9/array \
+  /usr/include/c++/9/stdexcept \
+  /usr/include/c++/9/string \
+  /usr/include/c++/9/bits/char_traits.h \
+  /usr/include/c++/9/cstdint \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+  /usr/include/c++/9/bits/localefwd.h \
+  /usr/include/x86_64-linux-gnu/c++/9/bits/c++locale.h \
+  /usr/include/c++/9/clocale \
+  /usr/include/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/c++/9/cctype \
+  /usr/include/ctype.h \
+  /usr/include/c++/9/bits/ostream_insert.h \
+  /usr/include/c++/9/bits/cxxabi_forced.h \
+  /usr/include/c++/9/bits/range_access.h \
+  /usr/include/c++/9/bits/basic_string.h \
   /usr/include/c++/9/ext/string_conversions.h \
-  /usr/include/c++/9/cstdlib \
-  /usr/include/stdlib.h \
-  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
-  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
-  /usr/include/x86_64-linux-gnu/sys/types.h \
-  /usr/include/endian.h \
-  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
-  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
-  /usr/include/x86_64-linux-gnu/sys/select.h \
-  /usr/include/x86_64-linux-gnu/bits/select.h \
-  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
-  /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/c++/9/bits/std_abs.h \
   /usr/include/c++/9/cstdio \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
@@ -1381,22 +1411,72 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/ackermann_to_vesc_
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/9/bits/functional_hash.h \
   /usr/include/c++/9/bits/basic_string.tcc \
+  /usr/include/c++/9/bits/invoke.h \
+  /usr/include/c++/9/bits/shared_ptr.h \
+  /usr/include/c++/9/bits/shared_ptr_base.h \
+  /usr/include/c++/9/bits/allocated_ptr.h \
+  /usr/include/c++/9/bits/refwrap.h \
+  /usr/include/c++/9/ext/aligned_buffer.h \
+  /usr/include/c++/9/bits/shared_ptr_atomic.h \
+  /usr/include/c++/9/bits/atomic_base.h \
+  /usr/include/c++/9/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/9/backward/auto_ptr.h \
+  /usr/include/boost/assert.hpp \
+  /usr/include/assert.h \
+  /usr/include/boost/checked_delete.hpp \
+  /usr/include/boost/core/checked_delete.hpp \
+  /usr/include/boost/throw_exception.hpp \
+  /usr/include/boost/detail/workaround.hpp \
+  /usr/include/boost/config/workaround.hpp \
+  /usr/include/boost/exception/exception.hpp \
+  /usr/include/boost/current_function.hpp \
+  /usr/include/boost/smart_ptr/detail/shared_count.hpp \
+  /usr/include/boost/smart_ptr/bad_weak_ptr.hpp \
+  /usr/include/boost/smart_ptr/detail/sp_counted_base.hpp \
+  /usr/include/boost/smart_ptr/detail/sp_has_sync.hpp \
+  /usr/include/boost/smart_ptr/detail/sp_counted_base_std_atomic.hpp \
+  /usr/include/boost/smart_ptr/detail/sp_typeinfo_.hpp \
+  /usr/include/boost/smart_ptr/detail/sp_noexcept.hpp \
+  /usr/include/c++/9/atomic \
+  /usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
+  /usr/include/boost/core/addressof.hpp \
+  /usr/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp \
+  /usr/include/c++/9/functional \
+  /usr/include/c++/9/bits/std_function.h \
+  /usr/include/boost/smart_ptr/detail/sp_convertible.hpp \
+  /usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp \
+  /usr/include/boost/smart_ptr/detail/spinlock_pool.hpp \
+  /usr/include/boost/smart_ptr/detail/spinlock.hpp \
+  /usr/include/boost/smart_ptr/detail/spinlock_std_atomic.hpp \
+  /usr/include/boost/smart_ptr/detail/yield_k.hpp \
+  /usr/include/boost/predef/platform/windows_runtime.h \
+  /usr/include/boost/predef/make.h \
+  /usr/include/boost/predef/detail/test.h \
+  /usr/include/boost/predef/os/windows.h \
+  /usr/include/boost/predef/version_number.h \
+  /usr/include/boost/predef/platform/windows_phone.h \
+  /usr/include/boost/predef/platform/windows_uwp.h \
+  /usr/include/boost/predef/platform/windows_store.h \
+  /usr/include/c++/9/algorithm \
+  /usr/include/c++/9/bits/stl_algo.h \
+  /usr/include/c++/9/bits/algorithmfwd.h \
+  /usr/include/c++/9/bits/stl_heap.h \
+  /usr/include/c++/9/bits/uniform_int_dist.h \
+  /usr/include/c++/9/limits \
+  /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
+  /usr/include/boost/smart_ptr/detail/local_sp_deleter.hpp \
+  /usr/include/boost/smart_ptr/detail/local_counted_base.hpp \
+  /opt/ros/noetic/include/nodelet/nodelet.h \
+  /opt/ros/noetic/include/nodelet/nodeletdecl.h \
+  /opt/ros/noetic/include/ros/macros.h \
+  /opt/ros/noetic/include/nodelet/exception.h \
   /usr/include/c++/9/vector \
-  /usr/include/c++/9/bits/stl_construct.h \
-  /usr/include/c++/9/bits/stl_uninitialized.h \
   /usr/include/c++/9/bits/stl_vector.h \
   /usr/include/c++/9/bits/stl_bvector.h \
   /usr/include/c++/9/bits/vector.tcc \
   /usr/include/c++/9/map \
   /usr/include/c++/9/bits/stl_tree.h \
-  /usr/include/c++/9/ext/aligned_buffer.h \
   /usr/include/c++/9/bits/stl_map.h \
-  /usr/include/c++/9/tuple \
-  /usr/include/c++/9/utility \
-  /usr/include/c++/9/bits/stl_relops.h \
-  /usr/include/c++/9/array \
-  /usr/include/c++/9/bits/uses_allocator.h \
-  /usr/include/c++/9/bits/invoke.h \
   /usr/include/c++/9/bits/stl_multimap.h \
   /usr/include/c++/9/bits/erase_if.h \
   /opt/ros/noetic/include/ros/console.h \
@@ -1456,43 +1536,12 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/ackermann_to_vesc_
   /opt/ros/noetic/include/ros/rostime_decl.h \
   /usr/include/boost/math/special_functions/round.hpp \
   /usr/include/boost/math/tools/config.hpp \
-  /usr/include/boost/config.hpp \
-  /usr/include/boost/config/user.hpp \
-  /usr/include/boost/config/detail/select_compiler_config.hpp \
-  /usr/include/boost/config/compiler/gcc.hpp \
-  /usr/include/c++/9/cstddef \
-  /usr/include/boost/config/detail/select_stdlib_config.hpp \
-  /usr/include/boost/config/stdlib/libstdcpp3.hpp \
-  /usr/include/unistd.h \
-  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
-  /usr/include/x86_64-linux-gnu/bits/environments.h \
-  /usr/include/x86_64-linux-gnu/bits/confname.h \
-  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
-  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
-  /usr/include/boost/config/detail/select_platform_config.hpp \
-  /usr/include/boost/config/platform/linux.hpp \
-  /usr/include/boost/config/detail/posix_features.hpp \
-  /usr/include/boost/config/detail/suffix.hpp \
-  /usr/include/boost/config/helper_macros.hpp \
   /usr/include/boost/predef/architecture/x86.h \
   /usr/include/boost/predef/architecture/x86/32.h \
-  /usr/include/boost/predef/version_number.h \
-  /usr/include/boost/predef/make.h \
-  /usr/include/boost/predef/detail/test.h \
   /usr/include/boost/predef/architecture/x86/64.h \
   /usr/include/boost/cstdint.hpp \
-  /usr/include/boost/detail/workaround.hpp \
-  /usr/include/boost/config/workaround.hpp \
   /usr/include/boost/type_traits/is_integral.hpp \
   /usr/include/boost/type_traits/integral_constant.hpp \
-  /usr/include/c++/9/algorithm \
-  /usr/include/c++/9/bits/stl_algo.h \
-  /usr/include/c++/9/bits/algorithmfwd.h \
-  /usr/include/c++/9/bits/stl_heap.h \
-  /usr/include/c++/9/bits/stl_tempbuf.h \
-  /usr/include/c++/9/bits/uniform_int_dist.h \
-  /usr/include/c++/9/limits \
   /usr/include/boost/config/no_tr1/cmath.hpp \
   /usr/include/c++/9/cfloat \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/float.h \
@@ -1508,7 +1557,6 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/ackermann_to_vesc_
   /usr/include/c++/9/bits/codecvt.h \
   /usr/include/c++/9/bits/locale_facets_nonio.tcc \
   /usr/include/c++/9/bits/locale_conv.h \
-  /usr/include/c++/9/bits/unique_ptr.h \
   /usr/include/c++/9/bits/quoted_string.h \
   /usr/include/c++/9/cstring \
   /usr/include/string.h \
@@ -1816,13 +1864,8 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/ackermann_to_vesc_
   /usr/include/boost/mpl/greater_equal.hpp \
   /usr/include/boost/mpl/aux_/preprocessed/gcc/greater_equal.hpp \
   /usr/include/boost/static_assert.hpp \
-  /usr/include/boost/assert.hpp \
-  /usr/include/assert.h \
   /usr/include/boost/math/tools/precision.hpp \
   /usr/include/boost/limits.hpp \
-  /usr/include/boost/throw_exception.hpp \
-  /usr/include/boost/exception/exception.hpp \
-  /usr/include/boost/current_function.hpp \
   /usr/include/boost/math/special_functions/math_fwd.hpp \
   /usr/include/boost/math/special_functions/detail/round_fwd.hpp \
   /usr/include/boost/math/tools/promotion.hpp \
@@ -1880,49 +1923,6 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/ackermann_to_vesc_
   /usr/include/log4cxx/helpers/objectptr.h \
   /usr/include/log4cxx/helpers/classregistration.h \
   /opt/ros/noetic/include/rosconsole/macros_generated.h \
-  /usr/include/boost/shared_ptr.hpp \
-  /usr/include/boost/smart_ptr/shared_ptr.hpp \
-  /usr/include/boost/config/no_tr1/memory.hpp \
-  /usr/include/c++/9/memory \
-  /usr/include/c++/9/bits/stl_raw_storage_iter.h \
-  /usr/include/c++/9/ext/concurrence.h \
-  /usr/include/c++/9/bits/shared_ptr.h \
-  /usr/include/c++/9/bits/shared_ptr_base.h \
-  /usr/include/c++/9/bits/allocated_ptr.h \
-  /usr/include/c++/9/bits/refwrap.h \
-  /usr/include/c++/9/bits/shared_ptr_atomic.h \
-  /usr/include/c++/9/bits/atomic_base.h \
-  /usr/include/c++/9/bits/atomic_lockfree_defines.h \
-  /usr/include/c++/9/backward/auto_ptr.h \
-  /usr/include/boost/checked_delete.hpp \
-  /usr/include/boost/core/checked_delete.hpp \
-  /usr/include/boost/smart_ptr/detail/shared_count.hpp \
-  /usr/include/boost/smart_ptr/bad_weak_ptr.hpp \
-  /usr/include/boost/smart_ptr/detail/sp_counted_base.hpp \
-  /usr/include/boost/smart_ptr/detail/sp_has_sync.hpp \
-  /usr/include/boost/smart_ptr/detail/sp_counted_base_std_atomic.hpp \
-  /usr/include/boost/smart_ptr/detail/sp_typeinfo_.hpp \
-  /usr/include/boost/smart_ptr/detail/sp_noexcept.hpp \
-  /usr/include/c++/9/atomic \
-  /usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
-  /usr/include/boost/core/addressof.hpp \
-  /usr/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp \
-  /usr/include/c++/9/functional \
-  /usr/include/c++/9/bits/std_function.h \
-  /usr/include/boost/smart_ptr/detail/sp_convertible.hpp \
-  /usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp \
-  /usr/include/boost/smart_ptr/detail/spinlock_pool.hpp \
-  /usr/include/boost/smart_ptr/detail/spinlock.hpp \
-  /usr/include/boost/smart_ptr/detail/spinlock_std_atomic.hpp \
-  /usr/include/boost/smart_ptr/detail/yield_k.hpp \
-  /usr/include/boost/predef/platform/windows_runtime.h \
-  /usr/include/boost/predef/os/windows.h \
-  /usr/include/boost/predef/platform/windows_phone.h \
-  /usr/include/boost/predef/platform/windows_uwp.h \
-  /usr/include/boost/predef/platform/windows_store.h \
-  /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
-  /usr/include/boost/smart_ptr/detail/local_sp_deleter.hpp \
-  /usr/include/boost/smart_ptr/detail/local_counted_base.hpp \
   /opt/ros/noetic/include/pluginlib/class_list_macros.h \
   /opt/ros/noetic/include/pluginlib/class_list_macros.hpp \
   /opt/ros/noetic/include/class_loader/class_loader.hpp \
@@ -2474,8 +2474,11 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/ackermann_to_vesc_
 vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom.cpp.o: /home/foscar/kmu_virtualdrive2025/src/vesc/vesc_ackermann/src/vesc_to_odom.cpp \
   /usr/include/stdc-predef.h \
   /home/foscar/kmu_virtualdrive2025/src/vesc/vesc_ackermann/include/vesc_ackermann/vesc_to_odom.h \
-  /usr/include/c++/9/memory \
-  /usr/include/c++/9/bits/stl_algobase.h \
+  /opt/ros/noetic/include/ros/ros.h \
+  /opt/ros/noetic/include/ros/time.h \
+  /opt/ros/noetic/include/ros/platform.h \
+  /usr/include/c++/9/stdlib.h \
+  /usr/include/c++/9/cstdlib \
   /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
   /usr/include/features.h \
@@ -2485,6 +2488,49 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom.cpp.o
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/cpu_defines.h \
+  /usr/include/stdlib.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/sys/select.h \
+  /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/alloca.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/c++/9/bits/std_abs.h \
+  /usr/include/c++/9/string \
+  /usr/include/c++/9/bits/stringfwd.h \
+  /usr/include/c++/9/bits/memoryfwd.h \
+  /usr/include/c++/9/bits/char_traits.h \
+  /usr/include/c++/9/bits/stl_algobase.h \
   /usr/include/c++/9/bits/functexcept.h \
   /usr/include/c++/9/bits/exception_defines.h \
   /usr/include/c++/9/bits/cpp_type_traits.h \
@@ -2501,6 +2547,20 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom.cpp.o
   /usr/include/c++/9/bits/ptr_traits.h \
   /usr/include/c++/9/debug/debug.h \
   /usr/include/c++/9/bits/predefined_ops.h \
+  /usr/include/c++/9/bits/postypes.h \
+  /usr/include/c++/9/cwchar \
+  /usr/include/wchar.h \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/c++/9/cstdint \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/c++/9/bits/allocator.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/c++allocator.h \
   /usr/include/c++/9/ext/new_allocator.h \
@@ -2509,111 +2569,42 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom.cpp.o
   /usr/include/c++/9/bits/exception.h \
   /usr/include/c++/9/bits/exception_ptr.h \
   /usr/include/c++/9/bits/cxxabi_init_exception.h \
-  /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
   /usr/include/c++/9/typeinfo \
   /usr/include/c++/9/bits/hash_bytes.h \
   /usr/include/c++/9/bits/nested_exception.h \
-  /usr/include/c++/9/bits/memoryfwd.h \
-  /usr/include/c++/9/bits/stl_construct.h \
-  /usr/include/c++/9/ext/alloc_traits.h \
-  /usr/include/c++/9/bits/alloc_traits.h \
-  /usr/include/c++/9/bits/stl_uninitialized.h \
-  /usr/include/c++/9/bits/stl_tempbuf.h \
-  /usr/include/c++/9/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/9/bits/localefwd.h \
+  /usr/include/x86_64-linux-gnu/c++/9/bits/c++locale.h \
+  /usr/include/c++/9/clocale \
+  /usr/include/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/locale.h \
   /usr/include/c++/9/iosfwd \
-  /usr/include/c++/9/bits/stringfwd.h \
-  /usr/include/c++/9/bits/postypes.h \
-  /usr/include/c++/9/cwchar \
-  /usr/include/wchar.h \
-  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
-  /usr/include/x86_64-linux-gnu/bits/floatn.h \
-  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
-  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar.h \
-  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
-  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
-  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/c++/9/cctype \
+  /usr/include/ctype.h \
+  /usr/include/c++/9/bits/ostream_insert.h \
+  /usr/include/c++/9/bits/cxxabi_forced.h \
+  /usr/include/c++/9/bits/stl_function.h \
+  /usr/include/c++/9/backward/binders.h \
+  /usr/include/c++/9/bits/range_access.h \
+  /usr/include/c++/9/initializer_list \
+  /usr/include/c++/9/bits/basic_string.h \
   /usr/include/c++/9/ext/atomicity.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
-  /usr/include/x86_64-linux-gnu/bits/types.h \
-  /usr/include/x86_64-linux-gnu/bits/timesize.h \
-  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
-  /usr/include/x86_64-linux-gnu/bits/time64.h \
-  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
-  /usr/include/x86_64-linux-gnu/bits/endian.h \
-  /usr/include/x86_64-linux-gnu/bits/endianness.h \
   /usr/include/x86_64-linux-gnu/bits/sched.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
   /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
   /usr/include/time.h \
   /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/timex.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
-  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
-  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
-  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
-  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
-  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
-  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
-  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/atomic_word.h \
-  /usr/include/c++/9/ext/concurrence.h \
-  /usr/include/c++/9/bits/stl_function.h \
-  /usr/include/c++/9/backward/binders.h \
-  /usr/include/c++/9/bits/uses_allocator.h \
-  /usr/include/c++/9/bits/unique_ptr.h \
-  /usr/include/c++/9/utility \
-  /usr/include/c++/9/bits/stl_relops.h \
-  /usr/include/c++/9/initializer_list \
-  /usr/include/c++/9/tuple \
-  /usr/include/c++/9/array \
-  /usr/include/c++/9/stdexcept \
-  /usr/include/c++/9/string \
-  /usr/include/c++/9/bits/char_traits.h \
-  /usr/include/c++/9/cstdint \
-  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h \
-  /usr/include/stdint.h \
-  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
-  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
-  /usr/include/c++/9/bits/localefwd.h \
-  /usr/include/x86_64-linux-gnu/c++/9/bits/c++locale.h \
-  /usr/include/c++/9/clocale \
-  /usr/include/locale.h \
-  /usr/include/x86_64-linux-gnu/bits/locale.h \
-  /usr/include/c++/9/cctype \
-  /usr/include/ctype.h \
-  /usr/include/c++/9/bits/ostream_insert.h \
-  /usr/include/c++/9/bits/cxxabi_forced.h \
-  /usr/include/c++/9/bits/range_access.h \
-  /usr/include/c++/9/bits/basic_string.h \
+  /usr/include/c++/9/ext/alloc_traits.h \
+  /usr/include/c++/9/bits/alloc_traits.h \
   /usr/include/c++/9/ext/string_conversions.h \
-  /usr/include/c++/9/cstdlib \
-  /usr/include/stdlib.h \
-  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
-  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
-  /usr/include/x86_64-linux-gnu/sys/types.h \
-  /usr/include/endian.h \
-  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
-  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
-  /usr/include/x86_64-linux-gnu/sys/select.h \
-  /usr/include/x86_64-linux-gnu/bits/select.h \
-  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
-  /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/c++/9/bits/std_abs.h \
   /usr/include/c++/9/cstdio \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
@@ -2632,20 +2623,6 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom.cpp.o
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/9/bits/functional_hash.h \
   /usr/include/c++/9/bits/basic_string.tcc \
-  /usr/include/c++/9/bits/invoke.h \
-  /usr/include/c++/9/bits/shared_ptr.h \
-  /usr/include/c++/9/bits/shared_ptr_base.h \
-  /usr/include/c++/9/bits/allocated_ptr.h \
-  /usr/include/c++/9/bits/refwrap.h \
-  /usr/include/c++/9/ext/aligned_buffer.h \
-  /usr/include/c++/9/bits/shared_ptr_atomic.h \
-  /usr/include/c++/9/bits/atomic_base.h \
-  /usr/include/c++/9/bits/atomic_lockfree_defines.h \
-  /usr/include/c++/9/backward/auto_ptr.h \
-  /opt/ros/noetic/include/ros/ros.h \
-  /opt/ros/noetic/include/ros/time.h \
-  /opt/ros/noetic/include/ros/platform.h \
-  /usr/include/c++/9/stdlib.h \
   /usr/include/c++/9/iostream \
   /usr/include/c++/9/ostream \
   /usr/include/c++/9/ios \
@@ -2654,6 +2631,7 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom.cpp.o
   /usr/include/c++/9/bits/locale_classes.tcc \
   /usr/include/c++/9/system_error \
   /usr/include/x86_64-linux-gnu/c++/9/bits/error_constants.h \
+  /usr/include/c++/9/stdexcept \
   /usr/include/c++/9/streambuf \
   /usr/include/c++/9/bits/streambuf.tcc \
   /usr/include/c++/9/bits/basic_ios.h \
@@ -2728,9 +2706,13 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom.cpp.o
   /usr/include/boost/type_traits/is_integral.hpp \
   /usr/include/boost/type_traits/integral_constant.hpp \
   /usr/include/c++/9/algorithm \
+  /usr/include/c++/9/utility \
+  /usr/include/c++/9/bits/stl_relops.h \
   /usr/include/c++/9/bits/stl_algo.h \
   /usr/include/c++/9/bits/algorithmfwd.h \
   /usr/include/c++/9/bits/stl_heap.h \
+  /usr/include/c++/9/bits/stl_tempbuf.h \
+  /usr/include/c++/9/bits/stl_construct.h \
   /usr/include/c++/9/bits/uniform_int_dist.h \
   /usr/include/c++/9/limits \
   /usr/include/boost/config/no_tr1/cmath.hpp \
@@ -2748,6 +2730,11 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom.cpp.o
   /usr/include/c++/9/bits/codecvt.h \
   /usr/include/c++/9/bits/locale_facets_nonio.tcc \
   /usr/include/c++/9/bits/locale_conv.h \
+  /usr/include/c++/9/bits/unique_ptr.h \
+  /usr/include/c++/9/tuple \
+  /usr/include/c++/9/array \
+  /usr/include/c++/9/bits/uses_allocator.h \
+  /usr/include/c++/9/bits/invoke.h \
   /usr/include/c++/9/bits/quoted_string.h \
   /usr/include/c++/9/sstream \
   /usr/include/c++/9/bits/sstream.tcc \
@@ -3066,6 +3053,7 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom.cpp.o
   /usr/include/boost/current_function.hpp \
   /usr/include/boost/math/special_functions/math_fwd.hpp \
   /usr/include/c++/9/vector \
+  /usr/include/c++/9/bits/stl_uninitialized.h \
   /usr/include/c++/9/bits/stl_vector.h \
   /usr/include/c++/9/bits/stl_bvector.h \
   /usr/include/c++/9/bits/vector.tcc \
@@ -3120,6 +3108,7 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom.cpp.o
   /usr/include/c++/9/cstdarg \
   /usr/include/c++/9/map \
   /usr/include/c++/9/bits/stl_tree.h \
+  /usr/include/c++/9/ext/aligned_buffer.h \
   /usr/include/c++/9/bits/stl_map.h \
   /usr/include/c++/9/bits/stl_multimap.h \
   /usr/include/c++/9/bits/erase_if.h \
@@ -3142,10 +3131,21 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom.cpp.o
   /usr/include/c++/9/bits/stl_multiset.h \
   /usr/include/c++/9/list \
   /usr/include/c++/9/bits/stl_list.h \
+  /usr/include/c++/9/bits/allocated_ptr.h \
   /usr/include/c++/9/bits/list.tcc \
   /usr/include/boost/shared_ptr.hpp \
   /usr/include/boost/smart_ptr/shared_ptr.hpp \
   /usr/include/boost/config/no_tr1/memory.hpp \
+  /usr/include/c++/9/memory \
+  /usr/include/c++/9/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/9/ext/concurrence.h \
+  /usr/include/c++/9/bits/shared_ptr.h \
+  /usr/include/c++/9/bits/shared_ptr_base.h \
+  /usr/include/c++/9/bits/refwrap.h \
+  /usr/include/c++/9/bits/shared_ptr_atomic.h \
+  /usr/include/c++/9/bits/atomic_base.h \
+  /usr/include/c++/9/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/9/backward/auto_ptr.h \
   /usr/include/boost/checked_delete.hpp \
   /usr/include/boost/core/checked_delete.hpp \
   /usr/include/boost/smart_ptr/detail/shared_count.hpp \
@@ -3994,12 +3994,13 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom.cpp.o
 
 vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom_nodelet.cpp.o: /home/foscar/kmu_virtualdrive2025/src/vesc/vesc_ackermann/src/vesc_to_odom_nodelet.cpp \
   /usr/include/stdc-predef.h \
-  /opt/ros/noetic/include/nodelet/nodelet.h \
-  /opt/ros/noetic/include/nodelet/nodeletdecl.h \
-  /opt/ros/noetic/include/ros/macros.h \
-  /opt/ros/noetic/include/nodelet/exception.h \
-  /usr/include/c++/9/stdexcept \
-  /usr/include/c++/9/exception \
+  /usr/include/boost/shared_ptr.hpp \
+  /usr/include/boost/smart_ptr/shared_ptr.hpp \
+  /usr/include/boost/config.hpp \
+  /usr/include/boost/config/user.hpp \
+  /usr/include/boost/config/detail/select_compiler_config.hpp \
+  /usr/include/boost/config/compiler/gcc.hpp \
+  /usr/include/c++/9/cstddef \
   /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
   /usr/include/features.h \
@@ -4009,28 +4010,71 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom_nodel
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/cpu_defines.h \
-  /usr/include/c++/9/bits/exception.h \
-  /usr/include/c++/9/bits/exception_ptr.h \
-  /usr/include/c++/9/bits/exception_defines.h \
-  /usr/include/c++/9/bits/cxxabi_init_exception.h \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
-  /usr/include/c++/9/typeinfo \
-  /usr/include/c++/9/bits/hash_bytes.h \
-  /usr/include/c++/9/new \
-  /usr/include/c++/9/bits/nested_exception.h \
-  /usr/include/c++/9/bits/move.h \
-  /usr/include/c++/9/bits/concept_check.h \
-  /usr/include/c++/9/type_traits \
-  /usr/include/c++/9/string \
-  /usr/include/c++/9/bits/stringfwd.h \
-  /usr/include/c++/9/bits/memoryfwd.h \
-  /usr/include/c++/9/bits/char_traits.h \
+  /usr/include/boost/config/detail/select_stdlib_config.hpp \
+  /usr/include/boost/config/stdlib/libstdcpp3.hpp \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/boost/config/detail/select_platform_config.hpp \
+  /usr/include/boost/config/platform/linux.hpp \
+  /usr/include/c++/9/cstdlib \
+  /usr/include/stdlib.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/sys/select.h \
+  /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/alloca.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/c++/9/bits/std_abs.h \
+  /usr/include/boost/config/detail/posix_features.hpp \
+  /usr/include/boost/config/detail/suffix.hpp \
+  /usr/include/boost/config/helper_macros.hpp \
+  /usr/include/boost/config/no_tr1/memory.hpp \
+  /usr/include/c++/9/memory \
   /usr/include/c++/9/bits/stl_algobase.h \
   /usr/include/c++/9/bits/functexcept.h \
+  /usr/include/c++/9/bits/exception_defines.h \
   /usr/include/c++/9/bits/cpp_type_traits.h \
   /usr/include/c++/9/ext/type_traits.h \
   /usr/include/c++/9/ext/numeric_traits.h \
   /usr/include/c++/9/bits/stl_pair.h \
+  /usr/include/c++/9/bits/move.h \
+  /usr/include/c++/9/bits/concept_check.h \
+  /usr/include/c++/9/type_traits \
   /usr/include/c++/9/bits/stl_iterator_base_types.h \
   /usr/include/c++/9/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/9/debug/assertions.h \
@@ -4038,12 +4082,29 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom_nodel
   /usr/include/c++/9/bits/ptr_traits.h \
   /usr/include/c++/9/debug/debug.h \
   /usr/include/c++/9/bits/predefined_ops.h \
+  /usr/include/c++/9/bits/allocator.h \
+  /usr/include/x86_64-linux-gnu/c++/9/bits/c++allocator.h \
+  /usr/include/c++/9/ext/new_allocator.h \
+  /usr/include/c++/9/new \
+  /usr/include/c++/9/exception \
+  /usr/include/c++/9/bits/exception.h \
+  /usr/include/c++/9/bits/exception_ptr.h \
+  /usr/include/c++/9/bits/cxxabi_init_exception.h \
+  /usr/include/c++/9/typeinfo \
+  /usr/include/c++/9/bits/hash_bytes.h \
+  /usr/include/c++/9/bits/nested_exception.h \
+  /usr/include/c++/9/bits/memoryfwd.h \
+  /usr/include/c++/9/bits/stl_construct.h \
+  /usr/include/c++/9/ext/alloc_traits.h \
+  /usr/include/c++/9/bits/alloc_traits.h \
+  /usr/include/c++/9/bits/stl_uninitialized.h \
+  /usr/include/c++/9/bits/stl_tempbuf.h \
+  /usr/include/c++/9/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/9/iosfwd \
+  /usr/include/c++/9/bits/stringfwd.h \
   /usr/include/c++/9/bits/postypes.h \
   /usr/include/c++/9/cwchar \
   /usr/include/wchar.h \
-  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
-  /usr/include/x86_64-linux-gnu/bits/floatn.h \
-  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
@@ -4051,81 +4112,50 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom_nodel
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
-  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/c++/9/cstdint \
-  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h \
-  /usr/include/stdint.h \
-  /usr/include/x86_64-linux-gnu/bits/types.h \
-  /usr/include/x86_64-linux-gnu/bits/timesize.h \
-  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
-  /usr/include/x86_64-linux-gnu/bits/time64.h \
-  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
-  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
-  /usr/include/c++/9/bits/allocator.h \
-  /usr/include/x86_64-linux-gnu/c++/9/bits/c++allocator.h \
-  /usr/include/c++/9/ext/new_allocator.h \
-  /usr/include/c++/9/bits/localefwd.h \
-  /usr/include/x86_64-linux-gnu/c++/9/bits/c++locale.h \
-  /usr/include/c++/9/clocale \
-  /usr/include/locale.h \
-  /usr/include/x86_64-linux-gnu/bits/locale.h \
-  /usr/include/c++/9/iosfwd \
-  /usr/include/c++/9/cctype \
-  /usr/include/ctype.h \
-  /usr/include/x86_64-linux-gnu/bits/endian.h \
-  /usr/include/x86_64-linux-gnu/bits/endianness.h \
-  /usr/include/c++/9/bits/ostream_insert.h \
-  /usr/include/c++/9/bits/cxxabi_forced.h \
-  /usr/include/c++/9/bits/stl_function.h \
-  /usr/include/c++/9/backward/binders.h \
-  /usr/include/c++/9/bits/range_access.h \
-  /usr/include/c++/9/initializer_list \
-  /usr/include/c++/9/bits/basic_string.h \
   /usr/include/c++/9/ext/atomicity.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
-  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
   /usr/include/x86_64-linux-gnu/bits/sched.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
   /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
   /usr/include/time.h \
   /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/timex.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
-  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
-  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
-  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
-  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
-  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
-  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
-  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/atomic_word.h \
-  /usr/include/c++/9/ext/alloc_traits.h \
-  /usr/include/c++/9/bits/alloc_traits.h \
+  /usr/include/c++/9/ext/concurrence.h \
+  /usr/include/c++/9/bits/stl_function.h \
+  /usr/include/c++/9/backward/binders.h \
+  /usr/include/c++/9/bits/uses_allocator.h \
+  /usr/include/c++/9/bits/unique_ptr.h \
+  /usr/include/c++/9/utility \
+  /usr/include/c++/9/bits/stl_relops.h \
+  /usr/include/c++/9/initializer_list \
+  /usr/include/c++/9/tuple \
+  /usr/include/c++/9/array \
+  /usr/include/c++/9/stdexcept \
+  /usr/include/c++/9/string \
+  /usr/include/c++/9/bits/char_traits.h \
+  /usr/include/c++/9/cstdint \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+  /usr/include/c++/9/bits/localefwd.h \
+  /usr/include/x86_64-linux-gnu/c++/9/bits/c++locale.h \
+  /usr/include/c++/9/clocale \
+  /usr/include/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/c++/9/cctype \
+  /usr/include/ctype.h \
+  /usr/include/c++/9/bits/ostream_insert.h \
+  /usr/include/c++/9/bits/cxxabi_forced.h \
+  /usr/include/c++/9/bits/range_access.h \
+  /usr/include/c++/9/bits/basic_string.h \
   /usr/include/c++/9/ext/string_conversions.h \
-  /usr/include/c++/9/cstdlib \
-  /usr/include/stdlib.h \
-  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
-  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
-  /usr/include/x86_64-linux-gnu/sys/types.h \
-  /usr/include/endian.h \
-  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
-  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
-  /usr/include/x86_64-linux-gnu/sys/select.h \
-  /usr/include/x86_64-linux-gnu/bits/select.h \
-  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
-  /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/c++/9/bits/std_abs.h \
   /usr/include/c++/9/cstdio \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
@@ -4144,22 +4174,72 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom_nodel
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/9/bits/functional_hash.h \
   /usr/include/c++/9/bits/basic_string.tcc \
+  /usr/include/c++/9/bits/invoke.h \
+  /usr/include/c++/9/bits/shared_ptr.h \
+  /usr/include/c++/9/bits/shared_ptr_base.h \
+  /usr/include/c++/9/bits/allocated_ptr.h \
+  /usr/include/c++/9/bits/refwrap.h \
+  /usr/include/c++/9/ext/aligned_buffer.h \
+  /usr/include/c++/9/bits/shared_ptr_atomic.h \
+  /usr/include/c++/9/bits/atomic_base.h \
+  /usr/include/c++/9/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/9/backward/auto_ptr.h \
+  /usr/include/boost/assert.hpp \
+  /usr/include/assert.h \
+  /usr/include/boost/checked_delete.hpp \
+  /usr/include/boost/core/checked_delete.hpp \
+  /usr/include/boost/throw_exception.hpp \
+  /usr/include/boost/detail/workaround.hpp \
+  /usr/include/boost/config/workaround.hpp \
+  /usr/include/boost/exception/exception.hpp \
+  /usr/include/boost/current_function.hpp \
+  /usr/include/boost/smart_ptr/detail/shared_count.hpp \
+  /usr/include/boost/smart_ptr/bad_weak_ptr.hpp \
+  /usr/include/boost/smart_ptr/detail/sp_counted_base.hpp \
+  /usr/include/boost/smart_ptr/detail/sp_has_sync.hpp \
+  /usr/include/boost/smart_ptr/detail/sp_counted_base_std_atomic.hpp \
+  /usr/include/boost/smart_ptr/detail/sp_typeinfo_.hpp \
+  /usr/include/boost/smart_ptr/detail/sp_noexcept.hpp \
+  /usr/include/c++/9/atomic \
+  /usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
+  /usr/include/boost/core/addressof.hpp \
+  /usr/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp \
+  /usr/include/c++/9/functional \
+  /usr/include/c++/9/bits/std_function.h \
+  /usr/include/boost/smart_ptr/detail/sp_convertible.hpp \
+  /usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp \
+  /usr/include/boost/smart_ptr/detail/spinlock_pool.hpp \
+  /usr/include/boost/smart_ptr/detail/spinlock.hpp \
+  /usr/include/boost/smart_ptr/detail/spinlock_std_atomic.hpp \
+  /usr/include/boost/smart_ptr/detail/yield_k.hpp \
+  /usr/include/boost/predef/platform/windows_runtime.h \
+  /usr/include/boost/predef/make.h \
+  /usr/include/boost/predef/detail/test.h \
+  /usr/include/boost/predef/os/windows.h \
+  /usr/include/boost/predef/version_number.h \
+  /usr/include/boost/predef/platform/windows_phone.h \
+  /usr/include/boost/predef/platform/windows_uwp.h \
+  /usr/include/boost/predef/platform/windows_store.h \
+  /usr/include/c++/9/algorithm \
+  /usr/include/c++/9/bits/stl_algo.h \
+  /usr/include/c++/9/bits/algorithmfwd.h \
+  /usr/include/c++/9/bits/stl_heap.h \
+  /usr/include/c++/9/bits/uniform_int_dist.h \
+  /usr/include/c++/9/limits \
+  /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
+  /usr/include/boost/smart_ptr/detail/local_sp_deleter.hpp \
+  /usr/include/boost/smart_ptr/detail/local_counted_base.hpp \
+  /opt/ros/noetic/include/nodelet/nodelet.h \
+  /opt/ros/noetic/include/nodelet/nodeletdecl.h \
+  /opt/ros/noetic/include/ros/macros.h \
+  /opt/ros/noetic/include/nodelet/exception.h \
   /usr/include/c++/9/vector \
-  /usr/include/c++/9/bits/stl_construct.h \
-  /usr/include/c++/9/bits/stl_uninitialized.h \
   /usr/include/c++/9/bits/stl_vector.h \
   /usr/include/c++/9/bits/stl_bvector.h \
   /usr/include/c++/9/bits/vector.tcc \
   /usr/include/c++/9/map \
   /usr/include/c++/9/bits/stl_tree.h \
-  /usr/include/c++/9/ext/aligned_buffer.h \
   /usr/include/c++/9/bits/stl_map.h \
-  /usr/include/c++/9/tuple \
-  /usr/include/c++/9/utility \
-  /usr/include/c++/9/bits/stl_relops.h \
-  /usr/include/c++/9/array \
-  /usr/include/c++/9/bits/uses_allocator.h \
-  /usr/include/c++/9/bits/invoke.h \
   /usr/include/c++/9/bits/stl_multimap.h \
   /usr/include/c++/9/bits/erase_if.h \
   /opt/ros/noetic/include/ros/console.h \
@@ -4219,43 +4299,12 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom_nodel
   /opt/ros/noetic/include/ros/rostime_decl.h \
   /usr/include/boost/math/special_functions/round.hpp \
   /usr/include/boost/math/tools/config.hpp \
-  /usr/include/boost/config.hpp \
-  /usr/include/boost/config/user.hpp \
-  /usr/include/boost/config/detail/select_compiler_config.hpp \
-  /usr/include/boost/config/compiler/gcc.hpp \
-  /usr/include/c++/9/cstddef \
-  /usr/include/boost/config/detail/select_stdlib_config.hpp \
-  /usr/include/boost/config/stdlib/libstdcpp3.hpp \
-  /usr/include/unistd.h \
-  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
-  /usr/include/x86_64-linux-gnu/bits/environments.h \
-  /usr/include/x86_64-linux-gnu/bits/confname.h \
-  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
-  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
-  /usr/include/boost/config/detail/select_platform_config.hpp \
-  /usr/include/boost/config/platform/linux.hpp \
-  /usr/include/boost/config/detail/posix_features.hpp \
-  /usr/include/boost/config/detail/suffix.hpp \
-  /usr/include/boost/config/helper_macros.hpp \
   /usr/include/boost/predef/architecture/x86.h \
   /usr/include/boost/predef/architecture/x86/32.h \
-  /usr/include/boost/predef/version_number.h \
-  /usr/include/boost/predef/make.h \
-  /usr/include/boost/predef/detail/test.h \
   /usr/include/boost/predef/architecture/x86/64.h \
   /usr/include/boost/cstdint.hpp \
-  /usr/include/boost/detail/workaround.hpp \
-  /usr/include/boost/config/workaround.hpp \
   /usr/include/boost/type_traits/is_integral.hpp \
   /usr/include/boost/type_traits/integral_constant.hpp \
-  /usr/include/c++/9/algorithm \
-  /usr/include/c++/9/bits/stl_algo.h \
-  /usr/include/c++/9/bits/algorithmfwd.h \
-  /usr/include/c++/9/bits/stl_heap.h \
-  /usr/include/c++/9/bits/stl_tempbuf.h \
-  /usr/include/c++/9/bits/uniform_int_dist.h \
-  /usr/include/c++/9/limits \
   /usr/include/boost/config/no_tr1/cmath.hpp \
   /usr/include/c++/9/cfloat \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/float.h \
@@ -4271,7 +4320,6 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom_nodel
   /usr/include/c++/9/bits/codecvt.h \
   /usr/include/c++/9/bits/locale_facets_nonio.tcc \
   /usr/include/c++/9/bits/locale_conv.h \
-  /usr/include/c++/9/bits/unique_ptr.h \
   /usr/include/c++/9/bits/quoted_string.h \
   /usr/include/c++/9/cstring \
   /usr/include/string.h \
@@ -4579,13 +4627,8 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom_nodel
   /usr/include/boost/mpl/greater_equal.hpp \
   /usr/include/boost/mpl/aux_/preprocessed/gcc/greater_equal.hpp \
   /usr/include/boost/static_assert.hpp \
-  /usr/include/boost/assert.hpp \
-  /usr/include/assert.h \
   /usr/include/boost/math/tools/precision.hpp \
   /usr/include/boost/limits.hpp \
-  /usr/include/boost/throw_exception.hpp \
-  /usr/include/boost/exception/exception.hpp \
-  /usr/include/boost/current_function.hpp \
   /usr/include/boost/math/special_functions/math_fwd.hpp \
   /usr/include/boost/math/special_functions/detail/round_fwd.hpp \
   /usr/include/boost/math/tools/promotion.hpp \
@@ -4643,49 +4686,6 @@ vesc/vesc_ackermann/CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom_nodel
   /usr/include/log4cxx/helpers/objectptr.h \
   /usr/include/log4cxx/helpers/classregistration.h \
   /opt/ros/noetic/include/rosconsole/macros_generated.h \
-  /usr/include/boost/shared_ptr.hpp \
-  /usr/include/boost/smart_ptr/shared_ptr.hpp \
-  /usr/include/boost/config/no_tr1/memory.hpp \
-  /usr/include/c++/9/memory \
-  /usr/include/c++/9/bits/stl_raw_storage_iter.h \
-  /usr/include/c++/9/ext/concurrence.h \
-  /usr/include/c++/9/bits/shared_ptr.h \
-  /usr/include/c++/9/bits/shared_ptr_base.h \
-  /usr/include/c++/9/bits/allocated_ptr.h \
-  /usr/include/c++/9/bits/refwrap.h \
-  /usr/include/c++/9/bits/shared_ptr_atomic.h \
-  /usr/include/c++/9/bits/atomic_base.h \
-  /usr/include/c++/9/bits/atomic_lockfree_defines.h \
-  /usr/include/c++/9/backward/auto_ptr.h \
-  /usr/include/boost/checked_delete.hpp \
-  /usr/include/boost/core/checked_delete.hpp \
-  /usr/include/boost/smart_ptr/detail/shared_count.hpp \
-  /usr/include/boost/smart_ptr/bad_weak_ptr.hpp \
-  /usr/include/boost/smart_ptr/detail/sp_counted_base.hpp \
-  /usr/include/boost/smart_ptr/detail/sp_has_sync.hpp \
-  /usr/include/boost/smart_ptr/detail/sp_counted_base_std_atomic.hpp \
-  /usr/include/boost/smart_ptr/detail/sp_typeinfo_.hpp \
-  /usr/include/boost/smart_ptr/detail/sp_noexcept.hpp \
-  /usr/include/c++/9/atomic \
-  /usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
-  /usr/include/boost/core/addressof.hpp \
-  /usr/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp \
-  /usr/include/c++/9/functional \
-  /usr/include/c++/9/bits/std_function.h \
-  /usr/include/boost/smart_ptr/detail/sp_convertible.hpp \
-  /usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp \
-  /usr/include/boost/smart_ptr/detail/spinlock_pool.hpp \
-  /usr/include/boost/smart_ptr/detail/spinlock.hpp \
-  /usr/include/boost/smart_ptr/detail/spinlock_std_atomic.hpp \
-  /usr/include/boost/smart_ptr/detail/yield_k.hpp \
-  /usr/include/boost/predef/platform/windows_runtime.h \
-  /usr/include/boost/predef/os/windows.h \
-  /usr/include/boost/predef/platform/windows_phone.h \
-  /usr/include/boost/predef/platform/windows_uwp.h \
-  /usr/include/boost/predef/platform/windows_store.h \
-  /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
-  /usr/include/boost/smart_ptr/detail/local_sp_deleter.hpp \
-  /usr/include/boost/smart_ptr/detail/local_counted_base.hpp \
   /opt/ros/noetic/include/pluginlib/class_list_macros.h \
   /opt/ros/noetic/include/pluginlib/class_list_macros.hpp \
   /opt/ros/noetic/include/class_loader/class_loader.hpp \

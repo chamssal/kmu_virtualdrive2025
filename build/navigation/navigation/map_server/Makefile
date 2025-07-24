@@ -382,76 +382,6 @@ nav_msgs_generate_messages_py/fast:
 .PHONY : nav_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_py: navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make navigation/navigation/map_server/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-# Convenience name for target.
 navigation/navigation/map_server/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
 	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 navigation/navigation/map_server/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
 .PHONY : navigation/navigation/map_server/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
@@ -986,11 +916,6 @@ help:
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... clean_test_results_map_server"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... nav_msgs_generate_messages_cpp"
 	@echo "... nav_msgs_generate_messages_eus"
 	@echo "... nav_msgs_generate_messages_lisp"

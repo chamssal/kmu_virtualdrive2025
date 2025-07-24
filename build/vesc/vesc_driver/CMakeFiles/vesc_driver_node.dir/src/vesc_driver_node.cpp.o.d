@@ -1123,5 +1123,8 @@ vesc/vesc_driver/CMakeFiles/vesc_driver_node.dir/src/vesc_driver_node.cpp.o: \
  /usr/include/boost/optional/detail/optional_relops.hpp \
  /usr/include/boost/optional/detail/optional_swap.hpp \
  /home/foscar/kmu_virtualdrive2025/src/vesc/vesc_driver/include/vesc_driver/vesc_interface.h \
+ /usr/include/boost/scoped_ptr.hpp \
+ /usr/include/boost/smart_ptr/scoped_ptr.hpp \
  /home/foscar/kmu_virtualdrive2025/src/vesc/vesc_driver/include/vesc_driver/vesc_packet.h \
- /home/foscar/kmu_virtualdrive2025/src/vesc/vesc_driver/include/vesc_driver/crc.h
+ /usr/include/boost/crc.hpp \
+ /home/foscar/kmu_virtualdrive2025/src/vesc/vesc_driver/include/vesc_driver/v8stdint.h
