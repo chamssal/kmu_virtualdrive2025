@@ -67,7 +67,7 @@ include wecar_msgs/CMakeFiles/_vesc_msgs_generate_messages_check_deps_VescStateS
 include wecar_msgs/CMakeFiles/_vesc_msgs_generate_messages_check_deps_VescStateStamped.dir/progress.make
 
 wecar_msgs/CMakeFiles/_vesc_msgs_generate_messages_check_deps_VescStateStamped:
-	cd /home/foscar/kmu_virtualdrive2025/build/wecar_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py vesc_msgs /home/foscar/kmu_virtualdrive2025/src/wecar_msgs/msg/VescStateStamped.msg vesc_msgs/VescState:std_msgs/Header
+	cd /home/foscar/kmu_virtualdrive2025/build/wecar_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py vesc_msgs /home/foscar/kmu_virtualdrive2025/src/wecar_msgs/msg/VescStateStamped.msg std_msgs/Header:vesc_msgs/VescState
 
 _vesc_msgs_generate_messages_check_deps_VescStateStamped: wecar_msgs/CMakeFiles/_vesc_msgs_generate_messages_check_deps_VescStateStamped
 _vesc_msgs_generate_messages_check_deps_VescStateStamped: wecar_msgs/CMakeFiles/_vesc_msgs_generate_messages_check_deps_VescStateStamped.dir/build.make

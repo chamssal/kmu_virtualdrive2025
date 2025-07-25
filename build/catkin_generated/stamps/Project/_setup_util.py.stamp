@@ -268,7 +268,7 @@ if __name__ == '__main__':
 
         if not args.local:
             # environment at generation time
-            CMAKE_PREFIX_PATH = r'/home/foscar/kmu_virtualdrive2025/devel;/home/foscar/iscc_lidar_team/hwamok_lidar/devel;/home/foscar/hwamok_lidar/devel;/home/foscar/raba_yolo/devel;/opt/ros/noetic'.split(';')
+            CMAKE_PREFIX_PATH = r'/home/foscar/iscc_lidar_team/hwamok_lidar/devel;/home/foscar/hwamok_lidar/devel;/home/foscar/raba_yolo/devel;/opt/ros/noetic'.split(';')
         else:
             # don't consider any other prefix path than this one
             CMAKE_PREFIX_PATH = []

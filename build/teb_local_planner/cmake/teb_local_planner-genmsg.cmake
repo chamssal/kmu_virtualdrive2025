@@ -19,17 +19,17 @@ add_custom_target(teb_local_planner_generate_messages ALL)
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg" NAME_WE)
 add_custom_target(_teb_local_planner_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "teb_local_planner" "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg" "geometry_msgs/Point:geometry_msgs/Vector3:geometry_msgs/Pose:geometry_msgs/Quaternion:geometry_msgs/Twist"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "teb_local_planner" "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg" "geometry_msgs/Point:geometry_msgs/Quaternion:geometry_msgs/Vector3:geometry_msgs/Pose:geometry_msgs/Twist"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg" NAME_WE)
 add_custom_target(_teb_local_planner_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "teb_local_planner" "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg" "geometry_msgs/Point:geometry_msgs/Vector3:geometry_msgs/Pose:geometry_msgs/Quaternion:geometry_msgs/Twist:teb_local_planner/TrajectoryPointMsg:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "teb_local_planner" "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg" "std_msgs/Header:geometry_msgs/Point:geometry_msgs/Quaternion:geometry_msgs/Twist:geometry_msgs/Vector3:geometry_msgs/Pose:teb_local_planner/TrajectoryPointMsg"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/FeedbackMsg.msg" NAME_WE)
 add_custom_target(_teb_local_planner_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "teb_local_planner" "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/FeedbackMsg.msg" "geometry_msgs/Point:costmap_converter/ObstacleArrayMsg:costmap_converter/ObstacleMsg:geometry_msgs/TwistWithCovariance:geometry_msgs/Vector3:geometry_msgs/Point32:geometry_msgs/Pose:geometry_msgs/Quaternion:geometry_msgs/Twist:teb_local_planner/TrajectoryMsg:teb_local_planner/TrajectoryPointMsg:geometry_msgs/Polygon:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "teb_local_planner" "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/FeedbackMsg.msg" "costmap_converter/ObstacleMsg:teb_local_planner/TrajectoryMsg:geometry_msgs/Point32:std_msgs/Header:geometry_msgs/TwistWithCovariance:geometry_msgs/Point:geometry_msgs/Quaternion:geometry_msgs/Twist:geometry_msgs/Vector3:geometry_msgs/Polygon:geometry_msgs/Pose:costmap_converter/ObstacleArrayMsg:teb_local_planner/TrajectoryPointMsg"
 )
 
 #
@@ -41,19 +41,19 @@ add_custom_target(_teb_local_planner_generate_messages_check_deps_${_filename}
 _generate_msg_cpp(teb_local_planner
   "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/teb_local_planner
 )
 _generate_msg_cpp(teb_local_planner
   "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/teb_local_planner
 )
 _generate_msg_cpp(teb_local_planner
   "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/FeedbackMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleArrayMsg.msg;/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleMsg.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleMsg.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleArrayMsg.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/teb_local_planner
 )
 
@@ -90,19 +90,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS teb_local_planner_generate_messages
 _generate_msg_eus(teb_local_planner
   "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/teb_local_planner
 )
 _generate_msg_eus(teb_local_planner
   "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/teb_local_planner
 )
 _generate_msg_eus(teb_local_planner
   "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/FeedbackMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleArrayMsg.msg;/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleMsg.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleMsg.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleArrayMsg.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/teb_local_planner
 )
 
@@ -139,19 +139,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS teb_local_planner_generate_messages
 _generate_msg_lisp(teb_local_planner
   "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/teb_local_planner
 )
 _generate_msg_lisp(teb_local_planner
   "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/teb_local_planner
 )
 _generate_msg_lisp(teb_local_planner
   "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/FeedbackMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleArrayMsg.msg;/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleMsg.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleMsg.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleArrayMsg.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/teb_local_planner
 )
 
@@ -188,19 +188,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS teb_local_planner_generate_messages
 _generate_msg_nodejs(teb_local_planner
   "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/teb_local_planner
 )
 _generate_msg_nodejs(teb_local_planner
   "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/teb_local_planner
 )
 _generate_msg_nodejs(teb_local_planner
   "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/FeedbackMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleArrayMsg.msg;/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleMsg.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleMsg.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleArrayMsg.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/teb_local_planner
 )
 
@@ -237,19 +237,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS teb_local_planner_generate_messages
 _generate_msg_py(teb_local_planner
   "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/teb_local_planner
 )
 _generate_msg_py(teb_local_planner
   "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/teb_local_planner
 )
 _generate_msg_py(teb_local_planner
   "/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/FeedbackMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleArrayMsg.msg;/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleMsg.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleMsg.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/costmap_converter/cmake/../msg/ObstacleArrayMsg.msg;/home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/teb_local_planner
 )
 

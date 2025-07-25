@@ -1,0 +1,17 @@
+(cl:defpackage obstacle_detect-msg
+  (:use )
+  (:export
+   "<LIDAROBSTACLEINFO>"
+   "LIDAROBSTACLEINFO"
+   "<LIDAROBSTACLEINFOARRAY>"
+   "LIDAROBSTACLEINFOARRAY"
+   "<OBSTACLEINFO>"
+   "OBSTACLEINFO"
+   "<OBSTACLEINFOARRAY>"
+   "OBSTACLEINFOARRAY"
+   "<ROTARY>"
+   "ROTARY"
+   "<ROTARYARRAY>"
+   "ROTARYARRAY"
+  ))
+

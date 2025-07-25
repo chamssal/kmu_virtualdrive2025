@@ -76,8 +76,8 @@ wecar_msgs/CMakeFiles/vesc_msgs_generate_messages_lisp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/vesc_msgs/msg/VescStateStamped.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/vesc_msgs/msg/VescStateStamped.lisp: /home/foscar/kmu_virtualdrive2025/src/wecar_msgs/msg/VescStateStamped.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/vesc_msgs/msg/VescStateStamped.lisp: /home/foscar/kmu_virtualdrive2025/src/wecar_msgs/msg/VescState.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/vesc_msgs/msg/VescStateStamped.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/vesc_msgs/msg/VescStateStamped.lisp: /home/foscar/kmu_virtualdrive2025/src/wecar_msgs/msg/VescState.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from vesc_msgs/VescStateStamped.msg"
 	cd /home/foscar/kmu_virtualdrive2025/build/wecar_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/foscar/kmu_virtualdrive2025/src/wecar_msgs/msg/VescStateStamped.msg -Ivesc_msgs:/home/foscar/kmu_virtualdrive2025/src/wecar_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p vesc_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/common-lisp/ros/vesc_msgs/msg
 

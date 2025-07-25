@@ -76,8 +76,8 @@ robot_localization/CMakeFiles/robot_localization_generate_messages_nodejs: /home
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/FromLL.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/FromLL.js: /home/foscar/kmu_virtualdrive2025/src/robot_localization/srv/FromLL.srv
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/FromLL.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/FromLL.js: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/FromLL.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from robot_localization/FromLL.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/robot_localization && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/robot_localization/srv/FromLL.srv -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p robot_localization -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv
 
@@ -88,20 +88,20 @@ robot_localization/CMakeFiles/robot_localization_generate_messages_nodejs: /home
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetDatum.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetDatum.js: /home/foscar/kmu_virtualdrive2025/src/robot_localization/srv/SetDatum.srv
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetDatum.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetDatum.js: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetDatum.js: /opt/ros/noetic/share/geographic_msgs/msg/GeoPose.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetDatum.js: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetDatum.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from robot_localization/SetDatum.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/robot_localization && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/robot_localization/srv/SetDatum.srv -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p robot_localization -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetPose.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetPose.js: /home/foscar/kmu_virtualdrive2025/src/robot_localization/srv/SetPose.srv
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetPose.js: /opt/ros/noetic/share/geometry_msgs/msg/PoseWithCovariance.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetPose.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetPose.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetPose.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetPose.js: /opt/ros/noetic/share/geometry_msgs/msg/PoseWithCovarianceStamped.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetPose.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetPose.js: /opt/ros/noetic/share/geometry_msgs/msg/PoseWithCovarianceStamped.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetPose.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetPose.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetPose.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv/SetPose.js: /opt/ros/noetic/share/geometry_msgs/msg/PoseWithCovariance.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from robot_localization/SetPose.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/robot_localization && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/robot_localization/srv/SetPose.srv -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p robot_localization -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/robot_localization/srv
 

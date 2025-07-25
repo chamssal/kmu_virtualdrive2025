@@ -1,0 +1,2 @@
+set(obstacle_detect_MESSAGE_FILES "/home/foscar/kmu_virtualdrive2025/src/obstacle_detect/msg/Rotary.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detect/msg/RotaryArray.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detect/msg/LidarObstacleInfo.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detect/msg/LidarObstacleInfoArray.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detect/msg/ObstacleInfo.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detect/msg/ObstacleInfoArray.msg")
+set(obstacle_detect_SERVICE_FILES "")

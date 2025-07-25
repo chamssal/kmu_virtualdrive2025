@@ -2339,7 +2339,7 @@ roscpp_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_cpp/fast:
-	$(MAKE) $(MAKESILENT) -f navigation/navigation/map_server/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make navigation/navigation/map_server/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make obstacle_detect/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
 
 #=============================================================================
@@ -2352,7 +2352,7 @@ roscpp_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_eus/fast:
-	$(MAKE) $(MAKESILENT) -f navigation/navigation/map_server/CMakeFiles/roscpp_generate_messages_eus.dir/build.make navigation/navigation/map_server/CMakeFiles/roscpp_generate_messages_eus.dir/build
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/roscpp_generate_messages_eus.dir/build.make obstacle_detect/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
 
 #=============================================================================
@@ -2365,7 +2365,7 @@ roscpp_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_lisp/fast:
-	$(MAKE) $(MAKESILENT) -f navigation/navigation/map_server/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make navigation/navigation/map_server/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make obstacle_detect/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 .PHONY : roscpp_generate_messages_lisp/fast
 
 #=============================================================================
@@ -2378,7 +2378,7 @@ roscpp_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_nodejs/fast:
-	$(MAKE) $(MAKESILENT) -f navigation/navigation/map_server/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make navigation/navigation/map_server/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make obstacle_detect/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 .PHONY : roscpp_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -2391,7 +2391,7 @@ roscpp_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_py/fast:
-	$(MAKE) $(MAKESILENT) -f navigation/navigation/map_server/CMakeFiles/roscpp_generate_messages_py.dir/build.make navigation/navigation/map_server/CMakeFiles/roscpp_generate_messages_py.dir/build
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/roscpp_generate_messages_py.dir/build.make obstacle_detect/CMakeFiles/roscpp_generate_messages_py.dir/build
 .PHONY : roscpp_generate_messages_py/fast
 
 #=============================================================================
@@ -2404,7 +2404,7 @@ rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_cpp/fast:
-	$(MAKE) $(MAKESILENT) -f navigation/navigation/map_server/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make navigation/navigation/map_server/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make obstacle_detect/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -2417,7 +2417,7 @@ rosgraph_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_eus/fast:
-	$(MAKE) $(MAKESILENT) -f navigation/navigation/map_server/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make navigation/navigation/map_server/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make obstacle_detect/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -2430,7 +2430,7 @@ rosgraph_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_lisp/fast:
-	$(MAKE) $(MAKESILENT) -f navigation/navigation/map_server/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make navigation/navigation/map_server/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make obstacle_detect/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -2443,7 +2443,7 @@ rosgraph_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_nodejs/fast:
-	$(MAKE) $(MAKESILENT) -f navigation/navigation/map_server/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make navigation/navigation/map_server/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make obstacle_detect/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -2456,8 +2456,229 @@ rosgraph_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_py/fast:
-	$(MAKE) $(MAKESILENT) -f navigation/navigation/map_server/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make navigation/navigation/map_server/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make obstacle_detect/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named obstacle_detect_generate_messages
+
+# Build rule for target.
+obstacle_detect_generate_messages: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 obstacle_detect_generate_messages
+.PHONY : obstacle_detect_generate_messages
+
+# fast build rule for target.
+obstacle_detect_generate_messages/fast:
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/obstacle_detect_generate_messages.dir/build.make obstacle_detect/CMakeFiles/obstacle_detect_generate_messages.dir/build
+.PHONY : obstacle_detect_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named _obstacle_detect_generate_messages_check_deps_Rotary
+
+# Build rule for target.
+_obstacle_detect_generate_messages_check_deps_Rotary: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _obstacle_detect_generate_messages_check_deps_Rotary
+.PHONY : _obstacle_detect_generate_messages_check_deps_Rotary
+
+# fast build rule for target.
+_obstacle_detect_generate_messages_check_deps_Rotary/fast:
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/_obstacle_detect_generate_messages_check_deps_Rotary.dir/build.make obstacle_detect/CMakeFiles/_obstacle_detect_generate_messages_check_deps_Rotary.dir/build
+.PHONY : _obstacle_detect_generate_messages_check_deps_Rotary/fast
+
+#=============================================================================
+# Target rules for targets named _obstacle_detect_generate_messages_check_deps_RotaryArray
+
+# Build rule for target.
+_obstacle_detect_generate_messages_check_deps_RotaryArray: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _obstacle_detect_generate_messages_check_deps_RotaryArray
+.PHONY : _obstacle_detect_generate_messages_check_deps_RotaryArray
+
+# fast build rule for target.
+_obstacle_detect_generate_messages_check_deps_RotaryArray/fast:
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/_obstacle_detect_generate_messages_check_deps_RotaryArray.dir/build.make obstacle_detect/CMakeFiles/_obstacle_detect_generate_messages_check_deps_RotaryArray.dir/build
+.PHONY : _obstacle_detect_generate_messages_check_deps_RotaryArray/fast
+
+#=============================================================================
+# Target rules for targets named _obstacle_detect_generate_messages_check_deps_LidarObstacleInfo
+
+# Build rule for target.
+_obstacle_detect_generate_messages_check_deps_LidarObstacleInfo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _obstacle_detect_generate_messages_check_deps_LidarObstacleInfo
+.PHONY : _obstacle_detect_generate_messages_check_deps_LidarObstacleInfo
+
+# fast build rule for target.
+_obstacle_detect_generate_messages_check_deps_LidarObstacleInfo/fast:
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/_obstacle_detect_generate_messages_check_deps_LidarObstacleInfo.dir/build.make obstacle_detect/CMakeFiles/_obstacle_detect_generate_messages_check_deps_LidarObstacleInfo.dir/build
+.PHONY : _obstacle_detect_generate_messages_check_deps_LidarObstacleInfo/fast
+
+#=============================================================================
+# Target rules for targets named _obstacle_detect_generate_messages_check_deps_LidarObstacleInfoArray
+
+# Build rule for target.
+_obstacle_detect_generate_messages_check_deps_LidarObstacleInfoArray: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _obstacle_detect_generate_messages_check_deps_LidarObstacleInfoArray
+.PHONY : _obstacle_detect_generate_messages_check_deps_LidarObstacleInfoArray
+
+# fast build rule for target.
+_obstacle_detect_generate_messages_check_deps_LidarObstacleInfoArray/fast:
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/_obstacle_detect_generate_messages_check_deps_LidarObstacleInfoArray.dir/build.make obstacle_detect/CMakeFiles/_obstacle_detect_generate_messages_check_deps_LidarObstacleInfoArray.dir/build
+.PHONY : _obstacle_detect_generate_messages_check_deps_LidarObstacleInfoArray/fast
+
+#=============================================================================
+# Target rules for targets named _obstacle_detect_generate_messages_check_deps_ObstacleInfo
+
+# Build rule for target.
+_obstacle_detect_generate_messages_check_deps_ObstacleInfo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _obstacle_detect_generate_messages_check_deps_ObstacleInfo
+.PHONY : _obstacle_detect_generate_messages_check_deps_ObstacleInfo
+
+# fast build rule for target.
+_obstacle_detect_generate_messages_check_deps_ObstacleInfo/fast:
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/_obstacle_detect_generate_messages_check_deps_ObstacleInfo.dir/build.make obstacle_detect/CMakeFiles/_obstacle_detect_generate_messages_check_deps_ObstacleInfo.dir/build
+.PHONY : _obstacle_detect_generate_messages_check_deps_ObstacleInfo/fast
+
+#=============================================================================
+# Target rules for targets named _obstacle_detect_generate_messages_check_deps_ObstacleInfoArray
+
+# Build rule for target.
+_obstacle_detect_generate_messages_check_deps_ObstacleInfoArray: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _obstacle_detect_generate_messages_check_deps_ObstacleInfoArray
+.PHONY : _obstacle_detect_generate_messages_check_deps_ObstacleInfoArray
+
+# fast build rule for target.
+_obstacle_detect_generate_messages_check_deps_ObstacleInfoArray/fast:
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/_obstacle_detect_generate_messages_check_deps_ObstacleInfoArray.dir/build.make obstacle_detect/CMakeFiles/_obstacle_detect_generate_messages_check_deps_ObstacleInfoArray.dir/build
+.PHONY : _obstacle_detect_generate_messages_check_deps_ObstacleInfoArray/fast
+
+#=============================================================================
+# Target rules for targets named obstacle_detect_generate_messages_cpp
+
+# Build rule for target.
+obstacle_detect_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 obstacle_detect_generate_messages_cpp
+.PHONY : obstacle_detect_generate_messages_cpp
+
+# fast build rule for target.
+obstacle_detect_generate_messages_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/obstacle_detect_generate_messages_cpp.dir/build.make obstacle_detect/CMakeFiles/obstacle_detect_generate_messages_cpp.dir/build
+.PHONY : obstacle_detect_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named obstacle_detect_gencpp
+
+# Build rule for target.
+obstacle_detect_gencpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 obstacle_detect_gencpp
+.PHONY : obstacle_detect_gencpp
+
+# fast build rule for target.
+obstacle_detect_gencpp/fast:
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/obstacle_detect_gencpp.dir/build.make obstacle_detect/CMakeFiles/obstacle_detect_gencpp.dir/build
+.PHONY : obstacle_detect_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named obstacle_detect_generate_messages_eus
+
+# Build rule for target.
+obstacle_detect_generate_messages_eus: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 obstacle_detect_generate_messages_eus
+.PHONY : obstacle_detect_generate_messages_eus
+
+# fast build rule for target.
+obstacle_detect_generate_messages_eus/fast:
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/obstacle_detect_generate_messages_eus.dir/build.make obstacle_detect/CMakeFiles/obstacle_detect_generate_messages_eus.dir/build
+.PHONY : obstacle_detect_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named obstacle_detect_geneus
+
+# Build rule for target.
+obstacle_detect_geneus: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 obstacle_detect_geneus
+.PHONY : obstacle_detect_geneus
+
+# fast build rule for target.
+obstacle_detect_geneus/fast:
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/obstacle_detect_geneus.dir/build.make obstacle_detect/CMakeFiles/obstacle_detect_geneus.dir/build
+.PHONY : obstacle_detect_geneus/fast
+
+#=============================================================================
+# Target rules for targets named obstacle_detect_generate_messages_lisp
+
+# Build rule for target.
+obstacle_detect_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 obstacle_detect_generate_messages_lisp
+.PHONY : obstacle_detect_generate_messages_lisp
+
+# fast build rule for target.
+obstacle_detect_generate_messages_lisp/fast:
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/obstacle_detect_generate_messages_lisp.dir/build.make obstacle_detect/CMakeFiles/obstacle_detect_generate_messages_lisp.dir/build
+.PHONY : obstacle_detect_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named obstacle_detect_genlisp
+
+# Build rule for target.
+obstacle_detect_genlisp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 obstacle_detect_genlisp
+.PHONY : obstacle_detect_genlisp
+
+# fast build rule for target.
+obstacle_detect_genlisp/fast:
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/obstacle_detect_genlisp.dir/build.make obstacle_detect/CMakeFiles/obstacle_detect_genlisp.dir/build
+.PHONY : obstacle_detect_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named obstacle_detect_generate_messages_nodejs
+
+# Build rule for target.
+obstacle_detect_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 obstacle_detect_generate_messages_nodejs
+.PHONY : obstacle_detect_generate_messages_nodejs
+
+# fast build rule for target.
+obstacle_detect_generate_messages_nodejs/fast:
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/obstacle_detect_generate_messages_nodejs.dir/build.make obstacle_detect/CMakeFiles/obstacle_detect_generate_messages_nodejs.dir/build
+.PHONY : obstacle_detect_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named obstacle_detect_gennodejs
+
+# Build rule for target.
+obstacle_detect_gennodejs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 obstacle_detect_gennodejs
+.PHONY : obstacle_detect_gennodejs
+
+# fast build rule for target.
+obstacle_detect_gennodejs/fast:
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/obstacle_detect_gennodejs.dir/build.make obstacle_detect/CMakeFiles/obstacle_detect_gennodejs.dir/build
+.PHONY : obstacle_detect_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named obstacle_detect_generate_messages_py
+
+# Build rule for target.
+obstacle_detect_generate_messages_py: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 obstacle_detect_generate_messages_py
+.PHONY : obstacle_detect_generate_messages_py
+
+# fast build rule for target.
+obstacle_detect_generate_messages_py/fast:
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/obstacle_detect_generate_messages_py.dir/build.make obstacle_detect/CMakeFiles/obstacle_detect_generate_messages_py.dir/build
+.PHONY : obstacle_detect_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named obstacle_detect_genpy
+
+# Build rule for target.
+obstacle_detect_genpy: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 obstacle_detect_genpy
+.PHONY : obstacle_detect_genpy
+
+# fast build rule for target.
+obstacle_detect_genpy/fast:
+	$(MAKE) $(MAKESILENT) -f obstacle_detect/CMakeFiles/obstacle_detect_genpy.dir/build.make obstacle_detect/CMakeFiles/obstacle_detect_genpy.dir/build
+.PHONY : obstacle_detect_genpy/fast
 
 #=============================================================================
 # Target rules for targets named nav_msgs_generate_messages_cpp
@@ -8367,6 +8588,12 @@ help:
 	@echo "... _morai_msgs_generate_messages_check_deps_WoowaDillyStatus"
 	@echo "... _navfn_generate_messages_check_deps_MakeNavPlan"
 	@echo "... _navfn_generate_messages_check_deps_SetCostmap"
+	@echo "... _obstacle_detect_generate_messages_check_deps_LidarObstacleInfo"
+	@echo "... _obstacle_detect_generate_messages_check_deps_LidarObstacleInfoArray"
+	@echo "... _obstacle_detect_generate_messages_check_deps_ObstacleInfo"
+	@echo "... _obstacle_detect_generate_messages_check_deps_ObstacleInfoArray"
+	@echo "... _obstacle_detect_generate_messages_check_deps_Rotary"
+	@echo "... _obstacle_detect_generate_messages_check_deps_RotaryArray"
 	@echo "... _robot_localization_generate_messages_check_deps_FromLL"
 	@echo "... _robot_localization_generate_messages_check_deps_GetState"
 	@echo "... _robot_localization_generate_messages_check_deps_SetDatum"
@@ -8611,6 +8838,17 @@ help:
 	@echo "... nodelet_generate_messages_lisp"
 	@echo "... nodelet_generate_messages_nodejs"
 	@echo "... nodelet_generate_messages_py"
+	@echo "... obstacle_detect_gencpp"
+	@echo "... obstacle_detect_generate_messages"
+	@echo "... obstacle_detect_generate_messages_cpp"
+	@echo "... obstacle_detect_generate_messages_eus"
+	@echo "... obstacle_detect_generate_messages_lisp"
+	@echo "... obstacle_detect_generate_messages_nodejs"
+	@echo "... obstacle_detect_generate_messages_py"
+	@echo "... obstacle_detect_geneus"
+	@echo "... obstacle_detect_genlisp"
+	@echo "... obstacle_detect_gennodejs"
+	@echo "... obstacle_detect_genpy"
 	@echo "... robot_localization_gencpp"
 	@echo "... robot_localization_generate_messages"
 	@echo "... robot_localization_generate_messages_cpp"

@@ -1218,6 +1218,15 @@ navsat_transform_nodelet_LIB_DEPENDS:STATIC=general;navsat_transform;general;/op
 nodelet_DIR:PATH=/opt/ros/noetic/share/nodelet/cmake
 
 //Value Computed by CMake
+obstacle_detect_BINARY_DIR:STATIC=/home/foscar/kmu_virtualdrive2025/build/obstacle_detect
+
+//Value Computed by CMake
+obstacle_detect_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+obstacle_detect_SOURCE_DIR:STATIC=/home/foscar/kmu_virtualdrive2025/src/obstacle_detect
+
+//Value Computed by CMake
 openslam_gmapping_BINARY_DIR:STATIC=/home/foscar/kmu_virtualdrive2025/build/openslam_gmapping
 
 //The directory containing a CMake configuration file for openslam_gmapping.
@@ -1696,7 +1705,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=39
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=40
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

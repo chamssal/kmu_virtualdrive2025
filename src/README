@@ -1,0 +1,9 @@
+lidar: 0.11 0 0.13
+imu: 0 0 0.12
+camera: 0.3 0 0.11
+
+**slam**
+1. roslaunch wego navigation.launch
+2. roslaunch wego teleop.launch
+3. rosrun wego navigation_client.py
+

@@ -11,6 +11,8 @@ class NavigationClient():
         
         self.goal_list = list()
         
+        
+        # 위치 
         self.waypoint_1 = MoveBaseGoal()
         self.waypoint_1.target_pose.header.frame_id = "map"
         self.waypoint_1.target_pose.pose.position.x = 18.601542942942007
