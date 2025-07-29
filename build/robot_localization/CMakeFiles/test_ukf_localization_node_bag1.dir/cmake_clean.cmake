@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/foscar/kmu_virtualdrive2025/devel/lib/robot_localization/test_ukf_localization_node_bag1"
-  "/home/foscar/kmu_virtualdrive2025/devel/lib/robot_localization/test_ukf_localization_node_bag1.pdb"
+  "/home/lsc/Downloads/kmu_virtualdrive2025/devel/lib/robot_localization/test_ukf_localization_node_bag1"
+  "/home/lsc/Downloads/kmu_virtualdrive2025/devel/lib/robot_localization/test_ukf_localization_node_bag1.pdb"
   "CMakeFiles/test_ukf_localization_node_bag1.dir/test/test_localization_node_bag_pose_tester.cpp.o"
-  "CMakeFiles/test_ukf_localization_node_bag1.dir/test/test_localization_node_bag_pose_tester.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

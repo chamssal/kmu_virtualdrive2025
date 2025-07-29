@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/foscar/kmu_virtualdrive2025/devel/lib/librobot_localization_estimator.pdb"
-  "/home/foscar/kmu_virtualdrive2025/devel/lib/librobot_localization_estimator.so"
+  "/home/lsc/Downloads/kmu_virtualdrive2025/devel/lib/librobot_localization_estimator.pdb"
+  "/home/lsc/Downloads/kmu_virtualdrive2025/devel/lib/librobot_localization_estimator.so"
   "CMakeFiles/robot_localization_estimator.dir/src/robot_localization_estimator.cpp.o"
-  "CMakeFiles/robot_localization_estimator.dir/src/robot_localization_estimator.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

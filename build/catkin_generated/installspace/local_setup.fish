@@ -5,7 +5,7 @@
 # or fall back to the destination set at configure time
 
 if test -z $_CATKIN_SETUP_DIR
-    set _CATKIN_SETUP_DIR /home/foscar/kmu_virtualdrive2025/install
+    set _CATKIN_SETUP_DIR /home/lsc/Downloads/kmu_virtualdrive2025/install
 end
 
 set CATKIN_SETUP_UTIL_ARGS "--extend --local"

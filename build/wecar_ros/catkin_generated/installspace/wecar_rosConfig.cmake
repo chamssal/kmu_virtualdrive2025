@@ -67,14 +67,14 @@ set(wecar_ros_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(wecar_ros_SOURCE_PREFIX /home/foscar/kmu_virtualdrive2025/src/wecar_ros)
-  set(wecar_ros_DEVEL_PREFIX /home/foscar/kmu_virtualdrive2025/devel)
+  set(wecar_ros_SOURCE_PREFIX /home/lsc/Downloads/kmu_virtualdrive2025/src/wecar_ros)
+  set(wecar_ros_DEVEL_PREFIX /home/lsc/Downloads/kmu_virtualdrive2025/devel)
   set(wecar_ros_INSTALL_PREFIX "")
   set(wecar_ros_PREFIX ${wecar_ros_DEVEL_PREFIX})
 else()
   set(wecar_ros_SOURCE_PREFIX "")
   set(wecar_ros_DEVEL_PREFIX "")
-  set(wecar_ros_INSTALL_PREFIX /home/foscar/kmu_virtualdrive2025/install)
+  set(wecar_ros_INSTALL_PREFIX /home/lsc/Downloads/kmu_virtualdrive2025/install)
   set(wecar_ros_PREFIX ${wecar_ros_INSTALL_PREFIX})
 endif()
 
@@ -156,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/foscar/kmu_virtualdrive2025/install/lib;/home/foscar/kmu_virtualdrive2025/devel/lib;/home/foscar/iscc_lidar_team/hwamok_lidar/devel/lib;/home/foscar/hwamok_lidar/devel/lib;/home/foscar/raba_yolo/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/lsc/Downloads/kmu_virtualdrive2025/install/lib;/home/lsc/catkin_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

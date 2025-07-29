@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/foscar/kmu_virtualdrive2025/devel/include/vesc_msgs/VescState.h"
-  "/home/foscar/kmu_virtualdrive2025/devel/include/vesc_msgs/VescStateStamped.h"
+  "/home/lsc/Downloads/kmu_virtualdrive2025/devel/include/vesc_msgs/VescState.h"
+  "/home/lsc/Downloads/kmu_virtualdrive2025/devel/include/vesc_msgs/VescStateStamped.h"
   "CMakeFiles/vesc_msgs_generate_messages_cpp"
 )
 

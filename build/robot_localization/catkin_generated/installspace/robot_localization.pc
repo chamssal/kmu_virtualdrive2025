@@ -1,4 +1,4 @@
-prefix=/home/foscar/kmu_virtualdrive2025/install
+prefix=/home/lsc/Downloads/kmu_virtualdrive2025/install
 
 Name: robot_localization
 Description: Description of robot_localization

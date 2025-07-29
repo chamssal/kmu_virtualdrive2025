@@ -1,8 +1,8 @@
-# Install script for directory: /home/foscar/kmu_virtualdrive2025/src
+# Install script for directory: /home/lsc/Downloads/kmu_virtualdrive2025/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/foscar/kmu_virtualdrive2025/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lsc/Downloads/kmu_virtualdrive2025/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,11 +37,6 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
-endif()
-
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   
       if (NOT EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}")
@@ -54,134 +49,112 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/foscar/kmu_virtualdrive2025/install/_setup_util.py")
+   "/home/lsc/Downloads/kmu_virtualdrive2025/install/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/foscar/kmu_virtualdrive2025/install" TYPE PROGRAM FILES "/home/foscar/kmu_virtualdrive2025/build/catkin_generated/installspace/_setup_util.py")
+file(INSTALL DESTINATION "/home/lsc/Downloads/kmu_virtualdrive2025/install" TYPE PROGRAM FILES "/home/lsc/Downloads/kmu_virtualdrive2025/build/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/foscar/kmu_virtualdrive2025/install/env.sh")
+   "/home/lsc/Downloads/kmu_virtualdrive2025/install/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/foscar/kmu_virtualdrive2025/install" TYPE PROGRAM FILES "/home/foscar/kmu_virtualdrive2025/build/catkin_generated/installspace/env.sh")
+file(INSTALL DESTINATION "/home/lsc/Downloads/kmu_virtualdrive2025/install" TYPE PROGRAM FILES "/home/lsc/Downloads/kmu_virtualdrive2025/build/catkin_generated/installspace/env.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/foscar/kmu_virtualdrive2025/install/setup.bash;/home/foscar/kmu_virtualdrive2025/install/local_setup.bash")
+   "/home/lsc/Downloads/kmu_virtualdrive2025/install/setup.bash;/home/lsc/Downloads/kmu_virtualdrive2025/install/local_setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/foscar/kmu_virtualdrive2025/install" TYPE FILE FILES
-    "/home/foscar/kmu_virtualdrive2025/build/catkin_generated/installspace/setup.bash"
-    "/home/foscar/kmu_virtualdrive2025/build/catkin_generated/installspace/local_setup.bash"
+file(INSTALL DESTINATION "/home/lsc/Downloads/kmu_virtualdrive2025/install" TYPE FILE FILES
+    "/home/lsc/Downloads/kmu_virtualdrive2025/build/catkin_generated/installspace/setup.bash"
+    "/home/lsc/Downloads/kmu_virtualdrive2025/build/catkin_generated/installspace/local_setup.bash"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/foscar/kmu_virtualdrive2025/install/setup.sh;/home/foscar/kmu_virtualdrive2025/install/local_setup.sh")
+   "/home/lsc/Downloads/kmu_virtualdrive2025/install/setup.sh;/home/lsc/Downloads/kmu_virtualdrive2025/install/local_setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/foscar/kmu_virtualdrive2025/install" TYPE FILE FILES
-    "/home/foscar/kmu_virtualdrive2025/build/catkin_generated/installspace/setup.sh"
-    "/home/foscar/kmu_virtualdrive2025/build/catkin_generated/installspace/local_setup.sh"
+file(INSTALL DESTINATION "/home/lsc/Downloads/kmu_virtualdrive2025/install" TYPE FILE FILES
+    "/home/lsc/Downloads/kmu_virtualdrive2025/build/catkin_generated/installspace/setup.sh"
+    "/home/lsc/Downloads/kmu_virtualdrive2025/build/catkin_generated/installspace/local_setup.sh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/foscar/kmu_virtualdrive2025/install/setup.zsh;/home/foscar/kmu_virtualdrive2025/install/local_setup.zsh")
+   "/home/lsc/Downloads/kmu_virtualdrive2025/install/setup.zsh;/home/lsc/Downloads/kmu_virtualdrive2025/install/local_setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/foscar/kmu_virtualdrive2025/install" TYPE FILE FILES
-    "/home/foscar/kmu_virtualdrive2025/build/catkin_generated/installspace/setup.zsh"
-    "/home/foscar/kmu_virtualdrive2025/build/catkin_generated/installspace/local_setup.zsh"
+file(INSTALL DESTINATION "/home/lsc/Downloads/kmu_virtualdrive2025/install" TYPE FILE FILES
+    "/home/lsc/Downloads/kmu_virtualdrive2025/build/catkin_generated/installspace/setup.zsh"
+    "/home/lsc/Downloads/kmu_virtualdrive2025/build/catkin_generated/installspace/local_setup.zsh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/foscar/kmu_virtualdrive2025/install/setup.fish;/home/foscar/kmu_virtualdrive2025/install/local_setup.fish")
+   "/home/lsc/Downloads/kmu_virtualdrive2025/install/setup.fish;/home/lsc/Downloads/kmu_virtualdrive2025/install/local_setup.fish")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/foscar/kmu_virtualdrive2025/install" TYPE FILE FILES
-    "/home/foscar/kmu_virtualdrive2025/build/catkin_generated/installspace/setup.fish"
-    "/home/foscar/kmu_virtualdrive2025/build/catkin_generated/installspace/local_setup.fish"
+file(INSTALL DESTINATION "/home/lsc/Downloads/kmu_virtualdrive2025/install" TYPE FILE FILES
+    "/home/lsc/Downloads/kmu_virtualdrive2025/build/catkin_generated/installspace/setup.fish"
+    "/home/lsc/Downloads/kmu_virtualdrive2025/build/catkin_generated/installspace/local_setup.fish"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/foscar/kmu_virtualdrive2025/install/.rosinstall")
+   "/home/lsc/Downloads/kmu_virtualdrive2025/install/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/foscar/kmu_virtualdrive2025/install" TYPE FILE FILES "/home/foscar/kmu_virtualdrive2025/build/catkin_generated/installspace/.rosinstall")
+file(INSTALL DESTINATION "/home/lsc/Downloads/kmu_virtualdrive2025/install" TYPE FILE FILES "/home/lsc/Downloads/kmu_virtualdrive2025/build/catkin_generated/installspace/.rosinstall")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/foscar/kmu_virtualdrive2025/build/gtest/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/navigation/navigation/navigation/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/openslam_gmapping/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/racecar/racecar/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/slam_gmapping/slam_gmapping/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/ackermann_msgs/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/vesc/vesc/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/wecar_msgs/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/navigation/navigation/map_server/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/racecar/ackermann_cmd_mux/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/slam_gmapping/gmapping/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/navigation/navigation/amcl/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/navigation/navigation/fake_localization/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/robot_localization/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/learning_tf/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/vesc/vesc_ackermann/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/vesc/vesc_driver/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/navigation/navigation/voxel_grid/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/navigation/navigation/costmap_2d/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/navigation/navigation/nav_core/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/navigation/navigation/base_local_planner/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/navigation/navigation/carrot_planner/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/navigation/navigation/clear_costmap_recovery/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/navigation/navigation/dwa_local_planner/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/navigation/navigation/move_slow_and_clear/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/navigation/navigation/navfn/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/navigation/navigation/global_planner/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/navigation/navigation/rotate_recovery/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/navigation/navigation/move_base/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/wecar_ros/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/wego/cmake_install.cmake")
-  include("/home/foscar/kmu_virtualdrive2025/build/wego_2d_nav/cmake_install.cmake")
+  include("/home/lsc/Downloads/kmu_virtualdrive2025/build/gtest/cmake_install.cmake")
+  include("/home/lsc/Downloads/kmu_virtualdrive2025/build/racecar/racecar/cmake_install.cmake")
+  include("/home/lsc/Downloads/kmu_virtualdrive2025/build/wecar_msgs/cmake_install.cmake")
+  include("/home/lsc/Downloads/kmu_virtualdrive2025/build/racecar/ackermann_cmd_mux/cmake_install.cmake")
+  include("/home/lsc/Downloads/kmu_virtualdrive2025/build/auto_drive/cmake_install.cmake")
+  include("/home/lsc/Downloads/kmu_virtualdrive2025/build/robot_localization/cmake_install.cmake")
+  include("/home/lsc/Downloads/kmu_virtualdrive2025/build/learning_tf/cmake_install.cmake")
+  include("/home/lsc/Downloads/kmu_virtualdrive2025/build/wecar_ros/cmake_install.cmake")
+  include("/home/lsc/Downloads/kmu_virtualdrive2025/build/wego/cmake_install.cmake")
+  include("/home/lsc/Downloads/kmu_virtualdrive2025/build/wego_2d_nav/cmake_install.cmake")
 
 endif()
 
@@ -193,5 +166,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/foscar/kmu_virtualdrive2025/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/lsc/Downloads/kmu_virtualdrive2025/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

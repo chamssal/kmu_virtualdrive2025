@@ -1,8 +1,8 @@
-# Install script for directory: /home/foscar/kmu_virtualdrive2025/src/wego_2d_nav
+# Install script for directory: /home/lsc/Downloads/kmu_virtualdrive2025/src/wego_2d_nav
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/foscar/kmu_virtualdrive2025/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lsc/Downloads/kmu_virtualdrive2025/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,27 +37,22 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
-endif()
-
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/foscar/kmu_virtualdrive2025/build/wego_2d_nav/catkin_generated/installspace/wego_2d_nav.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lsc/Downloads/kmu_virtualdrive2025/build/wego_2d_nav/catkin_generated/installspace/wego_2d_nav.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wego_2d_nav/cmake" TYPE FILE FILES
-    "/home/foscar/kmu_virtualdrive2025/build/wego_2d_nav/catkin_generated/installspace/wego_2d_navConfig.cmake"
-    "/home/foscar/kmu_virtualdrive2025/build/wego_2d_nav/catkin_generated/installspace/wego_2d_navConfig-version.cmake"
+    "/home/lsc/Downloads/kmu_virtualdrive2025/build/wego_2d_nav/catkin_generated/installspace/wego_2d_navConfig.cmake"
+    "/home/lsc/Downloads/kmu_virtualdrive2025/build/wego_2d_nav/catkin_generated/installspace/wego_2d_navConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wego_2d_nav" TYPE FILE FILES "/home/foscar/kmu_virtualdrive2025/src/wego_2d_nav/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wego_2d_nav" TYPE FILE FILES "/home/lsc/Downloads/kmu_virtualdrive2025/src/wego_2d_nav/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/wego_2d_nav" TYPE PROGRAM FILES "/home/foscar/kmu_virtualdrive2025/build/wego_2d_nav/catkin_generated/installspace/cmd_vel_to_ackermann.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/wego_2d_nav" TYPE PROGRAM FILES "/home/lsc/Downloads/kmu_virtualdrive2025/build/wego_2d_nav/catkin_generated/installspace/cmd_vel_to_ackermann.py")
 endif()
 

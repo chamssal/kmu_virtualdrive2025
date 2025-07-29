@@ -69,10 +69,10 @@ def annotate_image(img_bgr, lane_mask, steer_angle, offset_px):
 
 def main():
     # 모델과 입력/출력 파일 경로 설정
-    model_path = '/models/yolop-640-640.onnx'
+    model_path = "/home/lsc/Downloads/kmu_virtualdrive2025/src/auto_drive/models/yolop-640-640.onnx"
     # 테스트용 640×480 JPG 파일 (경로를 실제 파일명으로 수정하세요)
-    img_path   = '/image/test_image1.webp'
-    out_path   = '/image/test_done_1.jpg'
+    img_path   = '/home/lsc/Downloads/kmu_virtualdrive2025/src/auto_drive/image/test_image1.webp'
+    out_path   = '/home/lsc/Downloads/kmu_virtualdrive2025/src/auto_drive/image/test_done_1.jpg'
 
     # ONNX 모델 로드
     net = cv2.dnn.readNet(model_path)

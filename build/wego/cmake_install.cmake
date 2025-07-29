@@ -1,8 +1,8 @@
-# Install script for directory: /home/foscar/kmu_virtualdrive2025/src/wego
+# Install script for directory: /home/lsc/Downloads/kmu_virtualdrive2025/src/wego
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/foscar/kmu_virtualdrive2025/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lsc/Downloads/kmu_virtualdrive2025/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,31 +37,26 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
-endif()
-
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/foscar/kmu_virtualdrive2025/build/wego/catkin_generated/installspace/wego.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lsc/Downloads/kmu_virtualdrive2025/build/wego/catkin_generated/installspace/wego.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wego/cmake" TYPE FILE FILES
-    "/home/foscar/kmu_virtualdrive2025/build/wego/catkin_generated/installspace/wegoConfig.cmake"
-    "/home/foscar/kmu_virtualdrive2025/build/wego/catkin_generated/installspace/wegoConfig-version.cmake"
+    "/home/lsc/Downloads/kmu_virtualdrive2025/build/wego/catkin_generated/installspace/wegoConfig.cmake"
+    "/home/lsc/Downloads/kmu_virtualdrive2025/build/wego/catkin_generated/installspace/wegoConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wego" TYPE FILE FILES "/home/foscar/kmu_virtualdrive2025/src/wego/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wego" TYPE FILE FILES "/home/lsc/Downloads/kmu_virtualdrive2025/src/wego/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/wego" TYPE PROGRAM FILES "/home/foscar/kmu_virtualdrive2025/build/wego/catkin_generated/installspace/pub_odom.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/wego" TYPE PROGRAM FILES "/home/lsc/Downloads/kmu_virtualdrive2025/build/wego/catkin_generated/installspace/pub_odom.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/wego" TYPE PROGRAM FILES "/home/foscar/kmu_virtualdrive2025/build/wego/catkin_generated/installspace/navigation_client.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/wego" TYPE PROGRAM FILES "/home/lsc/Downloads/kmu_virtualdrive2025/build/wego/catkin_generated/installspace/navigation_client.py")
 endif()
 

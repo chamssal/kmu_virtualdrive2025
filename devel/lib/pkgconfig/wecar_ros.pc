@@ -1,4 +1,4 @@
-prefix=/home/foscar/kmu_virtualdrive2025/devel
+prefix=/home/lsc/Downloads/kmu_virtualdrive2025/devel
 
 Name: wecar_ros
 Description: Description of wecar_ros

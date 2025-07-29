@@ -1,8 +1,8 @@
-# Install script for directory: /home/foscar/kmu_virtualdrive2025/src/wecar_ros
+# Install script for directory: /home/lsc/Downloads/kmu_virtualdrive2025/src/wecar_ros
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/foscar/kmu_virtualdrive2025/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lsc/Downloads/kmu_virtualdrive2025/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,23 +37,18 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
-endif()
-
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/foscar/kmu_virtualdrive2025/build/wecar_ros/catkin_generated/installspace/wecar_ros.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lsc/Downloads/kmu_virtualdrive2025/build/wecar_ros/catkin_generated/installspace/wecar_ros.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wecar_ros/cmake" TYPE FILE FILES
-    "/home/foscar/kmu_virtualdrive2025/build/wecar_ros/catkin_generated/installspace/wecar_rosConfig.cmake"
-    "/home/foscar/kmu_virtualdrive2025/build/wecar_ros/catkin_generated/installspace/wecar_rosConfig-version.cmake"
+    "/home/lsc/Downloads/kmu_virtualdrive2025/build/wecar_ros/catkin_generated/installspace/wecar_rosConfig.cmake"
+    "/home/lsc/Downloads/kmu_virtualdrive2025/build/wecar_ros/catkin_generated/installspace/wecar_rosConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wecar_ros" TYPE FILE FILES "/home/foscar/kmu_virtualdrive2025/src/wecar_ros/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wecar_ros" TYPE FILE FILES "/home/lsc/Downloads/kmu_virtualdrive2025/src/wecar_ros/package.xml")
 endif()
 
