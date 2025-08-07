@@ -1,0 +1,17 @@
+file(REMOVE_RECURSE
+  "/home/foscar/kmu_virtualdrive2025/devel/lib/libobstacle_detector_nodelets.pdb"
+  "/home/foscar/kmu_virtualdrive2025/devel/lib/libobstacle_detector_nodelets.so"
+  "CMakeFiles/obstacle_detector_nodelets.dir/src/nodelets/obstacle_extractor_nodelet.cpp.o"
+  "CMakeFiles/obstacle_detector_nodelets.dir/src/nodelets/obstacle_extractor_nodelet.cpp.o.d"
+  "CMakeFiles/obstacle_detector_nodelets.dir/src/nodelets/obstacle_publisher_nodelet.cpp.o"
+  "CMakeFiles/obstacle_detector_nodelets.dir/src/nodelets/obstacle_publisher_nodelet.cpp.o.d"
+  "CMakeFiles/obstacle_detector_nodelets.dir/src/nodelets/obstacle_tracker_nodelet.cpp.o"
+  "CMakeFiles/obstacle_detector_nodelets.dir/src/nodelets/obstacle_tracker_nodelet.cpp.o.d"
+  "CMakeFiles/obstacle_detector_nodelets.dir/src/nodelets/scans_merger_nodelet.cpp.o"
+  "CMakeFiles/obstacle_detector_nodelets.dir/src/nodelets/scans_merger_nodelet.cpp.o.d"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/obstacle_detector_nodelets.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

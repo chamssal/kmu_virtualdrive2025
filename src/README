@@ -7,3 +7,10 @@ camera: 0.3 0 0.11
 2. roslaunch wego teleop.launch
 3. rosrun wego navigation_client.py
 
+roslaunch obstacle_detect obstacle.launch  
+
+rosnode kill /obstacle_extractor
+rostopic info /raw_obstacles
+
+morai msg 만 같이 돌리면 됨 그러면 경로 생김
+초기 위치값 설정해놨음

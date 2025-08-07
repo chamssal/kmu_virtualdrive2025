@@ -10,7 +10,7 @@ class NavigationClient():
         self.client.wait_for_server()
         
         self.goal_list = list()
-        
+    
         
         # 위치 
         self.waypoint_1 = MoveBaseGoal()
@@ -29,6 +29,9 @@ class NavigationClient():
         if self.client.get_state() != GoalStatus.ACTIVE:
             self.start_time = rospy.Time.now()
             self.sequence = (self.sequence + 1) % 1
+            
+            self.goal_list[self.sequence].target_pose.header.stamp = rospy.Time.now()
+            
             self.client.send_goal(self.goal_list[self.sequence])
             
         else:

@@ -172,76 +172,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_cpp.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_cpp.dir/rule
-.PHONY : navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-map_msgs_generate_messages_cpp: navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_cpp.dir/rule
-.PHONY : map_msgs_generate_messages_cpp
-
-# fast build rule for target.
-map_msgs_generate_messages_cpp/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_cpp.dir/build.make navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_cpp.dir/build
-.PHONY : map_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_eus.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_eus.dir/rule
-.PHONY : navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-map_msgs_generate_messages_eus: navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_eus.dir/rule
-.PHONY : map_msgs_generate_messages_eus
-
-# fast build rule for target.
-map_msgs_generate_messages_eus/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_eus.dir/build.make navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_eus.dir/build
-.PHONY : map_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_lisp.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_lisp.dir/rule
-.PHONY : navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-map_msgs_generate_messages_lisp: navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_lisp.dir/rule
-.PHONY : map_msgs_generate_messages_lisp
-
-# fast build rule for target.
-map_msgs_generate_messages_lisp/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_lisp.dir/build.make navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_lisp.dir/build
-.PHONY : map_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_nodejs.dir/rule
-.PHONY : navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-map_msgs_generate_messages_nodejs: navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_nodejs.dir/rule
-.PHONY : map_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-map_msgs_generate_messages_nodejs/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_nodejs.dir/build.make navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_nodejs.dir/build
-.PHONY : map_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_py.dir/rule:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_py.dir/rule
-.PHONY : navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-map_msgs_generate_messages_py: navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_py.dir/rule
-.PHONY : map_msgs_generate_messages_py
-
-# fast build rule for target.
-map_msgs_generate_messages_py/fast:
-	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_py.dir/build.make navigation/navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_py.dir/build
-.PHONY : map_msgs_generate_messages_py/fast
-
-# Convenience name for target.
 navigation/navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages.dir/rule:
 	cd /home/foscar/kmu_virtualdrive2025/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 navigation/navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages.dir/rule
 .PHONY : navigation/navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages.dir/rule
@@ -1531,11 +1461,6 @@ help:
 	@echo "... costmap_2d_genpy"
 	@echo "... costmap_2d_simple_driving_test_indexed.bag"
 	@echo "... costmap_2d_willow-full-0.025.pgm"
-	@echo "... map_msgs_generate_messages_cpp"
-	@echo "... map_msgs_generate_messages_eus"
-	@echo "... map_msgs_generate_messages_lisp"
-	@echo "... map_msgs_generate_messages_nodejs"
-	@echo "... map_msgs_generate_messages_py"
 	@echo "... run_tests_costmap_2d"
 	@echo "... run_tests_costmap_2d_gtest"
 	@echo "... run_tests_costmap_2d_gtest_array_parser_test"

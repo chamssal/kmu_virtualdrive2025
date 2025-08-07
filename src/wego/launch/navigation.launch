@@ -2,9 +2,17 @@
     <!-- <arg name="map_file" default="$(find wego)/maps/map.yaml"/> -->
     <arg name="map_file" default="$(find wego)/maps/map.yaml"/>
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
+      
+    <node name="navigation_client" pkg="wego" type="navigation_client.py" output="screen">
+        <param name="use_sim_time" value="false"/>
+    </node>
 
     <include file="$(find wego_2d_nav)/launch/amcl.launch"/>
     <include file="$(find wego_2d_nav)/launch/move_base.launch"/>
+
+    <include file="$(find wego)/launch/teleop.launch"/>
+    <include file="$(find obstacle_detect)/launch/obstacle.launch"/>
+    
 
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find wego)/rviz/navigation.rviz" />
 </launch>
