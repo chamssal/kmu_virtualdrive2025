@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="static_obstacle" type="static_obstacle.py" name="static_obstacle" output="screen">
+    <rosparam file="$(find static_obstacle)/config/static_params.yaml" command="load" />
+  </node>
+</launch>

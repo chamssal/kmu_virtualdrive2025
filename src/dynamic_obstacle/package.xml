@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>dynamic_obstacle</name>
+  <version>0.0.0</version>
+  <description>Dynamic obstacle decision node</description>
+
+  <maintainer email="foscar@todo.todo">foscar</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>obstacle_detect</depend>
+  <depend>obstacle_msgs</depend>
+
+  <exec_depend>message_runtime</exec_depend>
+
+  <export/>
+</package>

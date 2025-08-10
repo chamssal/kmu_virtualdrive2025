@@ -159,9 +159,9 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/CollisionData.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/CollisionData.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CollisionData.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/CollisionData.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/CollisionData.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/CollisionData.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/CollisionData.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/CollisionData.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from morai_msgs/CollisionData.msg"
 	cd /home/foscar/kmu_virtualdrive2025/src/morai_msgs && /home/foscar/kmu_virtualdrive2025/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CollisionData.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -192,24 +192,24 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EgoVehicleStatus.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EgoVehicleStatus.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EgoVehicleStatus.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EgoVehicleStatus.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EgoVehicleStatus.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EgoVehicleStatus.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating C++ code from morai_msgs/EgoVehicleStatus.msg"
 	cd /home/foscar/kmu_virtualdrive2025/src/morai_msgs && /home/foscar/kmu_virtualdrive2025/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EgoVehicleStatusExtended.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EgoVehicleStatusExtended.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatusExtended.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EgoVehicleStatusExtended.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EgoVehicleStatusExtended.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EgoVehicleStatusExtended.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EgoVehicleStatusExtended.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating C++ code from morai_msgs/EgoVehicleStatusExtended.msg"
 	cd /home/foscar/kmu_virtualdrive2025/src/morai_msgs && /home/foscar/kmu_virtualdrive2025/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatusExtended.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EventInfo.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EventInfo.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EventInfo.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EventInfo.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EventInfo.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/EventInfo.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from morai_msgs/EventInfo.msg"
 	cd /home/foscar/kmu_virtualdrive2025/src/morai_msgs && /home/foscar/kmu_virtualdrive2025/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -217,10 +217,10 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionCtrlSrv.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionCtrlSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionCtrlSrv.srv
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionCtrlSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionCtrlSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionCtrlSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionCtrlSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionCtrlSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Controller.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionCtrlSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionCtrlSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionCtrlSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionCtrlSrv.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionCtrlSrv.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating C++ code from morai_msgs/FaultInjectionCtrlSrv.srv"
@@ -229,11 +229,11 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionSensorSrv.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionSensorSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionSensorSrv.srv
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionSensorSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionSensorSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionSensorSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionSensorSrv.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionSensorSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionSensorSrv.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionSensorSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Sensor.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionSensorSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionSensorSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionSensorSrv.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionSensorSrv.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating C++ code from morai_msgs/FaultInjectionSensorSrv.srv"
@@ -242,10 +242,10 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionTireSrv.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionTireSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionTireSrv.srv
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionTireSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionTireSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionTireSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionTireSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Tire.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionTireSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionTireSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionTireSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionTireSrv.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjectionTireSrv.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating C++ code from morai_msgs/FaultInjectionTireSrv.srv"
@@ -259,9 +259,9 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjection_Response.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjection_Response.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjection_Response.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjection_Response.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjection_Response.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjection_Response.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultInjection_Response.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating C++ code from morai_msgs/FaultInjection_Response.msg"
 	cd /home/foscar/kmu_virtualdrive2025/src/morai_msgs && /home/foscar/kmu_virtualdrive2025/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -281,10 +281,10 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultStatusInfo.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultStatusInfo.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultStatusInfo.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultStatusInfo.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultStatusInfo.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultStatusInfo.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultStatusInfo.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultStatusInfo.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/FaultStatusInfo.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating C++ code from morai_msgs/FaultStatusInfo.msg"
 	cd /home/foscar/kmu_virtualdrive2025/src/morai_msgs && /home/foscar/kmu_virtualdrive2025/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -373,9 +373,9 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiEventCmdSrv.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiEventCmdSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiEventCmdSrv.srv
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiEventCmdSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiEventCmdSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiEventCmdSrv.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiEventCmdSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiEventCmdSrv.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiEventCmdSrv.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating C++ code from morai_msgs/MoraiEventCmdSrv.srv"
@@ -383,9 +383,9 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiMapSpecSrv.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiMapSpecSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiMapSpecSrv.srv
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiMapSpecSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpecIndex.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiMapSpecSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpec.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiMapSpecSrv.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiMapSpecSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpecIndex.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiMapSpecSrv.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiMapSpecSrv.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Generating C++ code from morai_msgs/MoraiMapSpecSrv.srv"
@@ -393,8 +393,8 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiScenarioLoadSrv.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiScenarioLoadSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiScenarioLoadSrv.srv
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiScenarioLoadSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MoraiSrvResponse.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiScenarioLoadSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ScenarioLoad.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiScenarioLoadSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MoraiSrvResponse.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiScenarioLoadSrv.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiScenarioLoadSrv.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Generating C++ code from morai_msgs/MoraiScenarioLoadSrv.srv"
@@ -431,8 +431,8 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeAddObjectSrv.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeAddObjectSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeAddObjectSrv.srv
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeAddObjectSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeAddObject.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeAddObjectSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeAddObjectSrv.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeAddObjectSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeAddObjectSrv.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeAddObjectSrv.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating C++ code from morai_msgs/MoraiSyncModeAddObjectSrv.srv"
@@ -440,8 +440,8 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeCmdSrv.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeCmdSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCmdSrv.srv
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeCmdSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmd.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeCmdSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmdResponse.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeCmdSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmd.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeCmdSrv.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeCmdSrv.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Generating C++ code from morai_msgs/MoraiSyncModeCmdSrv.srv"
@@ -449,9 +449,9 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeCtrlCmdSrv.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeCtrlCmdSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCtrlCmdSrv.srv
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeCtrlCmdSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCtrlCmd.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeCtrlCmdSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeCtrlCmdSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CtrlCmd.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeCtrlCmdSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCtrlCmd.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeCtrlCmdSrv.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeCtrlCmdSrv.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Generating C++ code from morai_msgs/MoraiSyncModeCtrlCmdSrv.srv"
@@ -459,8 +459,8 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeRemoveObjectSrv.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeRemoveObjectSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeRemoveObjectSrv.srv
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeRemoveObjectSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeRemoveObjectSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeRemoveObject.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeRemoveObjectSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeRemoveObjectSrv.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeRemoveObjectSrv.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Generating C++ code from morai_msgs/MoraiSyncModeRemoveObjectSrv.srv"
@@ -468,8 +468,8 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeSLSrv.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeSLSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSLSrv.srv
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeSLSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeSLSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeScenarioLoad.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeSLSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeSLSrv.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeSLSrv.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Generating C++ code from morai_msgs/MoraiSyncModeSLSrv.srv"
@@ -477,8 +477,8 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeSetGearSrv.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeSetGearSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSetGearSrv.srv
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeSetGearSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeSetGearSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeSetGear.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeSetGearSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeSetGearSrv.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiSyncModeSetGearSrv.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Generating C++ code from morai_msgs/MoraiSyncModeSetGearSrv.srv"
@@ -509,9 +509,9 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiVehicleSpecSrv.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiVehicleSpecSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiVehicleSpecSrv.srv
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiVehicleSpecSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpecIndex.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiVehicleSpecSrv.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiVehicleSpecSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpec.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiVehicleSpecSrv.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiVehicleSpecSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpecIndex.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiVehicleSpecSrv.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiVehicleSpecSrv.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Generating C++ code from morai_msgs/MoraiVehicleSpecSrv.srv"
@@ -521,9 +521,9 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiWaitForTickSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiWaitForTickSrv.srv
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiWaitForTickSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTick.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiWaitForTickSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiWaitForTickSrv.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiWaitForTickSrv.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiWaitForTickSrv.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiWaitForTickSrv.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiWaitForTickSrv.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/MoraiWaitForTickSrv.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Generating C++ code from morai_msgs/MoraiWaitForTickSrv.srv"
@@ -558,8 +558,8 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/NpcGhostCmd.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/NpcGhostCmd.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostCmd.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/NpcGhostCmd.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/NpcGhostCmd.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/NpcGhostCmd.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/NpcGhostCmd.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostInfo.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/NpcGhostCmd.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Generating C++ code from morai_msgs/NpcGhostCmd.msg"
@@ -589,19 +589,19 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ObjectStatusList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ObjectStatusList.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusList.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ObjectStatusList.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ObjectStatusList.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ObjectStatusList.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ObjectStatusList.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ObjectStatusList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Generating C++ code from morai_msgs/ObjectStatusList.msg"
 	cd /home/foscar/kmu_virtualdrive2025/src/morai_msgs && /home/foscar/kmu_virtualdrive2025/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusList.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ObjectStatusListExtended.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ObjectStatusListExtended.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusListExtended.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ObjectStatusListExtended.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ObjectStatusListExtended.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ObjectStatusListExtended.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ObjectStatusListExtended.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusExtended.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ObjectStatusListExtended.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ObjectStatusListExtended.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Generating C++ code from morai_msgs/ObjectStatusListExtended.msg"
 	cd /home/foscar/kmu_virtualdrive2025/src/morai_msgs && /home/foscar/kmu_virtualdrive2025/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusListExtended.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -642,19 +642,19 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/RadarDetections.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/RadarDetections.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetections.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/RadarDetections.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/RadarDetections.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/RadarDetections.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetection.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/RadarDetections.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/RadarDetections.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Generating C++ code from morai_msgs/RadarDetections.msg"
 	cd /home/foscar/kmu_virtualdrive2025/src/morai_msgs && /home/foscar/kmu_virtualdrive2025/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetections.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ReplayInfo.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ReplayInfo.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ReplayInfo.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ReplayInfo.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ReplayInfo.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ReplayInfo.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ReplayInfo.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ReplayInfo.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ReplayInfo.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ReplayInfo.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/ReplayInfo.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Generating C++ code from morai_msgs/ReplayInfo.msg"
 	cd /home/foscar/kmu_virtualdrive2025/src/morai_msgs && /home/foscar/kmu_virtualdrive2025/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ReplayInfo.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -698,8 +698,8 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/SkateboardStatus.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/SkateboardStatus.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkateboardStatus.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/SkateboardStatus.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/SkateboardStatus.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/SkateboardStatus.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/SkateboardStatus.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Generating C++ code from morai_msgs/SkateboardStatus.msg"
 	cd /home/foscar/kmu_virtualdrive2025/src/morai_msgs && /home/foscar/kmu_virtualdrive2025/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkateboardStatus.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -712,8 +712,8 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/SkidSteer6wUGVStatus.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/SkidSteer6wUGVStatus.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkidSteer6wUGVStatus.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/SkidSteer6wUGVStatus.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/SkidSteer6wUGVStatus.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/SkidSteer6wUGVStatus.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/SkidSteer6wUGVStatus.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Generating C++ code from morai_msgs/SkidSteer6wUGVStatus.msg"
 	cd /home/foscar/kmu_virtualdrive2025/src/morai_msgs && /home/foscar/kmu_virtualdrive2025/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkidSteer6wUGVStatus.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -791,10 +791,10 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/VehicleCollisionData.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/VehicleCollisionData.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollisionData.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/VehicleCollisionData.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/VehicleCollisionData.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollision.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/VehicleCollisionData.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/VehicleCollisionData.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollision.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/VehicleCollisionData.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/VehicleCollisionData.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/VehicleCollisionData.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Generating C++ code from morai_msgs/VehicleCollisionData.msg"
 	cd /home/foscar/kmu_virtualdrive2025/src/morai_msgs && /home/foscar/kmu_virtualdrive2025/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollisionData.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -820,9 +820,9 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_cpp: /home/foscar/kmu_virtual
 
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/WaitForTickResponse.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/WaitForTickResponse.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/WaitForTickResponse.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/WaitForTickResponse.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/WaitForTickResponse.h: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/WaitForTickResponse.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/WaitForTickResponse.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs/WaitForTickResponse.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Generating C++ code from morai_msgs/WaitForTickResponse.msg"
 	cd /home/foscar/kmu_virtualdrive2025/src/morai_msgs && /home/foscar/kmu_virtualdrive2025/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/include/morai_msgs -e /opt/ros/noetic/share/gencpp/cmake/..

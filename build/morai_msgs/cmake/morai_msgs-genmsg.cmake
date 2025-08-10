@@ -24,12 +24,12 @@ add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg" "std_msgs/Header:geometry_msgs/Vector3"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg" "geometry_msgs/Vector3:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatusExtended.msg" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatusExtended.msg" "std_msgs/Header:geometry_msgs/Vector3"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatusExtended.msg" "geometry_msgs/Vector3:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/GPSMessage.msg" NAME_WE)
@@ -44,7 +44,7 @@ add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusList.msg" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusList.msg" "std_msgs/Header:morai_msgs/ObjectStatus:geometry_msgs/Vector3"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusList.msg" "morai_msgs/ObjectStatus:geometry_msgs/Vector3:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg" NAME_WE)
@@ -59,7 +59,7 @@ add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusListExtended.msg" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusListExtended.msg" "std_msgs/Header:geometry_msgs/Vector3:geometry_msgs/Quaternion:morai_msgs/ObjectStatusExtended"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusListExtended.msg" "geometry_msgs/Vector3:geometry_msgs/Quaternion:morai_msgs/ObjectStatusExtended:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/TrafficLight.msg" NAME_WE)
@@ -94,7 +94,7 @@ add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CollisionData.msg" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CollisionData.msg" "std_msgs/Header:morai_msgs/ObjectStatus:geometry_msgs/Vector3"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CollisionData.msg" "morai_msgs/ObjectStatus:geometry_msgs/Vector3:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MultiEgoSetting.msg" NAME_WE)
@@ -149,12 +149,12 @@ add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ReplayInfo.msg" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ReplayInfo.msg" "morai_msgs/ObjectStatus:std_msgs/Header:geometry_msgs/Vector3:geometry_msgs/Quaternion"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ReplayInfo.msg" "geometry_msgs/Quaternion:morai_msgs/ObjectStatus:geometry_msgs/Vector3:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg" "morai_msgs/Lamps:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg" "std_msgs/Header:morai_msgs/Lamps"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg" NAME_WE)
@@ -174,7 +174,7 @@ add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostCmd.msg" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostCmd.msg" "std_msgs/Header:geometry_msgs/Vector3:morai_msgs/NpcGhostInfo"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostCmd.msg" "geometry_msgs/Vector3:std_msgs/Header:morai_msgs/NpcGhostInfo"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostInfo.msg" NAME_WE)
@@ -184,7 +184,7 @@ add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollisionData.msg" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollisionData.msg" "std_msgs/Header:morai_msgs/VehicleCollision:morai_msgs/ObjectStatus:geometry_msgs/Vector3"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollisionData.msg" "morai_msgs/ObjectStatus:morai_msgs/VehicleCollision:geometry_msgs/Vector3:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollision.msg" NAME_WE)
@@ -204,7 +204,7 @@ add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg" "std_msgs/Header:geometry_msgs/Vector3:morai_msgs/EgoVehicleStatus"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg" "morai_msgs/EgoVehicleStatus:geometry_msgs/Vector3:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmd.msg" NAME_WE)
@@ -264,7 +264,7 @@ add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetections.msg" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetections.msg" "std_msgs/Header:geometry_msgs/Point:morai_msgs/RadarDetection"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetections.msg" "geometry_msgs/Point:morai_msgs/RadarDetection:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/PRStatus.msg" NAME_WE)
@@ -289,7 +289,7 @@ add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkateboardStatus.msg" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkateboardStatus.msg" "std_msgs/Header:geometry_msgs/Vector3"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkateboardStatus.msg" "geometry_msgs/Vector3:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkidSteer6wUGVCtrlCmd.msg" NAME_WE)
@@ -299,7 +299,7 @@ add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkidSteer6wUGVStatus.msg" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkidSteer6wUGVStatus.msg" "std_msgs/Header:geometry_msgs/Vector3"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkidSteer6wUGVStatus.msg" "geometry_msgs/Vector3:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MultiPlayEventResponse.msg" NAME_WE)
@@ -339,7 +339,7 @@ add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg" "morai_msgs/FaultStatusInfo_Vehicle:morai_msgs/FaultStatusInfo_Overall:morai_msgs/FaultStatusInfo_Sensor"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg" "morai_msgs/FaultStatusInfo_Overall:morai_msgs/FaultStatusInfo_Sensor:morai_msgs/FaultStatusInfo_Vehicle"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Sensor.msg" NAME_WE)
@@ -369,12 +369,12 @@ add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo.msg" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo.msg" "morai_msgs/FaultStatusInfo_Vehicle:std_msgs/Header:morai_msgs/FaultStatusInfo_Overall:morai_msgs/FaultStatusInfo_Sensor"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo.msg" "morai_msgs/FaultStatusInfo_Overall:morai_msgs/FaultStatusInfo_Sensor:morai_msgs/FaultStatusInfo_Vehicle:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiScenarioLoadSrv.srv" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiScenarioLoadSrv.srv" "morai_msgs/MoraiSrvResponse:morai_msgs/ScenarioLoad"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiScenarioLoadSrv.srv" "morai_msgs/ScenarioLoad:morai_msgs/MoraiSrvResponse"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSimProcSrv.srv" NAME_WE)
@@ -389,42 +389,42 @@ add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiEventCmdSrv.srv" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiEventCmdSrv.srv" "morai_msgs/Lamps:morai_msgs/EventInfo:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiEventCmdSrv.srv" "morai_msgs/EventInfo:std_msgs/Header:morai_msgs/Lamps"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiVehicleSpecSrv.srv" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiVehicleSpecSrv.srv" "morai_msgs/VehicleSpecIndex:geometry_msgs/Vector3:morai_msgs/VehicleSpec"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiVehicleSpecSrv.srv" "morai_msgs/VehicleSpec:geometry_msgs/Vector3:morai_msgs/VehicleSpecIndex"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCmdSrv.srv" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCmdSrv.srv" "morai_msgs/SyncModeCmd:morai_msgs/SyncModeCmdResponse"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCmdSrv.srv" "morai_msgs/SyncModeCmdResponse:morai_msgs/SyncModeCmd"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiWaitForTickSrv.srv" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiWaitForTickSrv.srv" "morai_msgs/WaitForTick:morai_msgs/WaitForTickResponse:std_msgs/Header:morai_msgs/EgoVehicleStatus:geometry_msgs/Vector3"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiWaitForTickSrv.srv" "morai_msgs/WaitForTick:morai_msgs/WaitForTickResponse:morai_msgs/EgoVehicleStatus:geometry_msgs/Vector3:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiMapSpecSrv.srv" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiMapSpecSrv.srv" "morai_msgs/MapSpec:geometry_msgs/Vector3:morai_msgs/MapSpecIndex"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiMapSpecSrv.srv" "morai_msgs/MapSpecIndex:morai_msgs/MapSpec:geometry_msgs/Vector3"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCtrlCmdSrv.srv" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCtrlCmdSrv.srv" "morai_msgs/SyncModeResultResponse:morai_msgs/CtrlCmd:morai_msgs/SyncModeCtrlCmd"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCtrlCmdSrv.srv" "morai_msgs/SyncModeCtrlCmd:morai_msgs/SyncModeResultResponse:morai_msgs/CtrlCmd"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSetGearSrv.srv" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSetGearSrv.srv" "morai_msgs/SyncModeResultResponse:morai_msgs/SyncModeSetGear"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSetGearSrv.srv" "morai_msgs/SyncModeSetGear:morai_msgs/SyncModeResultResponse"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSLSrv.srv" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSLSrv.srv" "morai_msgs/SyncModeResultResponse:morai_msgs/SyncModeScenarioLoad"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSLSrv.srv" "morai_msgs/SyncModeScenarioLoad:morai_msgs/SyncModeResultResponse"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/PREventSrv.srv" NAME_WE)
@@ -434,12 +434,12 @@ add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeAddObjectSrv.srv" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeAddObjectSrv.srv" "morai_msgs/SyncModeAddObject:morai_msgs/SyncModeResultResponse:geometry_msgs/Vector3"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeAddObjectSrv.srv" "morai_msgs/SyncModeAddObject:geometry_msgs/Vector3:morai_msgs/SyncModeResultResponse"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeRemoveObjectSrv.srv" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeRemoveObjectSrv.srv" "morai_msgs/SyncModeResultResponse:morai_msgs/SyncModeRemoveObject"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeRemoveObjectSrv.srv" "morai_msgs/SyncModeRemoveObject:morai_msgs/SyncModeResultResponse"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MultiPlayEventSrv.srv" NAME_WE)
@@ -454,17 +454,17 @@ add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionCtrlSrv.srv" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionCtrlSrv.srv" "morai_msgs/FaultStatusInfo_Vehicle:morai_msgs/FaultInjection_Response:morai_msgs/FaultStatusInfo_Overall:morai_msgs/FaultStatusInfo_Sensor:morai_msgs/FaultInjection_Controller"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionCtrlSrv.srv" "morai_msgs/FaultStatusInfo_Vehicle:morai_msgs/FaultInjection_Controller:morai_msgs/FaultStatusInfo_Sensor:morai_msgs/FaultStatusInfo_Overall:morai_msgs/FaultInjection_Response"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionSensorSrv.srv" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionSensorSrv.srv" "morai_msgs/FaultStatusInfo_Vehicle:morai_msgs/FaultInjection_Response:morai_msgs/FaultStatusInfo_Overall:geometry_msgs/Vector3:morai_msgs/FaultStatusInfo_Sensor:morai_msgs/FaultInjection_Sensor"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionSensorSrv.srv" "morai_msgs/FaultStatusInfo_Vehicle:morai_msgs/FaultStatusInfo_Sensor:geometry_msgs/Vector3:morai_msgs/FaultInjection_Sensor:morai_msgs/FaultStatusInfo_Overall:morai_msgs/FaultInjection_Response"
 )
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionTireSrv.srv" NAME_WE)
 add_custom_target(_morai_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionTireSrv.srv" "morai_msgs/FaultStatusInfo_Vehicle:morai_msgs/FaultInjection_Response:morai_msgs/FaultInjection_Tire:morai_msgs/FaultStatusInfo_Overall:morai_msgs/FaultStatusInfo_Sensor"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "morai_msgs" "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionTireSrv.srv" "morai_msgs/FaultStatusInfo_Vehicle:morai_msgs/FaultStatusInfo_Sensor:morai_msgs/FaultInjection_Tire:morai_msgs/FaultStatusInfo_Overall:morai_msgs/FaultInjection_Response"
 )
 
 #
@@ -482,13 +482,13 @@ _generate_msg_cpp(morai_msgs
 _generate_msg_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatusExtended.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_cpp(morai_msgs
@@ -506,7 +506,7 @@ _generate_msg_cpp(morai_msgs
 _generate_msg_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_cpp(morai_msgs
@@ -524,7 +524,7 @@ _generate_msg_cpp(morai_msgs
 _generate_msg_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusListExtended.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusExtended.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusExtended.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_cpp(morai_msgs
@@ -566,7 +566,7 @@ _generate_msg_cpp(morai_msgs
 _generate_msg_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CollisionData.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_cpp(morai_msgs
@@ -632,13 +632,13 @@ _generate_msg_cpp(morai_msgs
 _generate_msg_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ReplayInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_cpp(morai_msgs
@@ -662,7 +662,7 @@ _generate_msg_cpp(morai_msgs
 _generate_msg_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostCmd.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostInfo.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_cpp(morai_msgs
@@ -674,7 +674,7 @@ _generate_msg_cpp(morai_msgs
 _generate_msg_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollisionData.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollision.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollision.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_cpp(morai_msgs
@@ -698,7 +698,7 @@ _generate_msg_cpp(morai_msgs
 _generate_msg_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_cpp(morai_msgs
@@ -770,7 +770,7 @@ _generate_msg_cpp(morai_msgs
 _generate_msg_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetections.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetection.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetection.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_cpp(morai_msgs
@@ -800,7 +800,7 @@ _generate_msg_cpp(morai_msgs
 _generate_msg_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkateboardStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_cpp(morai_msgs
@@ -812,7 +812,7 @@ _generate_msg_cpp(morai_msgs
 _generate_msg_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkidSteer6wUGVStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_cpp(morai_msgs
@@ -860,7 +860,7 @@ _generate_msg_cpp(morai_msgs
 _generate_msg_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_cpp(morai_msgs
@@ -896,7 +896,7 @@ _generate_msg_cpp(morai_msgs
 _generate_msg_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 
@@ -904,7 +904,7 @@ _generate_msg_cpp(morai_msgs
 _generate_srv_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiScenarioLoadSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MoraiSrvResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ScenarioLoad.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ScenarioLoad.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MoraiSrvResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_cpp(morai_msgs
@@ -922,49 +922,49 @@ _generate_srv_cpp(morai_msgs
 _generate_srv_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiEventCmdSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiVehicleSpecSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpecIndex.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpec.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpec.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpecIndex.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCmdSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmd.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmdResponse.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmdResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmd.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiWaitForTickSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTick.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTick.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiMapSpecSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpec.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpecIndex.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpecIndex.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpec.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCtrlCmdSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CtrlCmd.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCtrlCmd.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCtrlCmd.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CtrlCmd.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSetGearSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeSetGear.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeSetGear.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSLSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeScenarioLoad.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeScenarioLoad.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_cpp(morai_msgs
@@ -976,13 +976,13 @@ _generate_srv_cpp(morai_msgs
 _generate_srv_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeAddObjectSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeAddObject.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeAddObject.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeRemoveObjectSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeRemoveObject.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeRemoveObject.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_cpp(morai_msgs
@@ -1000,19 +1000,19 @@ _generate_srv_cpp(morai_msgs
 _generate_srv_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionCtrlSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Controller.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Controller.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionSensorSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_cpp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionTireSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Tire.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Tire.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/morai_msgs
 )
 
@@ -1227,13 +1227,13 @@ _generate_msg_eus(morai_msgs
 _generate_msg_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatusExtended.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_eus(morai_msgs
@@ -1251,7 +1251,7 @@ _generate_msg_eus(morai_msgs
 _generate_msg_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_eus(morai_msgs
@@ -1269,7 +1269,7 @@ _generate_msg_eus(morai_msgs
 _generate_msg_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusListExtended.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusExtended.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusExtended.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_eus(morai_msgs
@@ -1311,7 +1311,7 @@ _generate_msg_eus(morai_msgs
 _generate_msg_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CollisionData.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_eus(morai_msgs
@@ -1377,13 +1377,13 @@ _generate_msg_eus(morai_msgs
 _generate_msg_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ReplayInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_eus(morai_msgs
@@ -1407,7 +1407,7 @@ _generate_msg_eus(morai_msgs
 _generate_msg_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostCmd.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostInfo.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_eus(morai_msgs
@@ -1419,7 +1419,7 @@ _generate_msg_eus(morai_msgs
 _generate_msg_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollisionData.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollision.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollision.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_eus(morai_msgs
@@ -1443,7 +1443,7 @@ _generate_msg_eus(morai_msgs
 _generate_msg_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_eus(morai_msgs
@@ -1515,7 +1515,7 @@ _generate_msg_eus(morai_msgs
 _generate_msg_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetections.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetection.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetection.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_eus(morai_msgs
@@ -1545,7 +1545,7 @@ _generate_msg_eus(morai_msgs
 _generate_msg_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkateboardStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_eus(morai_msgs
@@ -1557,7 +1557,7 @@ _generate_msg_eus(morai_msgs
 _generate_msg_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkidSteer6wUGVStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_eus(morai_msgs
@@ -1605,7 +1605,7 @@ _generate_msg_eus(morai_msgs
 _generate_msg_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_eus(morai_msgs
@@ -1641,7 +1641,7 @@ _generate_msg_eus(morai_msgs
 _generate_msg_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 
@@ -1649,7 +1649,7 @@ _generate_msg_eus(morai_msgs
 _generate_srv_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiScenarioLoadSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MoraiSrvResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ScenarioLoad.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ScenarioLoad.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MoraiSrvResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_eus(morai_msgs
@@ -1667,49 +1667,49 @@ _generate_srv_eus(morai_msgs
 _generate_srv_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiEventCmdSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiVehicleSpecSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpecIndex.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpec.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpec.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpecIndex.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCmdSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmd.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmdResponse.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmdResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmd.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiWaitForTickSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTick.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTick.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiMapSpecSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpec.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpecIndex.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpecIndex.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpec.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCtrlCmdSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CtrlCmd.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCtrlCmd.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCtrlCmd.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CtrlCmd.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSetGearSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeSetGear.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeSetGear.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSLSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeScenarioLoad.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeScenarioLoad.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_eus(morai_msgs
@@ -1721,13 +1721,13 @@ _generate_srv_eus(morai_msgs
 _generate_srv_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeAddObjectSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeAddObject.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeAddObject.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeRemoveObjectSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeRemoveObject.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeRemoveObject.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_eus(morai_msgs
@@ -1745,19 +1745,19 @@ _generate_srv_eus(morai_msgs
 _generate_srv_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionCtrlSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Controller.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Controller.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionSensorSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_eus(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionTireSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Tire.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Tire.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/morai_msgs
 )
 
@@ -1972,13 +1972,13 @@ _generate_msg_lisp(morai_msgs
 _generate_msg_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatusExtended.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_lisp(morai_msgs
@@ -1996,7 +1996,7 @@ _generate_msg_lisp(morai_msgs
 _generate_msg_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_lisp(morai_msgs
@@ -2014,7 +2014,7 @@ _generate_msg_lisp(morai_msgs
 _generate_msg_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusListExtended.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusExtended.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusExtended.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_lisp(morai_msgs
@@ -2056,7 +2056,7 @@ _generate_msg_lisp(morai_msgs
 _generate_msg_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CollisionData.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_lisp(morai_msgs
@@ -2122,13 +2122,13 @@ _generate_msg_lisp(morai_msgs
 _generate_msg_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ReplayInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_lisp(morai_msgs
@@ -2152,7 +2152,7 @@ _generate_msg_lisp(morai_msgs
 _generate_msg_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostCmd.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostInfo.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_lisp(morai_msgs
@@ -2164,7 +2164,7 @@ _generate_msg_lisp(morai_msgs
 _generate_msg_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollisionData.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollision.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollision.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_lisp(morai_msgs
@@ -2188,7 +2188,7 @@ _generate_msg_lisp(morai_msgs
 _generate_msg_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_lisp(morai_msgs
@@ -2260,7 +2260,7 @@ _generate_msg_lisp(morai_msgs
 _generate_msg_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetections.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetection.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetection.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_lisp(morai_msgs
@@ -2290,7 +2290,7 @@ _generate_msg_lisp(morai_msgs
 _generate_msg_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkateboardStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_lisp(morai_msgs
@@ -2302,7 +2302,7 @@ _generate_msg_lisp(morai_msgs
 _generate_msg_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkidSteer6wUGVStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_lisp(morai_msgs
@@ -2350,7 +2350,7 @@ _generate_msg_lisp(morai_msgs
 _generate_msg_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_lisp(morai_msgs
@@ -2386,7 +2386,7 @@ _generate_msg_lisp(morai_msgs
 _generate_msg_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 
@@ -2394,7 +2394,7 @@ _generate_msg_lisp(morai_msgs
 _generate_srv_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiScenarioLoadSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MoraiSrvResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ScenarioLoad.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ScenarioLoad.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MoraiSrvResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_lisp(morai_msgs
@@ -2412,49 +2412,49 @@ _generate_srv_lisp(morai_msgs
 _generate_srv_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiEventCmdSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiVehicleSpecSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpecIndex.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpec.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpec.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpecIndex.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCmdSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmd.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmdResponse.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmdResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmd.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiWaitForTickSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTick.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTick.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiMapSpecSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpec.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpecIndex.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpecIndex.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpec.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCtrlCmdSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CtrlCmd.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCtrlCmd.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCtrlCmd.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CtrlCmd.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSetGearSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeSetGear.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeSetGear.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSLSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeScenarioLoad.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeScenarioLoad.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_lisp(morai_msgs
@@ -2466,13 +2466,13 @@ _generate_srv_lisp(morai_msgs
 _generate_srv_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeAddObjectSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeAddObject.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeAddObject.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeRemoveObjectSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeRemoveObject.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeRemoveObject.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_lisp(morai_msgs
@@ -2490,19 +2490,19 @@ _generate_srv_lisp(morai_msgs
 _generate_srv_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionCtrlSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Controller.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Controller.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionSensorSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_lisp(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionTireSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Tire.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Tire.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/morai_msgs
 )
 
@@ -2717,13 +2717,13 @@ _generate_msg_nodejs(morai_msgs
 _generate_msg_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatusExtended.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_nodejs(morai_msgs
@@ -2741,7 +2741,7 @@ _generate_msg_nodejs(morai_msgs
 _generate_msg_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_nodejs(morai_msgs
@@ -2759,7 +2759,7 @@ _generate_msg_nodejs(morai_msgs
 _generate_msg_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusListExtended.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusExtended.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusExtended.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_nodejs(morai_msgs
@@ -2801,7 +2801,7 @@ _generate_msg_nodejs(morai_msgs
 _generate_msg_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CollisionData.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_nodejs(morai_msgs
@@ -2867,13 +2867,13 @@ _generate_msg_nodejs(morai_msgs
 _generate_msg_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ReplayInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_nodejs(morai_msgs
@@ -2897,7 +2897,7 @@ _generate_msg_nodejs(morai_msgs
 _generate_msg_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostCmd.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostInfo.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_nodejs(morai_msgs
@@ -2909,7 +2909,7 @@ _generate_msg_nodejs(morai_msgs
 _generate_msg_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollisionData.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollision.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollision.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_nodejs(morai_msgs
@@ -2933,7 +2933,7 @@ _generate_msg_nodejs(morai_msgs
 _generate_msg_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_nodejs(morai_msgs
@@ -3005,7 +3005,7 @@ _generate_msg_nodejs(morai_msgs
 _generate_msg_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetections.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetection.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetection.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_nodejs(morai_msgs
@@ -3035,7 +3035,7 @@ _generate_msg_nodejs(morai_msgs
 _generate_msg_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkateboardStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_nodejs(morai_msgs
@@ -3047,7 +3047,7 @@ _generate_msg_nodejs(morai_msgs
 _generate_msg_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkidSteer6wUGVStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_nodejs(morai_msgs
@@ -3095,7 +3095,7 @@ _generate_msg_nodejs(morai_msgs
 _generate_msg_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_nodejs(morai_msgs
@@ -3131,7 +3131,7 @@ _generate_msg_nodejs(morai_msgs
 _generate_msg_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 
@@ -3139,7 +3139,7 @@ _generate_msg_nodejs(morai_msgs
 _generate_srv_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiScenarioLoadSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MoraiSrvResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ScenarioLoad.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ScenarioLoad.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MoraiSrvResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_nodejs(morai_msgs
@@ -3157,49 +3157,49 @@ _generate_srv_nodejs(morai_msgs
 _generate_srv_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiEventCmdSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiVehicleSpecSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpecIndex.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpec.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpec.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpecIndex.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCmdSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmd.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmdResponse.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmdResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmd.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiWaitForTickSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTick.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTick.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiMapSpecSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpec.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpecIndex.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpecIndex.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpec.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCtrlCmdSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CtrlCmd.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCtrlCmd.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCtrlCmd.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CtrlCmd.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSetGearSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeSetGear.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeSetGear.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSLSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeScenarioLoad.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeScenarioLoad.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_nodejs(morai_msgs
@@ -3211,13 +3211,13 @@ _generate_srv_nodejs(morai_msgs
 _generate_srv_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeAddObjectSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeAddObject.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeAddObject.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeRemoveObjectSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeRemoveObject.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeRemoveObject.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_nodejs(morai_msgs
@@ -3235,19 +3235,19 @@ _generate_srv_nodejs(morai_msgs
 _generate_srv_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionCtrlSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Controller.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Controller.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionSensorSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_nodejs(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionTireSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Tire.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Tire.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/morai_msgs
 )
 
@@ -3462,13 +3462,13 @@ _generate_msg_py(morai_msgs
 _generate_msg_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatusExtended.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_py(morai_msgs
@@ -3486,7 +3486,7 @@ _generate_msg_py(morai_msgs
 _generate_msg_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_py(morai_msgs
@@ -3504,7 +3504,7 @@ _generate_msg_py(morai_msgs
 _generate_msg_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusListExtended.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusExtended.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusExtended.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_py(morai_msgs
@@ -3546,7 +3546,7 @@ _generate_msg_py(morai_msgs
 _generate_msg_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CollisionData.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_py(morai_msgs
@@ -3612,13 +3612,13 @@ _generate_msg_py(morai_msgs
 _generate_msg_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ReplayInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_py(morai_msgs
@@ -3642,7 +3642,7 @@ _generate_msg_py(morai_msgs
 _generate_msg_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostCmd.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostInfo.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_py(morai_msgs
@@ -3654,7 +3654,7 @@ _generate_msg_py(morai_msgs
 _generate_msg_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollisionData.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollision.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollision.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_py(morai_msgs
@@ -3678,7 +3678,7 @@ _generate_msg_py(morai_msgs
 _generate_msg_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_py(morai_msgs
@@ -3750,7 +3750,7 @@ _generate_msg_py(morai_msgs
 _generate_msg_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetections.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetection.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetection.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_py(morai_msgs
@@ -3780,7 +3780,7 @@ _generate_msg_py(morai_msgs
 _generate_msg_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkateboardStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_py(morai_msgs
@@ -3792,7 +3792,7 @@ _generate_msg_py(morai_msgs
 _generate_msg_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkidSteer6wUGVStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_py(morai_msgs
@@ -3840,7 +3840,7 @@ _generate_msg_py(morai_msgs
 _generate_msg_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_msg_py(morai_msgs
@@ -3876,7 +3876,7 @@ _generate_msg_py(morai_msgs
 _generate_msg_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 
@@ -3884,7 +3884,7 @@ _generate_msg_py(morai_msgs
 _generate_srv_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiScenarioLoadSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MoraiSrvResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ScenarioLoad.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ScenarioLoad.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MoraiSrvResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_py(morai_msgs
@@ -3902,49 +3902,49 @@ _generate_srv_py(morai_msgs
 _generate_srv_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiEventCmdSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiVehicleSpecSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpecIndex.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpec.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpec.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpecIndex.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCmdSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmd.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmdResponse.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmdResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmd.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiWaitForTickSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTick.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTick.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiMapSpecSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpec.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpecIndex.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpecIndex.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpec.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCtrlCmdSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CtrlCmd.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCtrlCmd.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCtrlCmd.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CtrlCmd.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSetGearSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeSetGear.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeSetGear.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSLSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeScenarioLoad.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeScenarioLoad.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_py(morai_msgs
@@ -3956,13 +3956,13 @@ _generate_srv_py(morai_msgs
 _generate_srv_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeAddObjectSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeAddObject.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeAddObject.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeRemoveObjectSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeRemoveObject.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeRemoveObject.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_py(morai_msgs
@@ -3980,19 +3980,19 @@ _generate_srv_py(morai_msgs
 _generate_srv_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionCtrlSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Controller.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Controller.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionSensorSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 _generate_srv_py(morai_msgs
   "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionTireSrv.srv"
   "${MSG_I_FLAGS}"
-  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Tire.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg"
+  "/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Tire.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg;/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/morai_msgs
 )
 

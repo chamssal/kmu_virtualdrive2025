@@ -67,7 +67,7 @@ include morai_msgs/CMakeFiles/_morai_msgs_generate_messages_check_deps_SkidSteer
 include morai_msgs/CMakeFiles/_morai_msgs_generate_messages_check_deps_SkidSteer6wUGVStatus.dir/progress.make
 
 morai_msgs/CMakeFiles/_morai_msgs_generate_messages_check_deps_SkidSteer6wUGVStatus:
-	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py morai_msgs /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkidSteer6wUGVStatus.msg std_msgs/Header:geometry_msgs/Vector3
+	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py morai_msgs /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkidSteer6wUGVStatus.msg geometry_msgs/Vector3:std_msgs/Header
 
 _morai_msgs_generate_messages_check_deps_SkidSteer6wUGVStatus: morai_msgs/CMakeFiles/_morai_msgs_generate_messages_check_deps_SkidSteer6wUGVStatus
 _morai_msgs_generate_messages_check_deps_SkidSteer6wUGVStatus: morai_msgs/CMakeFiles/_morai_msgs_generate_messages_check_deps_SkidSteer6wUGVStatus.dir/build.make

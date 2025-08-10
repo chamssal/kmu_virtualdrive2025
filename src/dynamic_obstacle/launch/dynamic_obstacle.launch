@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="dynamic_obstacle" type="dynamic_obstacle.py" name="dynamic_obstacle" output="screen">
+    <rosparam file="$(find dynamic_obstacle)/config/dynamic_params.yaml" command="load" />
+    <param name="input_topic" value="/obstacles"/>
+    <param name="use_circles" value="true"/>
+    <param name="use_segments" value="false"/>
+  </node>
+</launch>

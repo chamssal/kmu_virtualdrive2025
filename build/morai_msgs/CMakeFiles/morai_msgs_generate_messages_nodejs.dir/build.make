@@ -159,9 +159,9 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_nodejs: /home/foscar/kmu_virt
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/CollisionData.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/CollisionData.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CollisionData.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/CollisionData.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/CollisionData.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/CollisionData.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/CollisionData.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from morai_msgs/CollisionData.msg"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CollisionData.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg
 
@@ -187,22 +187,22 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_nodejs: /home/foscar/kmu_virt
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/EgoVehicleStatus.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/EgoVehicleStatus.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/EgoVehicleStatus.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/EgoVehicleStatus.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/EgoVehicleStatus.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Javascript code from morai_msgs/EgoVehicleStatus.msg"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/EgoVehicleStatusExtended.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/EgoVehicleStatusExtended.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatusExtended.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/EgoVehicleStatusExtended.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/EgoVehicleStatusExtended.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/EgoVehicleStatusExtended.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Javascript code from morai_msgs/EgoVehicleStatusExtended.msg"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatusExtended.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/EventInfo.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/EventInfo.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/EventInfo.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/EventInfo.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/EventInfo.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Javascript code from morai_msgs/EventInfo.msg"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg
 
@@ -213,9 +213,9 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_nodejs: /home/foscar/kmu_virt
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/FaultInjection_Response.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/FaultInjection_Response.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/FaultInjection_Response.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/FaultInjection_Response.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/FaultInjection_Response.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/FaultInjection_Response.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Javascript code from morai_msgs/FaultInjection_Response.msg"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg
 
@@ -232,10 +232,10 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_nodejs: /home/foscar/kmu_virt
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/FaultStatusInfo.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/FaultStatusInfo.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/FaultStatusInfo.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/FaultStatusInfo.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/FaultStatusInfo.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/FaultStatusInfo.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/FaultStatusInfo.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/FaultStatusInfo.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Javascript code from morai_msgs/FaultStatusInfo.msg"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg
 
@@ -353,8 +353,8 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_nodejs: /home/foscar/kmu_virt
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/NpcGhostCmd.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/NpcGhostCmd.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostCmd.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/NpcGhostCmd.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/NpcGhostCmd.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/NpcGhostCmd.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/NpcGhostCmd.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostInfo.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating Javascript code from morai_msgs/NpcGhostCmd.msg"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/NpcGhostCmd.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg
@@ -380,18 +380,18 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_nodejs: /home/foscar/kmu_virt
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ObjectStatusList.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ObjectStatusList.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusList.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ObjectStatusList.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ObjectStatusList.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ObjectStatusList.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ObjectStatusList.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Generating Javascript code from morai_msgs/ObjectStatusList.msg"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusList.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ObjectStatusListExtended.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ObjectStatusListExtended.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusListExtended.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ObjectStatusListExtended.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ObjectStatusListExtended.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ObjectStatusListExtended.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ObjectStatusListExtended.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusExtended.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ObjectStatusListExtended.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Generating Javascript code from morai_msgs/ObjectStatusListExtended.msg"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatusListExtended.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg
 
@@ -419,18 +419,18 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_nodejs: /home/foscar/kmu_virt
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/RadarDetections.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/RadarDetections.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetections.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/RadarDetections.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/RadarDetections.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/RadarDetections.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetection.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/RadarDetections.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Generating Javascript code from morai_msgs/RadarDetections.msg"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/RadarDetections.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ReplayInfo.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ReplayInfo.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ReplayInfo.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ReplayInfo.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ReplayInfo.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ReplayInfo.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ReplayInfo.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ReplayInfo.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ReplayInfo.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/ReplayInfo.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Generating Javascript code from morai_msgs/ReplayInfo.msg"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ReplayInfo.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg
 
@@ -467,8 +467,8 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_nodejs: /home/foscar/kmu_virt
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/SkateboardStatus.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/SkateboardStatus.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkateboardStatus.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/SkateboardStatus.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/SkateboardStatus.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/SkateboardStatus.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Generating Javascript code from morai_msgs/SkateboardStatus.msg"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkateboardStatus.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg
 
@@ -479,8 +479,8 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_nodejs: /home/foscar/kmu_virt
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/SkidSteer6wUGVStatus.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/SkidSteer6wUGVStatus.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkidSteer6wUGVStatus.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/SkidSteer6wUGVStatus.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/SkidSteer6wUGVStatus.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/SkidSteer6wUGVStatus.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Generating Javascript code from morai_msgs/SkidSteer6wUGVStatus.msg"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SkidSteer6wUGVStatus.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg
 
@@ -546,10 +546,10 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_nodejs: /home/foscar/kmu_virt
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/VehicleCollisionData.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/VehicleCollisionData.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollisionData.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/VehicleCollisionData.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/VehicleCollisionData.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollision.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/VehicleCollisionData.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ObjectStatus.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/VehicleCollisionData.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollision.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/VehicleCollisionData.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/VehicleCollisionData.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Generating Javascript code from morai_msgs/VehicleCollisionData.msg"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleCollisionData.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg
 
@@ -571,9 +571,9 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_nodejs: /home/foscar/kmu_virt
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/WaitForTickResponse.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/WaitForTickResponse.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/WaitForTickResponse.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/WaitForTickResponse.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/WaitForTickResponse.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/WaitForTickResponse.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg/WaitForTickResponse.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Generating Javascript code from morai_msgs/WaitForTickResponse.msg"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/msg
 
@@ -586,54 +586,54 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_nodejs: /home/foscar/kmu_virt
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionCtrlSrv.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionCtrlSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionCtrlSrv.srv
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionCtrlSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionCtrlSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionCtrlSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionCtrlSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionCtrlSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Controller.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionCtrlSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionCtrlSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionCtrlSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Generating Javascript code from morai_msgs/FaultInjectionCtrlSrv.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionCtrlSrv.srv -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionSensorSrv.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionSensorSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionSensorSrv.srv
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionSensorSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionSensorSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionSensorSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionSensorSrv.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionSensorSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionSensorSrv.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionSensorSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Sensor.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionSensorSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionSensorSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Generating Javascript code from morai_msgs/FaultInjectionSensorSrv.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionSensorSrv.srv -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionTireSrv.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionTireSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionTireSrv.srv
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionTireSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Vehicle.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionTireSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionTireSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionTireSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Tire.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionTireSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Overall.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionTireSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultStatusInfo_Sensor.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/FaultInjectionTireSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/FaultInjection_Response.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Generating Javascript code from morai_msgs/FaultInjectionTireSrv.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/FaultInjectionTireSrv.srv -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiEventCmdSrv.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiEventCmdSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiEventCmdSrv.srv
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiEventCmdSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiEventCmdSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EventInfo.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiEventCmdSrv.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiEventCmdSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/Lamps.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Generating Javascript code from morai_msgs/MoraiEventCmdSrv.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiEventCmdSrv.srv -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiMapSpecSrv.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiMapSpecSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiMapSpecSrv.srv
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiMapSpecSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpecIndex.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiMapSpecSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpec.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiMapSpecSrv.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiMapSpecSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MapSpecIndex.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Generating Javascript code from morai_msgs/MoraiMapSpecSrv.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiMapSpecSrv.srv -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiScenarioLoadSrv.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiScenarioLoadSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiScenarioLoadSrv.srv
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiScenarioLoadSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MoraiSrvResponse.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiScenarioLoadSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/ScenarioLoad.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiScenarioLoadSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/MoraiSrvResponse.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Generating Javascript code from morai_msgs/MoraiScenarioLoadSrv.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiScenarioLoadSrv.srv -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv
 
@@ -647,44 +647,44 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_nodejs: /home/foscar/kmu_virt
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeAddObjectSrv.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeAddObjectSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeAddObjectSrv.srv
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeAddObjectSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeAddObject.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeAddObjectSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeAddObjectSrv.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeAddObjectSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Generating Javascript code from morai_msgs/MoraiSyncModeAddObjectSrv.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeAddObjectSrv.srv -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeCmdSrv.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeCmdSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCmdSrv.srv
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeCmdSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmd.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeCmdSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmdResponse.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeCmdSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCmd.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Generating Javascript code from morai_msgs/MoraiSyncModeCmdSrv.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCmdSrv.srv -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeCtrlCmdSrv.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeCtrlCmdSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCtrlCmdSrv.srv
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeCtrlCmdSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCtrlCmd.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeCtrlCmdSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeCtrlCmdSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/CtrlCmd.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeCtrlCmdSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeCtrlCmd.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Generating Javascript code from morai_msgs/MoraiSyncModeCtrlCmdSrv.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeCtrlCmdSrv.srv -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeRemoveObjectSrv.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeRemoveObjectSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeRemoveObjectSrv.srv
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeRemoveObjectSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeRemoveObjectSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeRemoveObject.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeRemoveObjectSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Generating Javascript code from morai_msgs/MoraiSyncModeRemoveObjectSrv.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeRemoveObjectSrv.srv -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeSLSrv.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeSLSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSLSrv.srv
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeSLSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeSLSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeScenarioLoad.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeSLSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Generating Javascript code from morai_msgs/MoraiSyncModeSLSrv.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSLSrv.srv -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeSetGearSrv.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeSetGearSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSetGearSrv.srv
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeSetGearSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeSetGearSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeSetGear.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiSyncModeSetGearSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/SyncModeResultResponse.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Generating Javascript code from morai_msgs/MoraiSyncModeSetGearSrv.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiSyncModeSetGearSrv.srv -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv
 
@@ -698,9 +698,9 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_nodejs: /home/foscar/kmu_virt
 
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiVehicleSpecSrv.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiVehicleSpecSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiVehicleSpecSrv.srv
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiVehicleSpecSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpecIndex.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiVehicleSpecSrv.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiVehicleSpecSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpec.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiVehicleSpecSrv.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiVehicleSpecSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/VehicleSpecIndex.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Generating Javascript code from morai_msgs/MoraiVehicleSpecSrv.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiVehicleSpecSrv.srv -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv
 
@@ -708,9 +708,9 @@ morai_msgs/CMakeFiles/morai_msgs_generate_messages_nodejs: /home/foscar/kmu_virt
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiWaitForTickSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiWaitForTickSrv.srv
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiWaitForTickSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTick.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiWaitForTickSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/WaitForTickResponse.msg
-/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiWaitForTickSrv.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiWaitForTickSrv.js: /home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg/EgoVehicleStatus.msg
 /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiWaitForTickSrv.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv/MoraiWaitForTickSrv.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Generating Javascript code from morai_msgs/MoraiWaitForTickSrv.srv"
 	cd /home/foscar/kmu_virtualdrive2025/build/morai_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/foscar/kmu_virtualdrive2025/src/morai_msgs/srv/MoraiWaitForTickSrv.srv -Imorai_msgs:/home/foscar/kmu_virtualdrive2025/src/morai_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p morai_msgs -o /home/foscar/kmu_virtualdrive2025/devel/share/gennodejs/ros/morai_msgs/srv
 
