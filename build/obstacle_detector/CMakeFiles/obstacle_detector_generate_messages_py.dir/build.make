@@ -80,11 +80,11 @@ obstacle_detector/CMakeFiles/obstacle_detector_generate_messages_py: /home/fosca
 
 /home/foscar/kmu_virtualdrive2025/devel/lib/python3/dist-packages/obstacle_detector/msg/_Obstacles.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/foscar/kmu_virtualdrive2025/devel/lib/python3/dist-packages/obstacle_detector/msg/_Obstacles.py: /home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/Obstacles.msg
-/home/foscar/kmu_virtualdrive2025/devel/lib/python3/dist-packages/obstacle_detector/msg/_Obstacles.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/foscar/kmu_virtualdrive2025/devel/lib/python3/dist-packages/obstacle_detector/msg/_Obstacles.py: /home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/SegmentObstacle.msg
-/home/foscar/kmu_virtualdrive2025/devel/lib/python3/dist-packages/obstacle_detector/msg/_Obstacles.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/foscar/kmu_virtualdrive2025/devel/lib/python3/dist-packages/obstacle_detector/msg/_Obstacles.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/foscar/kmu_virtualdrive2025/devel/lib/python3/dist-packages/obstacle_detector/msg/_Obstacles.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/foscar/kmu_virtualdrive2025/devel/lib/python3/dist-packages/obstacle_detector/msg/_Obstacles.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/foscar/kmu_virtualdrive2025/devel/lib/python3/dist-packages/obstacle_detector/msg/_Obstacles.py: /home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/CircleObstacle.msg
+/home/foscar/kmu_virtualdrive2025/devel/lib/python3/dist-packages/obstacle_detector/msg/_Obstacles.py: /home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/SegmentObstacle.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG obstacle_detector/Obstacles"
 	cd /home/foscar/kmu_virtualdrive2025/build/obstacle_detector && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/Obstacles.msg -Iobstacle_detector:/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p obstacle_detector -o /home/foscar/kmu_virtualdrive2025/devel/lib/python3/dist-packages/obstacle_detector/msg
 

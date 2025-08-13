@@ -80,11 +80,11 @@ obstacle_detector/CMakeFiles/obstacle_detector_generate_messages_cpp: /home/fosc
 
 /home/foscar/kmu_virtualdrive2025/devel/include/obstacle_detector/Obstacles.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/obstacle_detector/Obstacles.h: /home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/Obstacles.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/obstacle_detector/Obstacles.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/obstacle_detector/Obstacles.h: /home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/SegmentObstacle.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/obstacle_detector/Obstacles.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/obstacle_detector/Obstacles.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/obstacle_detector/Obstacles.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/obstacle_detector/Obstacles.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/obstacle_detector/Obstacles.h: /home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/CircleObstacle.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/obstacle_detector/Obstacles.h: /home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/SegmentObstacle.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/obstacle_detector/Obstacles.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from obstacle_detector/Obstacles.msg"
 	cd /home/foscar/kmu_virtualdrive2025/src/obstacle_detector && /home/foscar/kmu_virtualdrive2025/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/Obstacles.msg -Iobstacle_detector:/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p obstacle_detector -o /home/foscar/kmu_virtualdrive2025/devel/include/obstacle_detector -e /opt/ros/noetic/share/gencpp/cmake/..

@@ -72,18 +72,18 @@ teb_local_planner/CMakeFiles/teb_local_planner_generate_messages_cpp: /home/fosc
 
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/FeedbackMsg.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Polygon.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/costmap_converter/msg/ObstacleMsg.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/costmap_converter/msg/ObstacleArrayMsg.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/costmap_converter/msg/ObstacleMsg.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Polygon.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Point32.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/TwistWithCovariance.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/costmap_converter/msg/ObstacleArrayMsg.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/FeedbackMsg.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from teb_local_planner/FeedbackMsg.msg"
@@ -91,12 +91,12 @@ teb_local_planner/CMakeFiles/teb_local_planner_generate_messages_cpp: /home/fosc
 
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryMsg.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryMsg.h: /home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryMsg.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryMsg.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryMsg.h: /home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryMsg.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryMsg.h: /home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryMsg.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from teb_local_planner/TrajectoryMsg.msg"
@@ -104,10 +104,10 @@ teb_local_planner/CMakeFiles/teb_local_planner_generate_messages_cpp: /home/fosc
 
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryPointMsg.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryPointMsg.h: /home/foscar/kmu_virtualdrive2025/src/teb_local_planner/msg/TrajectoryPointMsg.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryPointMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryPointMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryPointMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryPointMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryPointMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryPointMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryPointMsg.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/foscar/kmu_virtualdrive2025/devel/include/teb_local_planner/TrajectoryPointMsg.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/foscar/kmu_virtualdrive2025/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from teb_local_planner/TrajectoryPointMsg.msg"

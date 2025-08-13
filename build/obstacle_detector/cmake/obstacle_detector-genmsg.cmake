@@ -29,7 +29,7 @@ add_custom_target(_obstacle_detector_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/Obstacles.msg" NAME_WE)
 add_custom_target(_obstacle_detector_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "obstacle_detector" "/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/Obstacles.msg" "geometry_msgs/Vector3:obstacle_detector/SegmentObstacle:geometry_msgs/Point:std_msgs/Header:obstacle_detector/CircleObstacle"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "obstacle_detector" "/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/Obstacles.msg" "std_msgs/Header:geometry_msgs/Point:geometry_msgs/Vector3:obstacle_detector/CircleObstacle:obstacle_detector/SegmentObstacle"
 )
 
 #
@@ -53,7 +53,7 @@ _generate_msg_cpp(obstacle_detector
 _generate_msg_cpp(obstacle_detector
   "/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/Obstacles.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/SegmentObstacle.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/CircleObstacle.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/CircleObstacle.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/SegmentObstacle.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/obstacle_detector
 )
 
@@ -102,7 +102,7 @@ _generate_msg_eus(obstacle_detector
 _generate_msg_eus(obstacle_detector
   "/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/Obstacles.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/SegmentObstacle.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/CircleObstacle.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/CircleObstacle.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/SegmentObstacle.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/obstacle_detector
 )
 
@@ -151,7 +151,7 @@ _generate_msg_lisp(obstacle_detector
 _generate_msg_lisp(obstacle_detector
   "/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/Obstacles.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/SegmentObstacle.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/CircleObstacle.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/CircleObstacle.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/SegmentObstacle.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/obstacle_detector
 )
 
@@ -200,7 +200,7 @@ _generate_msg_nodejs(obstacle_detector
 _generate_msg_nodejs(obstacle_detector
   "/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/Obstacles.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/SegmentObstacle.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/CircleObstacle.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/CircleObstacle.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/SegmentObstacle.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/obstacle_detector
 )
 
@@ -249,7 +249,7 @@ _generate_msg_py(obstacle_detector
 _generate_msg_py(obstacle_detector
   "/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/Obstacles.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/SegmentObstacle.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/CircleObstacle.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/CircleObstacle.msg;/home/foscar/kmu_virtualdrive2025/src/obstacle_detector/msg/SegmentObstacle.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/obstacle_detector
 )
 

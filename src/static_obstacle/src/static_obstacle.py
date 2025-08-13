@@ -1,143 +1,277 @@
 #!/usr/bin/env python3
-import math, rospy
-from collections import namedtuple
-from std_msgs.msg import Header
+# -*- coding: utf-8 -*-
+"""
+Total 정적 장애물 로직 (AMCL 없이) - yaw는 /odometry/filtered에서만 사용
+입력:
+  - /odometry/filtered (nav_msgs/Odometry)  → orientation(yaw)만 사용
+  - /lidar_obstacle_information (obstacle_detect/LidarObstacleInfoArray) 또는
+  - /obstacle_information (obstacle_detect/ObstacleInfoArray) 또는
+  - /raw_obstacles (obstacle_detector/Obstacles)
+출력:
+  - /commands/motor/speed (std_msgs/Float64)
+  - /commands/servo/position (std_msgs/Float64)
+"""
+
+import math
+import numpy as np
+import rospy
+import tf
+
+from std_msgs.msg import Float64
+from nav_msgs.msg import Odometry
+
+# 장애물 메시지들
+from obstacle_detect.msg import ObstacleInfoArray
 from obstacle_detector.msg import Obstacles
-from obstacle_msgs.msg import ObstacleDecision
 
-Track = namedtuple("Track", ["x","y","t"])
 
-class DynamicJudge:
+class TotalStaticNoAMCL:
     def __init__(self):
-        rospy.init_node("dynamic_obstacle")
+        rospy.init_node("total_static_no_amcl")
 
-        self.input_topic = rospy.get_param("~input_topic", "/obstacles")
-        self.use_circles  = rospy.get_param("~use_circles", True)
-        self.use_segments = rospy.get_param("~use_segments", False)
+        # ===== Params =====
+        self.debug = rospy.get_param("~debug", True)
 
-        # 전방=fwd=x, 좌우=lat=y
-        self.front_roi_min_x = rospy.get_param("~front_roi_min_x", 0.5)   # ★ 전방 ROI 시작 (m)
-        self.front_roi_max_x = rospy.get_param("~front_roi_max_x", 8.0)   # ★ 전방 ROI 끝   (m)
+        # ESC/서보 명령 스케일(기존 Total과 동일)
+        self.LANE_DRIVE_VEL = rospy.get_param("~lane_drive_vel_cmd", 1800.0)
+        self.OBST_VEL       = rospy.get_param("~obst_vel_cmd",        602.0)
+        self.base_servo_center = rospy.get_param("~servo_center", 0.5)
 
-        # 사다리꼴 ROI 파라미터(멀수록 좁게)
-        self.roi_half_width_near = rospy.get_param("~roi_half_width_near", 0.8)  # x≈0일 때 좌우 반폭
-        self.roi_half_width_far  = rospy.get_param("~roi_half_width_far",  0.45) # x≈front_roi_max_x일 때 좌우 반폭
+        # 조향 맵핑 범위(라디안 → 0..1)
+        self.map_from_min = rospy.get_param("~map_from_min", -0.25992659995162515)
+        self.map_from_max = rospy.get_param("~map_from_max",  0.25992659995162515)
 
-        # 동적 판정/액션 파라미터
-        self.speed_thr       = rospy.get_param("~speed_threshold_dynamic", 0.3)
-        self.yield_distance  = rospy.get_param("~yield_distance", 2.5)
-        self.stop_distance   = rospy.get_param("~stop_distance", 1.2)
-        self.lane_escape_lat = rospy.get_param("~lane_escape_lat", 0.9)    # ★ 차선 밖(y)
-        self.hold_time_yield = rospy.get_param("~hold_time_yield", 1.5)
-        self.target_speed_yield = rospy.get_param("~target_speed_yield", 0.5)
+        # 회피/판단 임계값(기존 Total 그대로)
+        self.stop_trigger_dist  = rospy.get_param("~stop_trigger_dist", 1.2)  # 1.2m 이상이면 행동 안함
+        self.engage_dist_static = rospy.get_param("~engage_dist_static", 0.7) # 0.7m 이내면 회피 착수
+        self.near_y_min         = rospy.get_param("~near_y_min", 0.2)         # 너무 가까운 전방 무시
+        self.first_lane         = rospy.get_param("~first_lane", True)        # 우측차선이면 False → angle< -pi/18 무시
 
-        # 벽/잡음 억제 필터
-        self.max_circle_radius = rospy.get_param("~max_circle_radius", 0.6)      # ★ 큰 원형 클러스터 제외
-        self.max_segment_len   = rospy.get_param("~max_segment_len",   1.2)      # ★ 긴 선분(벽) 제외
-        self.max_segment_side_deg = rospy.get_param("~max_segment_side_deg", 60) # ★ 측면 각도(>60°) 제외
+        # 라디안 제한(안전)
+        self.max_steer_rad = rospy.get_param("~max_steer_rad", math.pi/6.0)
 
-        self.pub = rospy.Publisher("/dynamic_obstacle/decision", ObstacleDecision, queue_size=1)
-        rospy.Subscriber(self.input_topic, Obstacles, self.cb, queue_size=1)
+        # ===== Publishers =====
+        self.vel_pub   = rospy.Publisher("/commands/motor/speed", Float64, queue_size=1)
+        self.steer_pub = rospy.Publisher("/commands/servo/position", Float64, queue_size=1)
 
-        self.prev_tracks = []
+        # ===== Subscribers =====
+        rospy.Subscriber("/odometry/filtered", Odometry, self.odom_cb, queue_size=1)
 
-    def estimate_speed(self, x, y, now):
-        if not self.prev_tracks: return 0.0
-        best = min(self.prev_tracks, key=lambda tr: (tr.x - x)**2 + (tr.y - y)**2)
-        dt = (now - best.t).to_sec()
-        if dt <= 1e-3: return 0.0
-        return math.hypot((x - best.x)/dt, (y - best.y)/dt)
+        # obstacle_detect 쪽(두 이름 모두 지원)
+        rospy.Subscriber("/lidar_obstacle_information", ObstacleInfoArray, self.obst_cb, queue_size=1)
+        rospy.Subscriber("/obstacle_information",       ObstacleInfoArray, self.obst_cb, queue_size=1)
 
-    # ★ 사다리꼴 ROI: x가 멀수록 허용 좌우 폭을 선형으로 줄임
-    def in_trapezoid(self, fwd, lat):
-        if fwd < self.front_roi_min_x or fwd > self.front_roi_max_x:
-            return False
-        alpha = (fwd - self.front_roi_min_x) / max(1e-6, (self.front_roi_max_x - self.front_roi_min_x))
-        w = self.roi_half_width_near + (self.roi_half_width_far - self.roi_half_width_near) * max(0.0, min(1.0, alpha))
-        return abs(lat) <= w
+        # obstacle_detector(Clusters)
+        rospy.Subscriber("/raw_obstacles", Obstacles, self.raw_obst_cb, queue_size=1)
 
-    def cb(self, msg: Obstacles):
-        now = msg.header.stamp if hasattr(msg, "header") else rospy.Time.now()
+        # ===== States =====
+        self.now_orientation = None     # odom orientation만 사용
+        self.last_odom_time  = None
+        self.last_obst_time  = None
+
+        self.direction   = 0           # 1:위, 2:왼, 3:아래 (Total 기준 분류)
+        self.obstacle_point = -1       # -1=비활성, 6→…→0 진행
+        self.move_left   = [0.0, 0.0, 0.0]
+        self.move_right  = [0.0, 0.0, 0.0]
+        self.return_ok   = False
+        self.stop_flag   = False
+        self.target_vel  = self.LANE_DRIVE_VEL
+
+        # 타이머(제어/하트비트)
+        rate = rospy.get_param("~rate", 20.0)
+        self.ctrl_timer = rospy.Timer(rospy.Duration(1.0 / rate), self.run)
+        self.hb_timer   = rospy.Timer(rospy.Duration(1.0), self.heartbeat)
+
+        rospy.loginfo("[TotalStaticNoAMCL] ready. Waiting for /odometry/filtered and obstacle topics...")
+
+    # ----------------- Utils -----------------
+    def odom_cb(self, msg: Odometry):
+        self.now_orientation = msg.pose.pose.orientation
+        self.last_odom_time = rospy.Time.now()
+        if self.debug:
+            rospy.loginfo_throttle(5.0, "[TotalStaticNoAMCL] /odometry/filtered received")
+
+    def get_yaw(self):
+        if self.now_orientation is None:
+            return None
+        q = self.now_orientation
+        euler = tf.transformations.euler_from_quaternion([q.x, q.y, q.z, q.w])
+        return euler[2]  # yaw
+
+    def rotation_matrix(self, theta):
+        return np.array([
+            [np.cos(theta), -np.sin(theta), 0.0],
+            [np.sin(theta),  np.cos(theta), 0.0],
+            [0.0,            0.0,           1.0],
+        ], dtype=np.float32)
+
+    def mapping01(self, value, from_min=None, from_max=None, to_min=0.0, to_max=1.0):
+        if from_min is None: from_min = self.map_from_min
+        if from_max is None: from_max = self.map_from_max
+        v = max(from_min, min(from_max, value))
+        return ((v - from_min) / (from_max - from_min)) * (to_max - to_min) + to_min
+
+    # ----------------- Total: 회피 시퀀스 생성 -----------------
+    def static_obst(self, key, yaw, info):
+        """key: 1(위), 2(왼), 3(아래) 방향별 목표 yaw 배열 생성 (Total 동일)"""
+        if key == 1:
+            if self.obstacle_point == -1:
+                rotated = self.rotation_matrix(yaw) @ np.array([[info.x, info.y, 1.0]], dtype=np.float32).T
+                rot = rotated.T[0]; rot /= rot[2]
+                tx, ty = rot[0], rot[1]
+                tx = tx - 0.4
+                self.move_left  = [0.0, -math.tan(tx/ty), 0.0]
+                self.move_right = [0.0,  math.tan(tx/ty), 0.0]
+        elif key == 2:
+            if self.obstacle_point == -1:
+                self.move_left  = [math.pi/2, (math.pi/3)*2, math.pi/2]
+                self.move_right = [math.pi/2, (math.pi/3),   math.pi/2]
+        elif key == 3:
+            if self.obstacle_point == -1:
+                self.move_left  = [math.pi, (math.pi/6)*5, math.pi]
+                self.move_right = [math.pi, (math.pi/6)*7, math.pi]
+
+    # ----------------- 공통 처리 (x,y 한 쌍 → Total 정적 판단) -----------------
+    def handle_xy_candidate(self, x, y):
+        self.last_obst_time = rospy.Time.now()
+
+        yaw = self.get_yaw()
+        if yaw is None:
+            rospy.logwarn_throttle(2.0, "[TotalStaticNoAMCL] waiting yaw from /odometry/filtered ...")
+            return
+
+        # 회피 시퀀스 중에는 판단 생략
+        if self.obstacle_point > 0:
+            return
+
+        # Total: 가장 가까운 장애물로 가정하여 dist 계산(0.21m 여유)
+        dist = max(0.0, math.hypot(x, y) - 0.21)
+
+        # 진행방향 분류 (Total 동일)
+        ayaw = abs(yaw)
+        if ayaw < math.pi/4:   self.direction = 1
+        elif ayaw < 2.6:       self.direction = 2
+        else:                  self.direction = 3
+
+        # 무시 조건(전방 너무 가까움 / 우측차선에서 오른쪽 각도)
+        angle = math.atan2(x, y)
+        if y < self.near_y_min:
+            rospy.loginfo("[TotalStaticNoAMCL] ignore: too near in y (%.2f < %.2f)", y, self.near_y_min)
+            return
+        if (not self.first_lane) and (angle < -math.pi/18.0):
+            self.stop_flag = False
+            rospy.loginfo("[TotalStaticNoAMCL] ignore: not first_lane & angle %.2f < -pi/18", angle)
+            return
+
+        rospy.loginfo("[TotalStaticNoAMCL] Detected 1 candidates")
+        rospy.loginfo("  dist=%.2f m, x=%.2f, y=%.2f", dist, x, y)
+
+        # 거리 기반 행동 결정 (Total 동일)
+        if dist > self.stop_trigger_dist:
+            self.stop_flag = False
+            rospy.loginfo("[TotalStaticNoAMCL] far (%.2f>%.2f) → no action", dist, self.stop_trigger_dist)
+            return
+
+        if dist > self.engage_dist_static:
+            self.stop_flag = False
+            rospy.loginfo("[TotalStaticNoAMCL] static or slow → keep moving (%.2f>%.2f)", dist, self.engage_dist_static)
+            return
+
+        # 착수
+        self.stop_flag = True
+        self.vel_pub.publish(Float64(0.0))
+        rospy.loginfo("[TotalStaticNoAMCL] close → START BYPASS")
+
+        if self.obstacle_point == -1:
+            dummy = type("Info", (), {})()
+            dummy.x, dummy.y = x, y
+            self.static_obst(self.direction, ayaw, dummy)
+            self.obstacle_point = 6
+            self.target_vel = self.OBST_VEL
+            self.stop_flag = False
+            self.return_ok = False
+
+    # ----------------- Subscribers: 두 타입 모두 처리 -----------------
+    def obst_cb(self, msg: ObstacleInfoArray):
+        """obstacle_detect/ObstacleInfoArray → 가장 가까운 항목 1개로 처리"""
+        self.last_obst_time = rospy.Time.now()
+        if self.obstacle_point > 0:
+            return
+        if not msg.obstacles:
+            if self.obstacle_point == -1:
+                self.return_ok = True
+            rospy.loginfo_throttle(5.0, "[TotalStaticNoAMCL] no obstacles")
+            return
+        dists = np.array([math.hypot(o.x, o.y) for o in msg.obstacles])
+        idx = int(np.argmin(dists))
+        info = msg.obstacles[idx]
+        self.handle_xy_candidate(info.x, info.y)
+
+    def raw_obst_cb(self, msg: Obstacles):
+        """obstacle_detector/Obstacles → circles/segments 대표 1개로 처리"""
         reps = []
-
-        # 원형 객체 처리
-        if self.use_circles:
-            for c in msg.circles:
-                fwd = c.center.x   # x = 전방(+)
-                lat = c.center.y   # y = 좌우(좌+)
-                # ★ 큰 반지름(벽 근처 군집) 제외
-                if hasattr(c, "radius") and c.radius > self.max_circle_radius:
-                    continue
-                # ★ 사다리꼴 ROI 적용
-                if not self.in_trapezoid(fwd, lat):
-                    continue
-                spd = self.estimate_speed(fwd, lat, now)
-                reps.append((math.hypot(fwd, lat), fwd, lat, spd))
-
-        # 선분 객체 처리(옵션)
-        if self.use_segments:
-            side_th = math.radians(self.max_segment_side_deg)
-            for s in msg.segments:
-                x1, y1 = s.first_point.x, s.first_point.y
-                x2, y2 = s.last_point.x,  s.last_point.y
-                cx, cy = 0.5*(x1+x2), 0.5*(y1+y2)
-                fwd, lat = cx, cy
-                # ★ 긴 선분은 벽으로 간주하여 제외
-                seg_len = math.hypot(x2-x1, y2-y1)
-                if seg_len > self.max_segment_len:
-                    continue
-                # ★ 측면 각도(진행방향과 평행한 벽) 제외
-                theta = abs(math.atan2(y2-y1, x2-x1))  # 0=전방, ~pi/2=측면
-                if theta > side_th:
-                    continue
-                if not self.in_trapezoid(fwd, lat):
-                    continue
-                spd = self.estimate_speed(fwd, lat, now)
-                reps.append((math.hypot(fwd, lat), fwd, lat, spd))
-
-        # 추적 버퍼 갱신
-        self.prev_tracks = [Track(x=r[1], y=r[2], t=now) for r in reps]
-
-        # 기본 결정 초기화
-        dec = ObstacleDecision()
-        dec.header = msg.header if hasattr(msg,"header") else Header(stamp=now)
-        dec.type = ObstacleDecision.DYNAMIC
-        dec.action = ObstacleDecision.ACT_NONE
-        dec.target_speed = -1.0
-        dec.lateral_offset = 0.0
-        dec.hold_time = rospy.Duration(0.0)
-        dec.confidence = 0.0
-
+        for c in msg.circles:
+            fx, fy = c.center.x, c.center.y
+            reps.append((math.hypot(fx, fy), fx, fy))
+        for s in msg.segments:
+            cx = 0.5 * (s.first_point.x + s.last_point.x)
+            cy = 0.5 * (s.first_point.y + s.last_point.y)
+            reps.append((math.hypot(cx, cy), cx, cy))
         if not reps:
-            self.pub.publish(dec); return
+            return
+        reps.sort(key=lambda r: r[0])  # 거리 가까운 것 우선
+        _, x, y = reps[0]
+        self.handle_xy_candidate(x, y)
 
-        # (거리↑, 속도↓) 우선
-        reps.sort(key=lambda r: (r[0], -r[3]))
-        dist, fwd, lat, spd = reps[0]
+    # ----------------- Control Loop (Total: obstacle_point 시퀀스) -----------------
+    def run(self, _evt):
+        steering_cmd = self.base_servo_center
 
-        # ★ 차선 밖으로 충분히 벗어났으면 간섭하지 않음(좌우 기준)
-        if abs(lat) >= self.lane_escape_lat:
-            self.pub.publish(dec); return
+        if self.obstacle_point >= 0:
+            now_yaw = self.get_yaw()
+            if now_yaw is not None:
+                if self.obstacle_point > 3:
+                    diff = self.move_left[self.obstacle_point % 3] - now_yaw
+                    if abs(diff) < (math.pi / 36.0):  # 약 5도
+                        self.obstacle_point -= 1
+                elif self.return_ok:
+                    diff = self.move_right[self.obstacle_point % 3] - now_yaw
+                    if abs(diff) < (math.pi / 36.0):
+                        self.obstacle_point -= 1
+                else:
+                    diff = 0.0 - now_yaw
 
-        # 동적성/거리 기반 액션
-        if spd >= self.speed_thr:
-            if dist <= self.stop_distance:
-                dec.action = ObstacleDecision.ACT_STOP
-                dec.target_speed = 0.0
-                dec.hold_time = rospy.Duration(self.hold_time_yield)
-                dec.confidence = 0.9
-            elif dist <= self.yield_distance:
-                dec.action = ObstacleDecision.ACT_YIELD
-                dec.target_speed = self.target_speed_yield
-                dec.hold_time = rospy.Duration(self.hold_time_yield)
-                dec.confidence = 0.7
-            else:
-                dec.confidence = 0.4
+                steer_rad = np.clip(diff * 1.815, -self.max_steer_rad, self.max_steer_rad)
+                steering_cmd = self.mapping01(steer_rad, self.map_from_min, self.map_from_max)
+
+                if self.obstacle_point == -1:
+                    self.target_vel = self.LANE_DRIVE_VEL
+
+        if not self.stop_flag:
+            self.vel_pub.publish(Float64(self.target_vel))
+            self.steer_pub.publish(Float64(steering_cmd))
+            rospy.loginfo_throttle(1.0, "[Publish] speed_cmd=%.0f, steer_cmd=%.3f", self.target_vel, steering_cmd)
         else:
-            dec.confidence = 0.2
+            self.vel_pub.publish(Float64(0.0))
+            self.steer_pub.publish(Float64(self.base_servo_center))
+            rospy.loginfo_throttle(1.0, "[Publish] speed_cmd=0, steer_cmd=%.3f (hold)", self.base_servo_center)
 
-        self.pub.publish(dec)
+    # ----------------- Heartbeat -----------------
+    def heartbeat(self, _evt):
+        if not self.debug:
+            return
+        now = rospy.Time.now()
+        odom_age = (now - self.last_odom_time).to_sec() if self.last_odom_time else None
+        obst_age = (now - self.last_obst_time).to_sec() if self.last_obst_time else None
+        rospy.loginfo_throttle(
+            1.0,
+            "[HB] odom_age=%s, obst_age=%s, state: obstacle_point=%d, stop_flag=%s, target_vel=%.0f",
+            f"{odom_age:.1f}s" if odom_age is not None else "None",
+            f"{obst_age:.1f}s" if obst_age is not None else "None",
+            self.obstacle_point, self.stop_flag, self.target_vel
+        )
+
 
 if __name__ == "__main__":
-    DynamicJudge()
+    TotalStaticNoAMCL()
     rospy.spin()
