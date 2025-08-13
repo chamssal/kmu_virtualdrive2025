@@ -13,6 +13,7 @@ import rospy
 from std_msgs.msg import Float64, Int32, Bool, String
 from sequence_manager.sequence_enum import SequenceState
 import threading
+import rosnode
 
 class SequenceManager:
     def __init__(self):
@@ -21,7 +22,7 @@ class SequenceManager:
 
         #--------------------초기상태, 멤버 초기화--------------------
 
-        self.sequence = SequenceState.TURN_RIGHT  # 초기값: LANE_FOLLOWING 상태
+        self.sequence = SequenceState.SLAM  # 초기값: SLAM 상태
         self.speed_default = 1500 # 기본속도
         self.speed_turn = 1000 # 회전속도
         self.speed_slow = 800 # 느린속도
@@ -35,6 +36,7 @@ class SequenceManager:
         self.dynamic_speed = None
         self.dynamic_steer = None
         self.traffic_is_stop = None
+        self.rotary_enter = None
         
         self.timer_threads = [] # 타이머 작업 저장용 (중복 실행 방지)
 
@@ -60,6 +62,16 @@ class SequenceManager:
         self.dynamic_speed_sub = rospy.Subscriber("/dynamic/speed", Float64, self.dynamic_speed_CB)
         self.dynamic_steer_sub = rospy.Subscriber("/dynamic/steer", Float64, self.dynamic_steer_CB)
         self.traffic_speed_sub = rospy.Subscriber("/traffic/semantic", String, self.traffic_semantic_CB)
+        self.rotary_enter_sub = rospy.Subscriber("/rotary/enter", Bool, self.rotary_enter_CB)
+
+        # --- 상태 변화 감지용 ---
+        self.rotary_entry_speed = 2500
+        self.rotary_entry_forward_time = 0.2
+        self.rotary_entry_turn_time = 0.3
+        self.rotary_entry_steer = 1.0
+        
+        self.prev_sequence = None
+        self.state_started_at = rospy.get_time()
 
         self.rate = rospy.Rate(20)
         self.run()
@@ -85,9 +97,10 @@ class SequenceManager:
 
     def slam_done_CB(self, msg):
         if msg.data == True:
+            rosnode.kill_nodes(['/throttle_interpolator'])
             self.sequence = SequenceState.LANE_FOLLOWING
         elif msg.data == False:
-            self.sequence = SequenceState.SLAM
+            self.sequence = SequenceState.ROTARY_ENTRY # test
 
     def static_done_CB(self, msg):
         if msg.data == True:
@@ -97,7 +110,7 @@ class SequenceManager:
             
     def dynamic_done_CB(self, msg):
         if msg.data == True:
-            self.sequence = SequenceState.LANE_FOLLOWING
+            self.sequence = SequenceState.TURN_LEFT
         elif msg.data == False:
             self.sequence = SequenceState.DYNAMIC_OBSTACLE
             
@@ -109,7 +122,7 @@ class SequenceManager:
 
     def traffic_done_CB(self, msg):
         if msg.data == True:
-            self.sequence = SequenceState.LANE_FOLLOWING
+            self.sequence = SequenceState.TURN_RIGHT
         elif msg.data == False:
             self.sequence = SequenceState.TRAFFIC_LIGHT
 
@@ -139,10 +152,17 @@ class SequenceManager:
         else:
             self.traffic_is_stop = True
             
+    def rotary_enter_CB(self, msg):
+        self.rotary_enter = msg.data
+            
+            
     #--------------------시퀀스 Enum 기반으로 분기 처리하는 함수--------------------s
         
     def run(self):
         while not rospy.is_shutdown():
+            if self.sequence != self.prev_sequence:
+                self.state_started_at = rospy.get_time()
+                self.prev_sequence = self.sequence
             self.seq_pub.publish(self.sequence.value)
 
             # Enum 기반 분기 처리
@@ -162,6 +182,10 @@ class SequenceManager:
                 self.handle_turn_left()
             elif self.sequence == SequenceState.TURN_RIGHT:
                 self.handle_turn_right()
+            elif self.sequence == SequenceState.ROTARY:
+                self.handle_rotary()
+            elif self.sequence == SequenceState.ROTARY_ENTRY:
+                self.handle_rotary_entry()
             else:
                 rospy.logwarn_throttle(5.0, f"[SequenceManager] 알 수 없는 시퀀스: {self.sequence}")
 
@@ -221,6 +245,40 @@ class SequenceManager:
         self.mode_pub.publish(Float64(1.0))
         self.speed_pub.publish(Float64(self.speed_turn+100))
         self.steer_pub.publish(self.lane_steer)
+        
+    def handle_rotary(self):
+        rospy.loginfo_throttle(2.0, "[SequenceManager] 로타리 미션 중...")
+        if self.lane_stopline:
+            if self.rotary_enter:
+                self.sequence = SequenceState.ROTARY_ENTRY
+            else:
+                self.speed_pub.publish(Float64(0.))
+                self.steer_pub.publish(Float64(0.5))
+        else:
+            self.speed_pub.publish(Float64(self.speed_slow))
+            self.steer_pub.publish(Float64(self.lane_steer))
+        
+    def handle_rotary_entry(self):
+        t = rospy.get_time() - self.state_started_at
+        n = float(self.rotary_entry_speed)
+
+        self.mode_pub.publish(Float64(1.0))
+
+        if t < self.rotary_entry_forward_time:
+            # 1단계: 직진
+            self.speed_pub.publish(Float64(n))
+            self.steer_pub.publish(Float64(0.5))
+            rospy.loginfo_throttle(0.5, "[SequenceManager] ROTARY_ENTRY: 직진 단계")
+        elif t < self.rotary_entry_forward_time + self.rotary_entry_turn_time:
+            # 2단계: 조향 1.0 유지하며 전진
+            self.speed_pub.publish(Float64(n))
+            self.steer_pub.publish(Float64(self.rotary_entry_steer))
+            rospy.loginfo_throttle(0.5, "[SequenceManager] ROTARY_ENTRY: 회전 단계")
+        else:
+            # 완료 → 본 로터리 시퀀스로 진입
+            rospy.loginfo("[SequenceManager] ROTARY_ENTRY 완료 → ROTARY 전환")
+            self.steer_pub.publish(Float64(0.5))
+            self.sequence = SequenceState.ROTARY
 
 
 if __name__ == "__main__":

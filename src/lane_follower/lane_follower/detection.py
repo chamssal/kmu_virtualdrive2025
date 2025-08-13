@@ -60,6 +60,10 @@ class Detection:
         # img: 바이너리 흑백(0/255), shape = (y, x)
         # ROI 마스킹
         img = self._apply_roi(img, mode)
+        if mode != "normal":
+            self.margin = 105
+        else:
+            self.margin = 60
         
         y, x = img.shape
         histogram = np.sum(img, axis=0)

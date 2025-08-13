@@ -63,10 +63,13 @@ class LaneFollowerNode:
     def _mode_cb(self, msg:Float64):
         if msg.data < 0:
             self.mode = "left_only"
+            self.midrange = 260
         elif msg.data > 0:
             self.mode = "right_only"
+            self.midrange = 230
         else:
             self.mode = "normal"
+            self.midrange = 310
 
     def _image_cb(self, msg: CompressedImage):
         # 1) Convert ROS msg to OpenCV image
@@ -105,7 +108,10 @@ class LaneFollowerNode:
             delta_px      = 10
         )
         
-        steer = self.det.shape_steer(ctrl, p=1.6, scale=3.5)
+        if self.mode != "normal":
+            steer = self.det.shape_steer(ctrl, p=1.6, scale=3.5)
+        else:
+            steer = ctrl
         
         # 5) Publish control commands
         rospy.loginfo(f"steering : {Float64(steer)}\n")

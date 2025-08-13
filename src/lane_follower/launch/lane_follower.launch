@@ -1,5 +1,5 @@
 <launch>
-  <node pkg="lane_follower" type="lane_follower_node.py" name="lane_follower" output="screen">
+  <node pkg="lane_follower" type="lane_follower_node.py" name="lane_follower">
     <!-- 파라미터는 코드 상단에서 직접 로드합니다 -->
   </node>
 </launch>

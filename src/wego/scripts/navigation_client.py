@@ -3,7 +3,7 @@ import rospy
 import actionlib
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 from geometry_msgs.msg import Pose
-from std_msgs.msg import Int32MultiArray
+from std_msgs.msg import Int32MultiArray, Bool
 from actionlib_msgs.msg import GoalStatus
 
 class DeliveryMissionManual:
@@ -18,9 +18,12 @@ class DeliveryMissionManual:
         self.goals = self.set_manual_goals()
 
         # 도달 여부 수동 관리
-        self.reached = [0, 0, 0]
+        self.reached = [0] * len(self.goals)
         self.current_index = 0
         self.sent_goal = False
+        
+        # slam done publisher
+        self.slam_done_pub = rospy.Publisher("/sequence/slam_done", Bool, queue_size=1, latch=True)
 
         rospy.loginfo("Manual delivery mission node started.")
         self.rate = rospy.Rate(10)
@@ -57,7 +60,7 @@ class DeliveryMissionManual:
         
         
         p4 = Pose()
-        p4.position.x = -7.388439178466797
+        p4.position.x = -9.588439178466797
         p4.position.y = -12.119901657104492
         p4.orientation.z = 0.0
         p4.orientation.w = 1.0
@@ -77,6 +80,7 @@ class DeliveryMissionManual:
         while not rospy.is_shutdown():
             if self.current_index >= len(self.goals):
                 rospy.loginfo("✅ All deliveries completed.")
+                self.slam_done_pub.publish(Bool(True))
                 break
 
             state = self.client.get_state()
