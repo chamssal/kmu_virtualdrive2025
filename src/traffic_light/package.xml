@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>traffic_light</name>
+  <version>0.0.1</version>
+  <description>Traffic light perception and decision node</description>
+
+  <!-- Replace the maintainer name and e‑mail address with your own. -->
+  <maintainer email="you@example.com">Your Name</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>morai_msgs</depend>
+
+</package>

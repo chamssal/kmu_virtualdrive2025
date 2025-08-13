@@ -57,8 +57,8 @@ class DeliveryMissionManual:
         
         
         p4 = Pose()
-        p4.position.x = -7.976315498352051
-        p4.position.y = -11.313032150268555
+        p4.position.x = -7.388439178466797
+        p4.position.y = -12.119901657104492
         p4.orientation.z = 0.0
         p4.orientation.w = 1.0
         goals.append(p4)
