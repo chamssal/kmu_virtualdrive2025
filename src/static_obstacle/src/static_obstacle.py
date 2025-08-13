@@ -1,17 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Total 정적 장애물 로직 (AMCL 없이) - yaw는 /odometry/filtered에서만 사용
-입력:
-  - /odometry/filtered (nav_msgs/Odometry)  → orientation(yaw)만 사용
-  - /lidar_obstacle_information (obstacle_detect/LidarObstacleInfoArray) 또는
-  - /obstacle_information (obstacle_detect/ObstacleInfoArray) 또는
-  - /raw_obstacles (obstacle_detector/Obstacles)
-출력:
-  - /commands/motor/speed (std_msgs/Float64)
-  - /commands/servo/position (std_msgs/Float64)
-"""
-
 import math
 import numpy as np
 import rospy
