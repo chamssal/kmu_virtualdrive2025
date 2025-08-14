@@ -35,8 +35,8 @@ class SequenceManager:
         self.lane_stopline = None
         self.static_speed = None
         self.static_steer = None
-        self.dynamic_stop = None
-        self.dynamic_go = None
+        self.dynamic_stop_queue = []
+        self.dynamic_stop_queue_size = 10
         self.traffic_is_stop = None
         self.rotary_enter = None
         
@@ -62,7 +62,6 @@ class SequenceManager:
         self.static_speed_sub = rospy.Subscriber("/static/speed", Float64, self.static_speed_CB)
         self.static_steer_sub = rospy.Subscriber("/static/steer", Float64, self.static_steer_CB)
         self.dynamic_stop_sub = rospy.Subscriber("/dynamic/stop", Bool, self.dynamic_stop_CB)
-        self.dynamic_go_sub = rospy.Subscriber("/dynamic/go", Bool, self.dynamic_go_CB)
         self.traffic_speed_sub = rospy.Subscriber("/traffic/semantic", String, self.traffic_semantic_CB)
         self.rotary_enter_sub = rospy.Subscriber("/rotary/enter", Bool, self.rotary_enter_CB)
 
@@ -100,6 +99,7 @@ class SequenceManager:
     def slam_done_CB(self, msg):
         if msg.data == True:
             rosnode.kill_nodes(['/throttle_interpolator'])
+            rospy.loginfo("/throttle_interpolator 노드 kill.")
             self.sequence = SequenceState.LANE_FOLLOWING
         elif msg.data == False:
             self.sequence = SequenceState.ROTARY_ENTRY # test
@@ -143,12 +143,9 @@ class SequenceManager:
         self.static_steer = msg.data
 
     def dynamic_stop_CB(self, msg):
-        self.dynamic_go = False
-        self.dynamic_stop = msg.data
-    
-    def dynamic_go_CB(self, msg):
-        self.dynamic_stop = False
-        self.dynamic_go = msg.data
+        self.dynamic_stop_queue.append(msg.data)
+        if len(self.dynamic_stop_queue) > self.dynamic_stop_queue_size:
+            self.dynamic_stop_queue.pop(0)
 
     def traffic_semantic_CB(self, msg):
         if msg.data == "LEFT" or msg.data == "STRAIGHT":
@@ -208,6 +205,8 @@ class SequenceManager:
         self.speed_pub.publish(Float64(self.speed_default))
         self.steer_pub.publish(self.lane_steer)
         self.mode_pub.publish(Float64(0.0))
+        if len(self.dynamic_stop_queue) == self.dynamic_stop_queue_size and False not in self.dynamic_stop_queue:
+            self.sequence = SequenceState.DYNAMIC_OBSTACLE
 
     def handle_static_obstacle(self):
         rospy.loginfo_throttle(2.0, "[SequenceManager] 정적 장애물 회피 중...")
@@ -216,16 +215,10 @@ class SequenceManager:
 
     def handle_dynamic_obstacle(self):
         rospy.loginfo_throttle(2.0, "[SequenceManager] 동적 장애물 회피 중...")
-        if self.dynamic_stop:
-            if self.dynamic_go:
-                self.speed_pub.publish(Float64(self.speed_obstacle))
-                self.steer_pub.publish(self.lane_steer)
-            else:
-                self.speed_pub.publish(Float64(0.))
-                self.steer_pub.publish(Float64(0.5))
-        else:
-            self.speed_pub.publish(Float64(self.speed_obstacle))
-            self.steer_pub.publish(self.lane_steer)
+        self.speed_pub.publish(Float64(0.))
+        self.steer_pub.publish(Float64(0.5))
+        self.change_sequence_after(2.0, SequenceState.LANE_FOLLOWING)
+        self.dynamic_stop_queue = []
 
     def handle_traffic_light(self):
         rospy.loginfo_throttle(2.0, "[SequenceManager] 신호등 미션 실행 중...")

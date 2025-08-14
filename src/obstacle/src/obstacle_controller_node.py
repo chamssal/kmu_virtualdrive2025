@@ -26,7 +26,7 @@ class ObstacleController:
 
         # distances / thresholds
         self.stop_trigger_dist  = float(rospy.get_param("~stop_trigger_dist", 3.0)) #1.2
-        self.engage_dist_static = float(rospy.get_param("~engage_dist_static", 2.0)) #0.7
+        self.engage_dist_static = float(rospy.get_param("~engage_dist_static", 2.5)) #0.7
         self.near_y_min         = float(rospy.get_param("~near_y_min", 0.2))
         self.first_lane         = bool(rospy.get_param("~first_lane", True))
         self.max_steer_rad      = float(rospy.get_param("~max_steer_rad", math.pi/6.0))
@@ -40,8 +40,8 @@ class ObstacleController:
         self.dynamic_clear_left  = float(rospy.get_param("~dynamic_clear_left", 0.25))
         self.dynamic_clear_right = float(rospy.get_param("~dynamic_clear_right",-0.65))
 
-        self.cmd_speed_topic = rospy.get_param("~cmd_speed_topic", "/commands/motor/speed")
-        self.cmd_steer_topic = rospy.get_param("~cmd_steer_topic", "/commands/servo/position")
+        self.cmd_speed_topic = rospy.get_param("~cmd_speed_topic", "/commands/motor/speed/fffffff")
+        self.cmd_steer_topic = rospy.get_param("~cmd_steer_topic", "/commands/servo/position/fffffff")
 
         # ===== Publishers =====
         self.cmd_speed_pub = rospy.Publisher(self.cmd_speed_topic, Float64, queue_size=1)
@@ -148,9 +148,10 @@ class ObstacleController:
     
     # ---------- Obstacle handling ----------
     def obst_cb(self, msg: ObstacleInfoArray):
-        
         self.last_obst_time = rospy.Time.now()
-
+        if not msg.obstacles:  # 장애물 없으면
+            self.type = "NONE"
+            return
         dists = np.array([math.hypot(o.x, o.y) for o in msg.obstacles]) # 각 장애물별 거리 array
         idx = int(np.argmin(dists)) # 거리가 제일 가까운 장애물의 idx
         info = msg.obstacles[idx] # 제일 가까운 장애물을 info로 초기화
@@ -192,7 +193,9 @@ class ObstacleController:
         
         if self.type == "DYNAMIC":
             self.dynamic_stop_pub.publish(Bool(True))
-        elif self.type == "STATIC":
+        else:
+            self.dynamic_stop_pub.publish(Bool(False))
+        if self.type == "STATIC":
             pass # 나중에 개발
         else:
             return
