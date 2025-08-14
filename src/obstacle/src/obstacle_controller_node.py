@@ -12,12 +12,10 @@ from obstacle_detect.msg import ObstacleInfoArray
 class ObstacleController:
     def __init__(self):
         rospy.init_node("obstacle_controller")
-
-        # ===== Params =====
         self.debug = rospy.get_param("~debug", True)
 
         # speed / steer scales
-        self.LANE_DRIVE_VEL   = float(rospy.get_param("~lane_drive_vel_cmd", 1800.0))
+        self.LANE_DRIVE_VEL   = float(rospy.get_param("~lane_drive_vel_cmd", 50.0))
         self.OBST_VEL         = float(rospy.get_param("~obst_vel_cmd",        602.0))
         self.base_servo_center= float(rospy.get_param("~servo_center",        0.5))
 
@@ -26,8 +24,8 @@ class ObstacleController:
         self.map_from_max = float(rospy.get_param("~map_from_max",  0.25992659995162515))
 
         # distances / thresholds
-        self.stop_trigger_dist  = float(rospy.get_param("~stop_trigger_dist", 1.2))
-        self.engage_dist_static = float(rospy.get_param("~engage_dist_static", 0.7))
+        self.stop_trigger_dist  = float(rospy.get_param("~stop_trigger_dist", 3.0)) #1.2
+        self.engage_dist_static = float(rospy.get_param("~engage_dist_static", 3.0)) #0.7
         self.near_y_min         = float(rospy.get_param("~near_y_min", 0.2))
         self.first_lane         = bool(rospy.get_param("~first_lane", True))
         self.max_steer_rad      = float(rospy.get_param("~max_steer_rad", math.pi/6.0))
@@ -36,17 +34,15 @@ class ObstacleController:
         self.ignore_first_secs  = float(rospy.get_param("~ignore_first_secs", 1.0))
 
         # 동적 장애물 조건(간단)
-        self.dynamic_center_x    = float(rospy.get_param("~dynamic_center_x",   0.15)) # 0.25
-        self.dynamic_engage_dist = float(rospy.get_param("~dynamic_engage_dist",1.2))  #1.2
+        self.dynamic_center_x    = float(rospy.get_param("~dynamic_center_x",   2.0)) # 0.25
+        self.dynamic_engage_dist = float(rospy.get_param("~dynamic_engage_dist",3.0))  #1.2
         self.dynamic_clear_left  = float(rospy.get_param("~dynamic_clear_left", 0.25))
         self.dynamic_clear_right = float(rospy.get_param("~dynamic_clear_right",-0.65))
 
-        # 단독 테스트용 최종 퍼블리시 대상 토픽
         self.cmd_speed_topic = rospy.get_param("~cmd_speed_topic", "/commands/motor/speed")
         self.cmd_steer_topic = rospy.get_param("~cmd_steer_topic", "/commands/servo/position")
 
         # ===== Publishers =====
-        # 최종 명령(단독 테스트용)
         self.cmd_speed_pub = rospy.Publisher(self.cmd_speed_topic, Float64, queue_size=1)
         self.cmd_steer_pub = rospy.Publisher(self.cmd_steer_topic, Float64, queue_size=1)
 
@@ -57,8 +53,6 @@ class ObstacleController:
         self.dynamic_steer_pub = rospy.Publisher("/dynamic/steer", Float64, queue_size=1)
         self.static_done_pub   = rospy.Publisher("/sequence/static_done",  Bool, queue_size=1)
         self.dynamic_done_pub  = rospy.Publisher("/sequence/dynamic_done", Bool, queue_size=1)
-
-        # 상태 문자열(사람 읽기용)
         self.state_pub = rospy.Publisher("/obstacle_controller/state", String, queue_size=1)
 
         # ===== Subscribers =====
@@ -70,22 +64,25 @@ class ObstacleController:
         self.last_obst_time  = None
         self.start_time      = rospy.Time.now()
 
-        self.direction   = 0            # 1,2,3 (Total 스타일)
-        self.obstacle_point = -1        # -1 idle, 6..0 진행
+        self.direction   = 0           
+        self.obstacle_point = -1        
         self.move_left   = [0.0, 0.0, 0.0]
         self.move_right  = [0.0, 0.0, 0.0]
         self.return_ok   = False
+        
+        self.type_history = []
+        self.history_len = 5
 
         self.dynamic_active = False
         self.latest_cmd_speed = self.LANE_DRIVE_VEL
         self.latest_cmd_steer = self.base_servo_center
         self.latest_state_str = "CRUISE"
-
         rate = float(rospy.get_param("~rate", 20.0))
         self.ctrl_timer = rospy.Timer(rospy.Duration(1.0 / rate), self.run)
 
         rospy.loginfo("[ObstacleController] direct publish -> %s , %s",
                       self.cmd_speed_topic, self.cmd_steer_topic)
+        
 
     # ---------- Utils ----------
     def odom_cb(self, msg: Odometry):
@@ -112,7 +109,6 @@ class ObstacleController:
         return ((v - from_min) / (from_max - from_min)) * (to_max - to_min) + to_min
 
     def report(self, ob_type="NONE", speed=None, steer=None, info=None, dist=None, extra=""):
-        """터미널에 '장애물 타입/좌표/거리/속도/조향'만 깔끔 출력"""
         if speed is None:  speed = self.latest_cmd_speed
         if steer is None:  steer = self.latest_cmd_steer
 
@@ -127,7 +123,7 @@ class ObstacleController:
             line += f" {extra}"
         rospy.loginfo(line)
 
-    # 회피 시퀀스 생성 (Total 스타일)
+    # 회피 시퀀스 생성 
     def static_obst(self, key, yaw, info):
         if key == 1:
             if self.obstacle_point == -1:
@@ -146,17 +142,17 @@ class ObstacleController:
                 self.move_left  = [math.pi, (math.pi/6)*5, math.pi]
                 self.move_right = [math.pi, (math.pi/6)*7, math.pi]
 
+    
     # ---------- Obstacle handling ----------
     def obst_cb(self, msg: ObstacleInfoArray):
+        
         self.last_obst_time = rospy.Time.now()
 
-        # ── NaN/Inf 필터 ──
         clean = []
         for o in msg.obstacles:
             if np.isfinite(o.x) and np.isfinite(o.y):
                 clean.append(o)
         if not clean:
-            # 동적 active였다면 종료
             if self.dynamic_active:
                 self.dynamic_done_pub.publish(Bool(data=True))
                 self.dynamic_active = False
@@ -165,31 +161,61 @@ class ObstacleController:
             self.latest_state_str = "CRUISE(NO_OBST)"
             return
 
-        # 가장 가까운 것 하나로 판단
         dists = np.array([math.hypot(o.x, o.y) for o in msg.obstacles])
         idx = int(np.argmin(dists))
         info = msg.obstacles[idx]
-        dist = max(0.0, dists[idx] - 0.21)  # 0.21 여유
+        dist = max(0.0, dists[idx] - 0.21)
 
         is_dyn = bool(getattr(info, "is_dynamic", False))
+        rospy.loginfo(f"[DEBUG] is_dynamic raw: {is_dyn}")
 
-        # 동적: 거리/중앙영역 충족 시 정지
-        if is_dyn and (dist <= self.dynamic_engage_dist) and (abs(info.x) <= self.dynamic_center_x):
-            self.handle_dynamic(info, dist)
+        new_type = "NONE"
+        if is_dyn:
+            if dist <= self.dynamic_engage_dist and abs(info.x) <= self.dynamic_center_x:
+                new_type = "DYNAMIC"
         else:
+            new_type = "STATIC" 
+            
+        # rospy.loginfo(f"[DEBUG] x={info.x:.2f}, y={info.y:.2f}, dist={dist:.2f}, is_dyn={is_dyn}, new_type={new_type}")
+        # rospy.loginfo(f"[DEBUG] type_history={self.type_history}")
+
+
+        self.type_history.append(new_type)
+        if len(self.type_history) > self.history_len:
+            self.type_history.pop(0)
+
+        # confirmed_type = max(set(self.type_history), key=self.type_history.count)
+        
+        if new_type != "NONE":
+            self.type_history.append(new_type)
+            if len(self.type_history) > self.history_len:
+                self.type_history.pop(0)
+
+        if self.type_history:
+            confirmed_type = max(set(self.type_history), key=self.type_history.count)
+        else:
+            confirmed_type = "NONE"
+            
+            
+        if confirmed_type == "DYNAMIC":
+            self.latest_state_str = "DYNAMIC"
+            self.handle_dynamic(info, dist)
+        elif confirmed_type == "STATIC":
+            self.latest_state_str = "STATIC"
             self.handle_static(info, dist)
+        else:
+            self.latest_state_str = "CRUISE(NO_OBST)"
+            if self.dynamic_active:
+                self.dynamic_done_pub.publish(Bool(data=True))
+                self.dynamic_active = False
+
 
     def handle_dynamic(self, info, dist):
-        # 진입 신호
         if not self.dynamic_active:
             self.dynamic_done_pub.publish(Bool(data=False))
             self.dynamic_active = True
-
-        # 정지 명령
         speed_cmd = 0.0
         steer_cmd = self.base_servo_center
-
-        # 해제: 차선 밖으로 벗어나면
         if (info.x > self.dynamic_clear_left) or (info.x < self.dynamic_clear_right):
             self.dynamic_done_pub.publish(Bool(data=True))
             self.dynamic_active = False
@@ -197,10 +223,8 @@ class ObstacleController:
             self.report("NONE", self.LANE_DRIVE_VEL, self.base_servo_center)
             return
 
-        # 유지(대기)
         self.dynamic_speed_pub.publish(Float64(speed_cmd))
         self.dynamic_steer_pub.publish(Float64(steer_cmd))
-        # 단독 테스트용 최종 명령도 직접 퍼블리시
         self.publish_cmd(speed_cmd, steer_cmd)
         self.latest_state_str = "DYNAMIC_WAIT"
         self.report("DYNAMIC", speed_cmd, steer_cmd, info, dist)
@@ -208,10 +232,9 @@ class ObstacleController:
     def handle_static(self, info, dist):
         yaw = self.get_yaw()
         if self.obstacle_point > 0:
-            # 이미 회피 중이면 run()에서 계속 출력/퍼블리시
+            rospy.logdebug("[STATIC] already handling, skipping new start")
             return
 
-        # 진행방향 분류
         if yaw is not None:
             ayaw = abs(yaw)
             if ayaw < math.pi/4:   self.direction = 1
@@ -237,8 +260,6 @@ class ObstacleController:
         if dist > self.engage_dist_static:
             self.latest_state_str = "CRUISE(KEEP)"
             return
-
-        # 착수
         self.static_done_pub.publish(Bool(data=False))
         if self.obstacle_point == -1:
             self.static_obst(self.direction, abs(yaw), info)
@@ -274,12 +295,9 @@ class ObstacleController:
             steer_cmd = self.mapping01(steer_rad, self.map_from_min, self.map_from_max)
             speed_cmd = self.OBST_VEL
 
-            # 퍼블리시(정적 회피 중)
             self.static_speed_pub.publish(Float64(speed_cmd))
             self.static_steer_pub.publish(Float64(steer_cmd))
             self.publish_cmd(speed_cmd, steer_cmd)
-
-            # 진행 상황 간단 출력(op 단계만)
             self.report("STATIC", speed_cmd, steer_cmd, info=None, dist=None, extra=f"op={self.obstacle_point}")
 
             if self.obstacle_point == -1:
@@ -288,21 +306,15 @@ class ObstacleController:
                 self.report("NONE", self.LANE_DRIVE_VEL, self.base_servo_center)
 
         else:
-            # 동적 active 중이면 obst_cb에서 명령 퍼블리시 중
             if not self.dynamic_active:
-                # 크루즈(직진)
                 self.publish_cmd(speed_cmd, steer_cmd)
-                # 과다 로그 방지를 원하면 주기 제한/상태변화 시에만 출력
                 self.report("NONE", speed_cmd, steer_cmd)
-
-        # 상태 문자열 토픽
         self.state_pub.publish(String(self.latest_state_str))
 
         # 최근 값 저장
         self.latest_cmd_speed = speed_cmd
         self.latest_cmd_steer = steer_cmd
 
-    # 최종 커맨드 퍼블리셔(모터/서보)
     def publish_cmd(self, speed, steer):
         self.cmd_speed_pub.publish(Float64(speed))
         self.cmd_steer_pub.publish(Float64(steer))

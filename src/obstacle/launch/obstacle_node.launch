@@ -4,7 +4,7 @@
   <node pkg="obstacle_detect" type="camera_obstacle_detect.py"  name="camera_obstacle" output="screen"/>
 
   <node pkg="obstacle" type="obstacle_controller_node.py" name="obstacle_controller" output="screen">
-    <param name="lane_drive_vel_cmd" value="1800.0"/>
+    <param name="lane_drive_vel_cmd" value="1000"/>
     <param name="obst_vel_cmd"       value="602.0"/>
     <param name="servo_center"       value="0.5"/>
     <param name="stop_trigger_dist"  value="1.2"/>
