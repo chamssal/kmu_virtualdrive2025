@@ -77,7 +77,7 @@ class CamObstacleDetect:
         ], dtype=np.float32)
 
 
-        roll, pitch, yaw = 0., 0., -0.13
+        roll, pitch, yaw = 0., 0., -0.12
         x, y, z = 0.19, 0., -0.02
 
         R_veh2cam = np.transpose(rotation_from_euler(roll, pitch, yaw))
@@ -95,83 +95,6 @@ class CamObstacleDetect:
 
         rows = [[info.obst_y, -info.obst_x, 0.0, 1.0] for info in msg.obstacle_infos]
         self.obstacle_info = np.asarray(rows, dtype=np.float32).reshape(-1, 4)
-
-    # 1. 라이다 정보 받기
-    # 2. 근데 장애물 좌표가 중앙차선을 벗어난 상태이고 파란끼가 있으면
-    #    일정 거리내로 들어오면 정지
-    
-    # def camera_obstacle_callback(self, msg: CompressedImage):
-    #     self.img = self.get_image(msg)
-    #     self.h, self.w, _ = self.img.shape
-    #     self.hsv = cv2.cvtColor(self.img, cv2.COLOR_BGR2HSV)
-    #     self.gray = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)
-
-    #     data = ObstacleInfoArray()
-
-    #     # 라이다 점 준비 안됨
-    #     if self.obstacle_info is None or self.obstacle_info.shape[0] == 0:
-    #         self.obstacles_pub.publish(data)
-    #         return
-
-    #     # >>> 레이스 컨디션 방지: 지역 복사본 사용
-    #     obs = np.array(self.obstacle_info, copy=True)  # (N,4)
-    #     N = obs.shape[0]
-
-    #     # 1) 투영
-    #     pts = obs.T                    # (4,N)
-    #     proj = self.ipm_matrix @ pts   # (4,N)
-    #     denom = proj[2, :]
-
-    #     valid_denom = np.isfinite(denom) & (np.abs(denom) > 1e-6)
-    #     if not np.any(valid_denom):
-    #         self.obstacles_pub.publish(data)
-    #         return
-
-    #     uv_all = np.full((N, 2), np.nan, dtype=np.float32)
-    #     uv_all[valid_denom, 0] = proj[0, valid_denom] / denom[valid_denom]
-    #     uv_all[valid_denom, 1] = proj[1, valid_denom] / denom[valid_denom]
-
-    #     in_img = (
-    #         np.isfinite(uv_all[:, 0]) & np.isfinite(uv_all[:, 1]) &
-    #         (uv_all[:, 0] >= 0) & (uv_all[:, 0] < self.w) &
-    #         (uv_all[:, 1] >= 0) & (uv_all[:, 1] < self.h)
-    #     )
-    #     valid_idx = np.where(in_img)[0]
-
-    #     for k in valid_idx:
-    #         # 혹시라도 경계 문제 생기면 한번 더 방어
-    #         if k < 0 or k >= N:
-    #             continue
-
-    #         x_pix = int(uv_all[k, 0])
-    #         y_pix = int(uv_all[k, 1])
-
-    #         # 안전 ROI
-    #         x0 = max(0, x_pix - 20); x1 = min(self.w, x_pix + 20)
-    #         y0 = max(0, y_pix - 30); y1 = min(self.h, y_pix + 10)
-
-    #         # 흰 차 여부
-    #         is_white = self.find_white_car(x_pix, y_pix)
-
-    #         # ★ 2D 인덱싱으로 고정: (row, col)
-    #         _x = -float(obs[k, 1])   # 차량좌표 x  (원래 [y, -x, 0, 1] 로 쌓았음)
-    #         _y =  float(obs[k, 0])   # 차량좌표 y
-
-    #         if not np.isfinite(_x) or not np.isfinite(_y):
-    #             continue
-
-    #         is_dyn = not is_white  # 흰차면 정적(False), 아니면 동적(True)
-
-    #         data.obstacles.append(
-    #             ObstacleInfo(x=_x, y=_y, distance=float(np.hypot(_x, _y)), is_dynamic=bool(is_dyn))
-    #         )
-
-    #         # 디버그 표시
-    #         cv2.circle(self.img, (x_pix, y_pix), 3, (0, 0, 255), -1)
-    #         color = (255, 0, 0) if is_dyn else (0, 255, 0)
-    #         cv2.rectangle(self.img, (x0, y0), (x1, y1), color, 2)
-
-    #     self.obstacles_pub.publish(data)
 
     def camera_obstacle_callback(self, msg: CompressedImage):
         self.img = self.get_image(msg)

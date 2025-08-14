@@ -15,11 +15,11 @@ class LidarObstacle:
         rospy.init_node("lidar_obstacle")
 
         # ---- 파라미터 (필요하면 launch에서 바꿔서 튜닝) ----
-        self.fov_deg         = rospy.get_param("~fov_deg", 230.0)     # 사용 FOV
+        self.fov_deg         = rospy.get_param("~fov_deg", 230.0)     # 사용 FOV #TODO: 슬램할때랑 장애물할때 fov 다르게 가져갑시다
         self.max_range       = rospy.get_param("~max_range", 4.0)     # m 2.5
         self.min_range       = rospy.get_param("~min_range", 0.05)    # m
         self.min_cluster_pts = rospy.get_param("~min_cluster_pts", 2)
-        self.max_cluster_pts = rospy.get_param("~max_cluster_pts", 60)
+        self.max_cluster_pts = rospy.get_param("~max_cluster_pts", 60) #60
         self.gap_deg_limit   = rospy.get_param("~gap_deg_limit", 8.0) # 연속 인덱스 간 최대 각도 간격(도)
         # 거리 점프 임계값: thr = base + scale * prev_r
         self.range_jump_base = rospy.get_param("~range_jump_base", 0.15)

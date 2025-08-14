@@ -4,6 +4,7 @@ import math
 import numpy as np
 import rospy
 import tf
+from collections import Counter
 
 from std_msgs.msg import Float64, Bool, String
 from nav_msgs.msg import Odometry
@@ -25,7 +26,7 @@ class ObstacleController:
 
         # distances / thresholds
         self.stop_trigger_dist  = float(rospy.get_param("~stop_trigger_dist", 3.0)) #1.2
-        self.engage_dist_static = float(rospy.get_param("~engage_dist_static", 3.0)) #0.7
+        self.engage_dist_static = float(rospy.get_param("~engage_dist_static", 2.0)) #0.7
         self.near_y_min         = float(rospy.get_param("~near_y_min", 0.2))
         self.first_lane         = bool(rospy.get_param("~first_lane", True))
         self.max_steer_rad      = float(rospy.get_param("~max_steer_rad", math.pi/6.0))
@@ -35,7 +36,7 @@ class ObstacleController:
 
         # 동적 장애물 조건(간단)
         self.dynamic_center_x    = float(rospy.get_param("~dynamic_center_x",   2.0)) # 0.25
-        self.dynamic_engage_dist = float(rospy.get_param("~dynamic_engage_dist",3.0))  #1.2
+        self.dynamic_engage_dist = float(rospy.get_param("~dynamic_engage_dist",2.0))  #1.2
         self.dynamic_clear_left  = float(rospy.get_param("~dynamic_clear_left", 0.25))
         self.dynamic_clear_right = float(rospy.get_param("~dynamic_clear_right",-0.65))
 
@@ -49,10 +50,11 @@ class ObstacleController:
         # 시퀀스 매니저 호환(원하면 같이 사용 가능)
         self.static_speed_pub  = rospy.Publisher("/static/speed",  Float64, queue_size=1)
         self.static_steer_pub  = rospy.Publisher("/static/steer",  Float64, queue_size=1)
-        self.dynamic_speed_pub = rospy.Publisher("/dynamic/speed", Float64, queue_size=1)
-        self.dynamic_steer_pub = rospy.Publisher("/dynamic/steer", Float64, queue_size=1)
         self.static_done_pub   = rospy.Publisher("/sequence/static_done",  Bool, queue_size=1)
+        
+        self.dynamic_stop_pub = rospy.Publisher("/dynamic/stop", Bool, queue_size=1)
         self.dynamic_done_pub  = rospy.Publisher("/sequence/dynamic_done", Bool, queue_size=1)
+        
         self.state_pub = rospy.Publisher("/obstacle_controller/state", String, queue_size=1)
 
         # ===== Subscribers =====
@@ -70,8 +72,9 @@ class ObstacleController:
         self.move_right  = [0.0, 0.0, 0.0]
         self.return_ok   = False
         
-        self.type_history = []
-        self.history_len = 5
+        self.type = None
+        self.typeQueue = []
+        self.typeThreshold = 5
 
         self.dynamic_active = False
         self.latest_cmd_speed = self.LANE_DRIVE_VEL
@@ -113,7 +116,7 @@ class ObstacleController:
         if steer is None:  steer = self.latest_cmd_steer
 
         if info is None:
-            rospy.loginfo(f"[OBST] type={ob_type:7s}  speed={float(speed):.0f}  steer={float(steer):.3f}")
+            # rospy.loginfo(f"[OBST] type={ob_type:7s}  speed={float(speed):.0f}  steer={float(steer):.3f}")
             return
 
         x, y = float(info.x), float(info.y)
@@ -148,66 +151,51 @@ class ObstacleController:
         
         self.last_obst_time = rospy.Time.now()
 
-        clean = []
-        for o in msg.obstacles:
-            if np.isfinite(o.x) and np.isfinite(o.y):
-                clean.append(o)
-        if not clean:
-            if self.dynamic_active:
-                self.dynamic_done_pub.publish(Bool(data=True))
-                self.dynamic_active = False
-            if self.obstacle_point == -1:
-                self.return_ok = True
-            self.latest_state_str = "CRUISE(NO_OBST)"
+        dists = np.array([math.hypot(o.x, o.y) for o in msg.obstacles]) # 각 장애물별 거리 array
+        idx = int(np.argmin(dists)) # 거리가 제일 가까운 장애물의 idx
+        info = msg.obstacles[idx] # 제일 가까운 장애물을 info로 초기화
+        dist = max(0.0, dists[idx] - 0.21) # 장애물과의 거리 0.21은 안전거리? 쯤으로 생각하시오
+        
+        if dist >= self.dynamic_engage_dist:
+            self.type = "NONE"
             return
 
-        dists = np.array([math.hypot(o.x, o.y) for o in msg.obstacles])
-        idx = int(np.argmin(dists))
-        info = msg.obstacles[idx]
-        dist = max(0.0, dists[idx] - 0.21)
-
         is_dyn = bool(getattr(info, "is_dynamic", False))
-        rospy.loginfo(f"[DEBUG] is_dynamic raw: {is_dyn}")
+        # rospy.loginfo(f"[DEBUG] is_dynamic raw: {is_dyn}")
 
         new_type = "NONE"
         if is_dyn:
-            if dist <= self.dynamic_engage_dist and abs(info.x) <= self.dynamic_center_x:
-                new_type = "DYNAMIC"
+            new_type = "DYNAMIC"
         else:
             new_type = "STATIC" 
             
-        # rospy.loginfo(f"[DEBUG] x={info.x:.2f}, y={info.y:.2f}, dist={dist:.2f}, is_dyn={is_dyn}, new_type={new_type}")
-        # rospy.loginfo(f"[DEBUG] type_history={self.type_history}")
-
-
-        self.type_history.append(new_type)
-        if len(self.type_history) > self.history_len:
-            self.type_history.pop(0)
-
-        # confirmed_type = max(set(self.type_history), key=self.type_history.count)
+        self.typeQueue.append(new_type)
         
-        if new_type != "NONE":
-            self.type_history.append(new_type)
-            if len(self.type_history) > self.history_len:
-                self.type_history.pop(0)
+        dynamic_cnt = 0
+        static_cnt = 0
+        if len(self.typeQueue) > self.typeThreshold:
+            self.typeQueue.pop(0)        
+        if len(self.typeQueue) == self.typeThreshold:
+            none_cnt = self.typeQueue.count("NONE")
+            dynamic_cnt = self.typeQueue.count("DYNAMIC")
+            static_cnt = self.typeQueue.count("STATIC")
+        else:
+            self.type = "NONE"
 
-        if self.type_history:
-            confirmed_type = max(set(self.type_history), key=self.type_history.count)
+        if dynamic_cnt >= 1:
+            self.type = "DYNAMIC"
+        elif static_cnt >= 2:
+            self.type = "STATIC"
         else:
-            confirmed_type = "NONE"
-            
-            
-        if confirmed_type == "DYNAMIC":
-            self.latest_state_str = "DYNAMIC"
-            self.handle_dynamic(info, dist)
-        elif confirmed_type == "STATIC":
-            self.latest_state_str = "STATIC"
-            self.handle_static(info, dist)
+            self.type = "NONE"
+        rospy.loginfo(f"[DEBUG] self.typeQueue is : {self.typeQueue}, {dynamic_cnt}, {static_cnt}, {len(self.typeQueue)}\n MYTYPE = {self.type}")
+        
+        if self.type == "DYNAMIC":
+            self.dynamic_stop_pub.publish(Bool(True))
+        elif self.type == "STATIC":
+            pass # 나중에 개발
         else:
-            self.latest_state_str = "CRUISE(NO_OBST)"
-            if self.dynamic_active:
-                self.dynamic_done_pub.publish(Bool(data=True))
-                self.dynamic_active = False
+            return
 
 
     def handle_dynamic(self, info, dist):
