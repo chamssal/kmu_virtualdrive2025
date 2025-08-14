@@ -25,7 +25,9 @@ class SequenceManager:
         self.sequence = SequenceState.SLAM  # 초기값: SLAM 상태
         self.speed_default = 1500 # 기본속도
         self.speed_turn = 1000 # 회전속도
+        self.speed_obstacle = 1000 # 장애물회피 속도
         self.speed_slow = 800 # 느린속도
+        self.speed_rotary = 800 # 로타리 진행속도
 
         self.idle_speed = 0.
         self.idle_steer = 0.
@@ -33,8 +35,8 @@ class SequenceManager:
         self.lane_stopline = None
         self.static_speed = None
         self.static_steer = None
-        self.dynamic_speed = None
-        self.dynamic_steer = None
+        self.dynamic_stop = None
+        self.dynamic_go = None
         self.traffic_is_stop = None
         self.rotary_enter = None
         
@@ -59,8 +61,8 @@ class SequenceManager:
         self.lane_stopline_sub = rospy.Subscriber("/lane/stopline", Bool, self.lane_stopline_CB)
         self.static_speed_sub = rospy.Subscriber("/static/speed", Float64, self.static_speed_CB)
         self.static_steer_sub = rospy.Subscriber("/static/steer", Float64, self.static_steer_CB)
-        self.dynamic_speed_sub = rospy.Subscriber("/dynamic/speed", Float64, self.dynamic_speed_CB)
-        self.dynamic_steer_sub = rospy.Subscriber("/dynamic/steer", Float64, self.dynamic_steer_CB)
+        self.dynamic_stop_sub = rospy.Subscriber("/dynamic/stop", Bool, self.dynamic_stop_CB)
+        self.dynamic_go_sub = rospy.Subscriber("/dynamic/go", Bool, self.dynamic_go_CB)
         self.traffic_speed_sub = rospy.Subscriber("/traffic/semantic", String, self.traffic_semantic_CB)
         self.rotary_enter_sub = rospy.Subscriber("/rotary/enter", Bool, self.rotary_enter_CB)
 
@@ -140,11 +142,13 @@ class SequenceManager:
     def static_steer_CB(self, msg):
         self.static_steer = msg.data
 
-    def dynamic_speed_CB(self, msg):
-        self.dynamic_speed = msg.data
+    def dynamic_stop_CB(self, msg):
+        self.dynamic_go = False
+        self.dynamic_stop = msg.data
     
-    def dynamic_steer_CB(self, msg):
-        self.dynamic_steer = msg.data
+    def dynamic_go_CB(self, msg):
+        self.dynamic_stop = False
+        self.dynamic_go = msg.data
 
     def traffic_semantic_CB(self, msg):
         if msg.data == "LEFT" or msg.data == "STRAIGHT":
@@ -212,8 +216,16 @@ class SequenceManager:
 
     def handle_dynamic_obstacle(self):
         rospy.loginfo_throttle(2.0, "[SequenceManager] 동적 장애물 회피 중...")
-        self.speed_pub.publish(self.dynamic_speed)
-        self.steer_pub.publish(self.dynamic_steer)
+        if self.dynamic_stop:
+            if self.dynamic_go:
+                self.speed_pub.publish(Float64(self.speed_obstacle))
+                self.steer_pub.publish(self.lane_steer)
+            else:
+                self.speed_pub.publish(Float64(0.))
+                self.steer_pub.publish(Float64(0.5))
+        else:
+            self.speed_pub.publish(Float64(self.speed_obstacle))
+            self.steer_pub.publish(self.lane_steer)
 
     def handle_traffic_light(self):
         rospy.loginfo_throttle(2.0, "[SequenceManager] 신호등 미션 실행 중...")
@@ -255,7 +267,7 @@ class SequenceManager:
                 self.speed_pub.publish(Float64(0.))
                 self.steer_pub.publish(Float64(0.5))
         else:
-            self.speed_pub.publish(Float64(self.speed_slow))
+            self.speed_pub.publish(Float64(self.speed_rotary))
             self.steer_pub.publish(Float64(self.lane_steer))
         
     def handle_rotary_entry(self):
