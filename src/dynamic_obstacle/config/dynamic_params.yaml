@@ -1,9 +1,0 @@
-front_roi_min_y: 0.2
-front_roi_max_y: 8.0
-roi_half_width: 0.9
-speed_threshold_dynamic: 0.3
-yield_distance: 2.5
-stop_distance: 1.2
-lane_escape_x: 0.8
-hold_time_yield: 1.5
-target_speed_yield: 0.5

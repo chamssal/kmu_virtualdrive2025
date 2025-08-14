@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>obstacle</name>
+  <version>0.0.1</version>
+  <description>Obstacle controller routing node</description>
+
+  <maintainer email="you@example.com">Your Name</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>tf</exec_depend>
+  <exec_depend>obstacle_detect</exec_depend>
+
+  <!-- 이 패키지에서 .msg 정의할 때만 아래 두 줄 추가 -->
+  <!-- <build_depend>message_generation</build_depend> -->
+  <!-- <exec_depend>message_runtime</exec_depend> -->
+</package>

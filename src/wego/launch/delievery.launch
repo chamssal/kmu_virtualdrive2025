@@ -1,0 +1,7 @@
+<launch>
+  <!-- 좌표 발행받아서 주행하는 코드 -->
+  <node pkg="wego" type="navigation_client.py" name="navigation_client" output="screen" />
+
+  <!-- 좌표 발행-->
+  <node pkg="wego" type="pub_goal.py" name="pub_goal" output="screen" />
+</launch>

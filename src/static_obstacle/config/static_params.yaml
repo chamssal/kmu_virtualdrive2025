@@ -1,8 +1,0 @@
-front_roi_min_y: 0.2
-front_roi_max_y: 6.0
-roi_half_width: 0.7
-stop_distance: 1.2
-avoid_distance: 2.5
-avoid_offset: 0.6
-target_speed_slow: 0.8
-hold_time_stop: 2.0

@@ -1,9 +1,0 @@
-<launch>
-  <arg name="input_topic" default="/raw_obstacles"/>
-  <node pkg="static_obstacle" type="static_obstacle.py" name="static_obstacle" output="screen">
-    <rosparam file="$(find static_obstacle)/config/static_params.yaml" command="load" />
-    <param name="input_topic" value="$(arg input_topic)"/>
-    <remap from="/dynamic_obstacle/decision" to="/static_obstacle/decision"/>
-    <remap from="/obstacles" to="$(arg input_topic)"/>
-  </node>
-</launch>

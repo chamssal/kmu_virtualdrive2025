@@ -1,19 +1,26 @@
+**센서 위치**
 lidar: 0.11 0 0.13
 imu: 0 0 0.12
 camera: 0.3 0 0.11
 
 **slam**
 1. roslaunch wego navigation.launch
-2. roslaunch wego teleop.launch
-3. rosrun wego navigation_client.py
-
-roslaunch obstacle_detect obstacle.launch  
-
-rosnode kill /obstacle_extractor
-rostopic info /raw_obstacles
-
-morai msg 만 같이 돌리면 됨 그러면 경로 생김
-초기 위치값 설정해놨음
-
+2. rosrun wego navigation_client.py
 
 유민아토큰: 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
+
+morai id:  stage_coss25_001/ 0002
+morai pass: kmkm1234!
+
+**슬램 파라미터 조절**
+wego_2d_nav/params/teb_local_planner_params.yaml
+
+**슬램 개선점**
+1. 코너링 할때 장애물이 없는데도 부드럽게 회전하지 못함.
+2. 좌표의 중심점 좌표로 넣고 주변에 안부닥치게 하드코딩
+3. 공분산? 바꿔보면서 양상 파악하기
+4. 동적장애물 알고리즘 생각 , 정적장애물이랑 똑같은 형태의 토픽으로 발행하고 실제로 움직이는걸 피할 수 있는지 확인하기
+5. 임의로 배달위치가 배정됨.
+6. 장애물 roi 좁게 바꾸기 벽을 안보게
+7. 마지막 차선 목적지까지 주행하도록 코드 바꾸기
+

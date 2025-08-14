@@ -8,6 +8,7 @@ from sensor_msgs.msg import LaserScan
 from obstacle_detect.msg import Rotary, RotaryArray, LidarObstacleInfo, LidarObstacleInfoArray
 from obstacle_detector.msg import Obstacles, CircleObstacle
 from std_msgs.msg import Header
+from visualization_msgs.msg import Marker, MarkerArray
 
 class LidarObstacle:
     def __init__(self):
@@ -15,7 +16,7 @@ class LidarObstacle:
 
         # ---- 파라미터 (필요하면 launch에서 바꿔서 튜닝) ----
         self.fov_deg         = rospy.get_param("~fov_deg", 230.0)     # 사용 FOV
-        self.max_range       = rospy.get_param("~max_range", 2.5)     # m
+        self.max_range       = rospy.get_param("~max_range", 4.0)     # m 2.5
         self.min_range       = rospy.get_param("~min_range", 0.05)    # m
         self.min_cluster_pts = rospy.get_param("~min_cluster_pts", 2)
         self.max_cluster_pts = rospy.get_param("~max_cluster_pts", 60)
@@ -30,6 +31,9 @@ class LidarObstacle:
         self.obstacle_pub= rospy.Publisher("/lidar_obstacle_information", LidarObstacleInfoArray, queue_size=10)
         self.rotary_pub  = rospy.Publisher("/rotary_info", RotaryArray, queue_size=10)
         self.circle_pub  = rospy.Publisher("/raw_obstacles", Obstacles, queue_size=10)  # 판단 노드가 원하면 이걸 input으로 사용
+        
+        self.marker_pub  = rospy.Publisher("/visualization_marker", Marker, queue_size=10)
+        self.marker_array_pub = rospy.Publisher("/lidar_obstacle_markers", MarkerArray, queue_size=10)  # ★ 추가
 
     def callback(self, msg: LaserScan):
         ranges = np.array(msg.ranges, dtype=float)
@@ -142,6 +146,95 @@ class LidarObstacle:
             c.velocity.y = 0.0
             msg.circles.append(c)
         self.circle_pub.publish(msg)
+        
+        
+    def publish_lidar_info_markers(self, obstacle_arr):
+        """
+        /lidar_obstacle_information (LidarObstacleInfoArray)을
+        RViz MarkerArray로 예쁘게 시각화.
+        - 파란 점(SPHERE_LIST): 클러스터 중심
+        - 회색 선(LINE_LIST): 원점(0,0) → 장애물
+        - 흰색 텍스트(TEXT_VIEW_FACING): 인덱스와 좌표, 거리
+        RViz에서 'MarkerArray'로 /lidar_obstacle_markers 구독하면 보임.
+        """
+        ma = MarkerArray()
+        now = rospy.Time.now()
+        frame = "base_link"
+
+        # (A) 점들: SPHERE_LIST 하나로 모두
+        pts = Marker()
+        pts.header.frame_id = frame
+        pts.header.stamp = now
+        pts.ns = "lidar_pts"
+        pts.id = 0
+        pts.type = Marker.SPHERE_LIST
+        pts.action = Marker.ADD
+        pts.pose.orientation.w = 1.0
+        pts.scale.x = pts.scale.y = pts.scale.z = 0.18  # 점 크기
+        pts.color.a = 1.0
+        pts.color.r = 0.1
+        pts.color.g = 0.4
+        pts.color.b = 1.0   # 파란 느낌
+
+        # (B) 선들: LINE_LIST로 원점↔장애물 연결
+        lines = Marker()
+        lines.header.frame_id = frame
+        lines.header.stamp = now
+        lines.ns = "lidar_rays"
+        lines.id = 1
+        lines.type = Marker.LINE_LIST
+        lines.action = Marker.ADD
+        lines.pose.orientation.w = 1.0
+        lines.scale.x = 0.02  # 선 굵기
+        lines.color.a = 0.8
+        lines.color.r = 0.7
+        lines.color.g = 0.7
+        lines.color.b = 0.7   # 회색
+
+        # (C) 텍스트: 각 점마다 TEXT_VIEW_FACING
+        text_id_base = 1000
+        text_scale = 0.18
+
+        # 데이터 채우기
+        for i, info in enumerate(obstacle_arr.obstacle_infos):
+            x = float(info.obst_x)
+            y = float(info.obst_y)
+            d = math.hypot(x, y)
+
+            # 점
+            p = Point(x=x, y=y, z=0.0)
+            pts.points.append(p)
+
+            # 선 (원점 → 점)
+            lines.points.append(Point(x=0.0, y=0.0, z=0.0))
+            lines.points.append(p)
+
+            # 텍스트
+            txt = Marker()
+            txt.header.frame_id = frame
+            txt.header.stamp = now
+            txt.ns = "lidar_text"
+            txt.id = text_id_base + i
+            txt.type = Marker.TEXT_VIEW_FACING
+            txt.action = Marker.ADD
+            txt.pose.position.x = x
+            txt.pose.position.y = y
+            txt.pose.position.z = 0.25  # 점 위에
+            txt.scale.z = text_scale
+            txt.color.a = 1.0
+            txt.color.r = 1.0
+            txt.color.g = 1.0
+            txt.color.b = 1.0
+            txt.text = f"{i}: ({x:.2f},{y:.2f}) d={d:.2f}m"
+            ma.markers.append(txt)
+
+        # SPHERE_LIST / LINE_LIST 추가
+        ma.markers.append(pts)
+        ma.markers.append(lines)
+
+        # 퍼블리시
+        self.marker_array_pub.publish(ma)
+
 
 def main():
     try:
