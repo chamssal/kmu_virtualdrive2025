@@ -36,7 +36,7 @@ class SequenceManager:
         self.static_speed = None
         self.static_steer = None
         self.dynamic_stop_queue = []
-        self.dynamic_stop_queue_size = 10
+        self.dynamic_stop_queue_size = 5
         self.traffic_is_stop = None
         self.rotary_enter = None
         
@@ -87,6 +87,7 @@ class SequenceManager:
             rospy.sleep(delay_sec)  # ROS time으로 sleep
             rospy.loginfo(f"[SequenceManager] {delay_sec}초 경과 → 상태 {new_sequence.name} 로 변경")
             self.sequence = new_sequence
+            self.dynamic_stop_queue = []
 
         # 백그라운드 스레드로 실행
         t = threading.Thread(target=timer_job)
@@ -100,7 +101,7 @@ class SequenceManager:
         if msg.data == True:
             rosnode.kill_nodes(['/throttle_interpolator'])
             rospy.loginfo("/throttle_interpolator 노드 kill.")
-            self.sequence = SequenceState.LANE_FOLLOWING
+            self.sequence = SequenceState.LANE_OBSTACLE
         elif msg.data == False:
             self.sequence = SequenceState.ROTARY_ENTRY # test
 
@@ -173,6 +174,8 @@ class SequenceManager:
                 self.handle_idle()
             elif self.sequence == SequenceState.LANE_FOLLOWING:
                 self.handle_lane_following()
+            elif self.sequence == SequenceState.LANE_OBSTACLE:
+                self.handle_lane_obstacle()
             elif self.sequence == SequenceState.STATIC_OBSTACLE:
                 self.handle_static_obstacle()
             elif self.sequence == SequenceState.DYNAMIC_OBSTACLE:
@@ -205,6 +208,12 @@ class SequenceManager:
         self.speed_pub.publish(Float64(self.speed_default))
         self.steer_pub.publish(self.lane_steer)
         self.mode_pub.publish(Float64(0.0))
+
+    def handle_lane_obstacle(self):
+        rospy.loginfo_throttle(2.0, "[SequenceManager] 차선 추종 중... : 장애물 코스")
+        self.speed_pub.publish(Float64(self.speed_default))
+        self.steer_pub.publish(self.lane_steer)
+        self.mode_pub.publish(Float64(0.0))
         if len(self.dynamic_stop_queue) == self.dynamic_stop_queue_size and False not in self.dynamic_stop_queue:
             self.sequence = SequenceState.DYNAMIC_OBSTACLE
 
@@ -217,8 +226,7 @@ class SequenceManager:
         rospy.loginfo_throttle(2.0, "[SequenceManager] 동적 장애물 회피 중...")
         self.speed_pub.publish(Float64(0.))
         self.steer_pub.publish(Float64(0.5))
-        self.change_sequence_after(2.0, SequenceState.LANE_FOLLOWING)
-        self.dynamic_stop_queue = []
+        self.change_sequence_after(2.0, SequenceState.LANE_OBSTACLE)
 
     def handle_traffic_light(self):
         rospy.loginfo_throttle(2.0, "[SequenceManager] 신호등 미션 실행 중...")

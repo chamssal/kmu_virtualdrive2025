@@ -4,11 +4,12 @@ class SequenceState(IntEnum):
     SLAM = -1
     IDLE = 0
     LANE_FOLLOWING = 1
-    STATIC_OBSTACLE = 2
-    DYNAMIC_OBSTACLE = 3
-    TRAFFIC_LIGHT = 4
-    TURN_LEFT = 5
-    TURN_RIGHT = 6
-    ROTARY = 7
-    ROTARY_ENTRY = 8
+    LANE_OBSTACLE = 2
+    STATIC_OBSTACLE = 3
+    DYNAMIC_OBSTACLE = 4
+    TRAFFIC_LIGHT = 5
+    TURN_LEFT = 6
+    TURN_RIGHT = 7
+    ROTARY = 8
+    ROTARY_ENTRY = 9
     # 필요 시 이후 상태 계속 추가 가능
