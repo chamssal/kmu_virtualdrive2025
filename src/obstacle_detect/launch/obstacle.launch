@@ -10,4 +10,9 @@
           name="camera_obstacle_detect"
           type="camera_obstacle_detect.py"
           output="screen" />
+
+    <node pkg="obstacle_detect"
+          name="front_wall_detector_angle"
+          type="wall_ransac.py"
+          output="screen" />
 </launch>

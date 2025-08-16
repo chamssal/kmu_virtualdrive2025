@@ -80,14 +80,8 @@ def detect_lane_obstacle_from_clusters(obstacle_arr, params, pub, marker_pub=Non
         if abs(th) > math.radians(params["lane_fov"] * 0.5):
             continue
         
-        # if (
-        #     abs(y) <= (params["lane_width"] * 0.5) 
-        #     and 0 < x < params["lane_thr"]
-        # ):
-        #     pts_xy.append((x, y))
-
         # 차선 폭 내부 + 전방 특정 거리(thr) 조건 <--- 더 빡빡한 조건 !!!!!!!
-        if abs(y) <= (params["lane_width"] * 0.5) and 0 < x <= params.get("lane_max_x", 1.0):
+        if abs(y) <= (params["lane_width"] * 0.5) and 0 < x <= params.get("lane_max_x", 3.0):
             pts_xy.append((x, y))
 
     # --- 탐지 여부 결정 ---

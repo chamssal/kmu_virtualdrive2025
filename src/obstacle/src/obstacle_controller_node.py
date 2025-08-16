@@ -183,7 +183,8 @@ class ObstacleController:
             self.type = "NONE"
 
         if dynamic_cnt >= 3:
-            self.type = "DYNAMIC"
+            if dist >= 0.75:
+                self.type = "DYNAMIC"
         elif static_cnt >= 3:
             self.type = "STATIC"
         else:

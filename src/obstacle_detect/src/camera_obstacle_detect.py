@@ -78,7 +78,7 @@ class CamObstacleDetect:
 
 
         roll, pitch, yaw = 0., 0., -0.14
-        x, y, z = 0.19, 0., -0.02
+        x, y, z = 0.17, 0., -0.02
 
         R_veh2cam = np.transpose(rotation_from_euler(roll, pitch, yaw))
         T_veh2cam = translation_matrix((-x, -y, -z))
@@ -110,6 +110,15 @@ class CamObstacleDetect:
 
         obs = np.array(self.obstacle_info, copy=True)  # (N,4)
         N = obs.shape[0]
+
+        # ⬇⬇⬇ 여기부터 추가: '당기기' (radial shrink)
+        # delta = 0.  # 당길 거리[m], 필요에 맞게 0.1~0.5 등으로 조절
+        # v = obs[:, :3]                             # (x,y,z)
+        # r = np.linalg.norm(v, axis=1)              # 각 점의 거리
+        # r_safe = np.maximum(r, 1e-6)
+        # scale = np.clip((r - delta) / r_safe, 0.05 / r_safe, 1.0)  # 최소 5cm는 남기기
+        # obs[:, 0] *= scale; obs[:, 1] *= scale; obs[:, 2] *= scale
+        # ⬆⬆⬆ 추가 끝
 
         pts = obs.T
         proj = self.ipm_matrix @ pts

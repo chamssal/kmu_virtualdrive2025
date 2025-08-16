@@ -57,8 +57,8 @@ class FrontWallDetector(object):
         # 토픽/범위/FOV
         self.topic = rospy.get_param("~topic", "/scan")
         self.min_range = rospy.get_param("~min_range", 0.05)
-        self.max_range = rospy.get_param("~max_range", 10.0)
-        self.fov_deg   = rospy.get_param("~fov_deg",   120.0)  # 정면 ±60°
+        self.max_range = rospy.get_param("~max_range", 7.0)
+        self.fov_deg   = rospy.get_param("~fov_deg",   180.0)  # 정면 ±60°
 
         # RANSAC 파라미터
         self.ransac_iters  = int(rospy.get_param("~ransac_iters", 100))
@@ -66,7 +66,7 @@ class FrontWallDetector(object):
         self.min_inliers   = int(rospy.get_param("~min_inliers", 40))
 
         # 각도 기반 판정: x축과 수직(= 방향각 ≈ 90°) 허용 오차 [deg]
-        self.angle_tol_deg = rospy.get_param("~angle_tol_deg", 15.0)
+        self.angle_tol_deg = rospy.get_param("~angle_tol_deg", 2.5)
         # 수학적으로는 |B| <= sin(delta) 또는 |A| >= cos(delta)
         self.sin_delta = math.sin(math.radians(self.angle_tol_deg))
         self.cos_delta = math.cos(math.radians(self.angle_tol_deg))
