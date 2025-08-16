@@ -178,8 +178,7 @@ class ObstacleController:
             self.typeQueue.pop(0)        
         if len(self.typeQueue) == self.typeThreshold:
             dynamic_cnt = self.typeQueue.count("DYNAMIC")
-            static_cnt = self.typeQueue.count("STATIC") 
-            self.typeQueue = []
+            static_cnt = self.typeQueue.count("STATIC")
         else:
             self.type = "NONE"
 

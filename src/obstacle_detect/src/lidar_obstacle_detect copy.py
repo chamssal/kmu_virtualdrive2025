@@ -2,126 +2,13 @@
 # -*- coding: utf-8 -*-
 
 import rospy, numpy as np, math
-from visualization_msgs.msg import Marker, MarkerArray
+from visualization_msgs.msg import Marker
 from geometry_msgs.msg import Point
 from sensor_msgs.msg import LaserScan
 from obstacle_detect.msg import Rotary, RotaryArray, LidarObstacleInfo, LidarObstacleInfoArray
 from obstacle_detector.msg import Obstacles, CircleObstacle
-from std_msgs.msg import Header, Bool
-
-
-# =========================
-# --- 벽 감지 ---
-# # =========================
-# def detect_wall(msg, params, pub):
-#     ranges = np.array(msg.ranges, dtype=float)
-#     angles = msg.angle_min + np.arange(len(ranges)) * msg.angle_increment
-
-#     # 정면 FOV 포인트 추출
-#     half = math.radians(params["wall_fov"] * 0.5)
-#     mask = np.abs(angles) <= half
-#     front_ranges = ranges[mask]
-#     front_angles = angles[mask]
-
-#     # inf, NaN 제거
-#     valid_mask = np.isfinite(front_ranges)
-#     front_ranges = front_ranges[valid_mask]
-#     front_angles = front_angles[valid_mask]
-
-#     # 좌표 변환 
-#     xs = front_ranges * np.cos(front_angles)
-#     ys = front_ranges * np.sin(front_angles)
-
-#     detected = False
-#     detected_distance = None
-
-#     if len(xs) >= params["wall_min_pts"]:
-#         # 직선 피팅: y = ax + b
-#         coeffs = np.polyfit(xs, ys, 1)
-#         a, b = coeffs
-#         y_fit = a * xs + b
-#         residuals = ys - y_fit
-#         rmse = np.sqrt(np.mean(residuals**2))
-
-#         mean_dist = np.mean(front_ranges)
-
-
-#         # (조건) 직선 + 거리 2m~3m 사이
-#         if rmse <= params.get("wall_max_rmse", 0.05) and 2.0 <= mean_dist < 3.0:
-#             detected = True
-#             detected_distance = mean_dist
-
-#     pub.publish(Bool(data=detected))
-
-#     if detected:
-#         rospy.loginfo_throttle(
-#             0.5,
-#             f"[WallDetector] WALL detected! distance ~ {detected_distance:.2f} m"
-#         )
-#     else:
-#         rospy.loginfo_throttle(1.0, "[WallDetector] no wall")
-
-
-
-
-# =========================
-# --- 차선 내부 장애물 감지 ---
-# =========================
-def detect_lane_obstacle_from_clusters(obstacle_arr, params, pub, marker_pub=None):
-    detected = False
-    detected_distance = None
-    pts_xy = []
-
-    for info in obstacle_arr.obstacle_infos:
-        x, y = info.obst_x, info.obst_y
-
-        # 정면 FOV 제한
-        th = math.atan2(y, x)
-        if abs(th) > math.radians(params["lane_fov"] * 0.5):
-            continue
-        
-        # if (
-        #     abs(y) <= (params["lane_width"] * 0.5) 
-        #     and 0 < x < params["lane_thr"]
-        # ):
-        #     pts_xy.append((x, y))
-
-        # 차선 폭 내부 + 전방 특정 거리(thr) 조건 <--- 더 빡빡한 조건 !!!!!!!
-        if abs(y) <= (params["lane_width"] * 0.5) and 0 < x <= params.get("lane_max_x", 1.0):
-            pts_xy.append((x, y))
-
-    # --- 탐지 여부 결정 ---
-    if pts_xy:
-        detected = True
-        detected_distance = min(math.hypot(x, y) for x, y in pts_xy)
-
-    pub.publish(Bool(data=detected))
-
-    if detected:
-        rospy.loginfo_throttle(0.5,
-            f"[LaneDetector] obstacle detected ~{detected_distance:.2f} m")
-    else:
-        rospy.loginfo_throttle(1.0, "[LaneDetector] no obstacle in lane")
-
-    if marker_pub:
-        marker = Marker()
-        marker.header.frame_id = "base_link"
-        marker.header.stamp = rospy.Time.now()
-        marker.ns = "lane_obstacles"
-        marker.id = 0
-        marker.type = Marker.SPHERE_LIST
-        marker.action = Marker.ADD
-        marker.pose.orientation.w = 1.0
-        marker.scale.x = marker.scale.y = marker.scale.z = 0.15
-        marker.color.a = 1.0
-        marker.color.r = 1.0
-        marker.color.g = 0.0
-        marker.color.b = 0.0
-        marker.points = []  
-        for (x, y) in pts_xy:
-            marker.points.append(Point(x=x, y=y, z=0.0))
-        marker_pub.publish(marker)
-        
+from std_msgs.msg import Header
+from visualization_msgs.msg import Marker, MarkerArray
 
 class LidarObstacle:
     def __init__(self):
@@ -136,31 +23,26 @@ class LidarObstacle:
         self.gap_deg_limit   = rospy.get_param("~gap_deg_limit", 8.0)  
         self.range_jump_base = rospy.get_param("~range_jump_base", 0.15)
         self.range_jump_scale= rospy.get_param("~range_jump_scale", 0.10)
-
-        # ---- 추가: 벽/차선 감지 파라미터 ----
-        # self.wall_fov     = rospy.get_param("~wall/fov_deg", 20.0)
-        # self.wall_thr     = rospy.get_param("~wall/threshold", 1.0)
-        # self.wall_min_pts = rospy.get_param("~wall/min_points", 8)
-        # self.wall_max_std = rospy.get_param("~wall/max_stddev", 0.03)
-
-        self.lane_fov     = rospy.get_param("~lane/fov_deg", 30.0)
-        self.lane_width   = rospy.get_param("~lane/lane_width", 0.35)
-        self.lane_thr     = rospy.get_param("~lane/threshold", 5.0)
-        self.lane_max_x = rospy.get_param("~lane/max_threshold", 1.0)
+        
+        """        
+        original
+        self.fov_deg         = rospy.get_param("~fov_deg", 230.0)     
+        self.max_range       = rospy.get_param("~max_range", 4.0)     
+        self.min_range       = rospy.get_param("~min_range", 0.05)    
+        self.min_cluster_pts = rospy.get_param("~min_cluster_pts", 2) 
+        self.max_cluster_pts = rospy.get_param("~max_cluster_pts", 60)
+        self.gap_deg_limit   = rospy.get_param("~gap_deg_limit", 8.0)  
+        self.range_jump_base = rospy.get_param("~range_jump_base", 0.15)
+        self.range_jump_scale= rospy.get_param("~range_jump_scale", 0.10)
+        """
 
         # ---- Pub/Sub ----
         rospy.Subscriber("/scan", LaserScan, self.callback, queue_size=1)
         self.marker_pub  = rospy.Publisher("/visualization_marker", Marker, queue_size=10)
         self.obstacle_pub= rospy.Publisher("/lidar_obstacle_information", LidarObstacleInfoArray, queue_size=10)
         self.rotary_pub  = rospy.Publisher("/rotary_info", RotaryArray, queue_size=10)
-        self.circle_pub  = rospy.Publisher("/raw_obstacles", Obstacles, queue_size=10)  
-        self.marker_array_pub = rospy.Publisher("/lidar_obstacle_markers", MarkerArray, queue_size=10)  
-
-        # 추가된 퍼블리셔
-        # self.wall_pub = rospy.Publisher("/front_wall_detected", Bool, queue_size=10)
-        self.lane_pub = rospy.Publisher("/lane_obstacle_detected", Bool, queue_size=10)
-        self.lane_marker_pub = rospy.Publisher("/lane_obstacle_markers", Marker, queue_size=10)
-
+        self.circle_pub  = rospy.Publisher("/raw_obstacles", Obstacles, queue_size=10)  # 판단 노드가 원하면 이걸 input으로 사용
+        self.marker_array_pub = rospy.Publisher("/lidar_obstacle_markers", MarkerArray, queue_size=10)  # ★ 추가
 
     def callback(self, msg: LaserScan):
         ranges = np.array(msg.ranges, dtype=float)
@@ -176,11 +58,29 @@ class LidarObstacle:
         prev_r = None
         prev_th = None
 
+        # def finalize_cluster(s_i, e_i):
+        #     size = e_i - s_i + 1
+        #     if size < self.min_cluster_pts or size > self.max_cluster_pts:
+        #         return
+        #     mid_i = (s_i + e_i) // 2
+        #     mid_r = ranges[mid_i]
+        #     if not np.isfinite(mid_r) or mid_r < self.min_range or mid_r > self.max_range:
+        #         return
+        #     mid_th = angle_min + mid_i * angle_inc
+        #     # FOV 체크
+        #     if abs(mid_th) > fov_half:
+        #         return
+        #     x = mid_r * math.cos(mid_th)
+        #     y = mid_r * math.sin(mid_th)
+        #     obstacle_arr.obstacle_infos.append(LidarObstacleInfo(obst_x=x, obst_y=y))
+        
+        
         def finalize_cluster(s_i, e_i):
             size = e_i - s_i + 1
             if size < self.min_cluster_pts or size > self.max_cluster_pts:
                 return
 
+            # 양 끝점 좌표와 span 계산
             r_s = ranges[s_i]; th_s = angle_min + s_i * angle_inc
             r_e = ranges[e_i]; th_e = angle_min + e_i * angle_inc
             if not (np.isfinite(r_s) and np.isfinite(r_e)):
@@ -188,7 +88,8 @@ class LidarObstacle:
             xs, ys = r_s * math.cos(th_s), r_s * math.sin(th_s)
             xe, ye = r_e * math.cos(th_e), r_e * math.sin(th_e)
             span = math.hypot(xe - xs, ye - ys)
-            if span >= 1.0:
+
+            if span >= 1.0: #0.5
                 return
             mid_i = (s_i + e_i) // 2
             mid_r = ranges[mid_i]
@@ -204,7 +105,9 @@ class LidarObstacle:
         for i in range(n):
             r = ranges[i]
             th = angle_min + i * angle_inc
+
             valid = (np.isfinite(r) and (self.min_range <= r <= self.max_range) and (abs(th) <= fov_half))
+
             if not valid:
                 if is_open:
                     finalize_cluster(start_i, prev_i)
@@ -236,28 +139,7 @@ class LidarObstacle:
         self.publish_markers(obstacle_arr)
         self.publish_rotary(obstacle_arr)
         self.publish_circles(obstacle_arr)
-        self.publish_lidar_info_markers(obstacle_arr)  
         rospy.loginfo_throttle(1.0, f"[lidar_obstacle] clusters={len(obstacle_arr.obstacle_infos)}")
-
-        # # 추가된 벽/차선 감지 호출
-        # wall_params = {
-        #     "wall_fov": self.wall_fov,
-        #     "wall_thr": self.wall_thr,
-        #     "wall_min_pts": self.wall_min_pts,
-        #     "wall_max_std": self.wall_max_std,
-        # }
-        # # detect_wall(msg, wall_params, self.wall_pub)
-
-        lane_params = {
-            "lane_fov": self.lane_fov,
-            "lane_width": self.lane_width,
-            "lane_thr": self.lane_thr,
-            "lane_max_x": self.lane_max_x,
-        }
-
-        detect_lane_obstacle_from_clusters(obstacle_arr, lane_params, self.lane_pub, self.lane_marker_pub)
-
-
 
     def publish_markers(self, obstacle_arr):
         marker = Marker()
@@ -303,10 +185,19 @@ class LidarObstacle:
         self.circle_pub.publish(msg)
         
     def publish_lidar_info_markers(self, obstacle_arr):
-        # ✅ 원래 코드 그대로 보존
+        """
+        /lidar_obstacle_information (LidarObstacleInfoArray)을
+        RViz MarkerArray로 예쁘게 시각화.
+        - 파란 점(SPHERE_LIST): 클러스터 중심
+        - 회색 선(LINE_LIST): 원점(0,0) → 장애물
+        - 흰색 텍스트(TEXT_VIEW_FACING): 인덱스와 좌표, 거리
+        RViz에서 'MarkerArray'로 /lidar_obstacle_markers 구독하면 보임.
+        """
         ma = MarkerArray()
         now = rospy.Time.now()
         frame = "base_link"
+
+        # (A) 점들: SPHERE_LIST 하나로 모두
         pts = Marker()
         pts.header.frame_id = frame
         pts.header.stamp = now
@@ -315,11 +206,13 @@ class LidarObstacle:
         pts.type = Marker.SPHERE_LIST
         pts.action = Marker.ADD
         pts.pose.orientation.w = 1.0
-        pts.scale.x = pts.scale.y = pts.scale.z = 0.18
+        pts.scale.x = pts.scale.y = pts.scale.z = 0.18  # 점 크기
         pts.color.a = 1.0
         pts.color.r = 0.1
         pts.color.g = 0.4
-        pts.color.b = 1.0
+        pts.color.b = 1.0   # 파란 느낌
+
+        # (B) 선들: LINE_LIST로 원점↔장애물 연결
         lines = Marker()
         lines.header.frame_id = frame
         lines.header.stamp = now
@@ -328,21 +221,31 @@ class LidarObstacle:
         lines.type = Marker.LINE_LIST
         lines.action = Marker.ADD
         lines.pose.orientation.w = 1.0
-        lines.scale.x = 0.02
+        lines.scale.x = 0.02  # 선 굵기
         lines.color.a = 0.8
         lines.color.r = 0.7
         lines.color.g = 0.7
-        lines.color.b = 0.7
+        lines.color.b = 0.7   # 회색
+
+        # (C) 텍스트: 각 점마다 TEXT_VIEW_FACING
         text_id_base = 1000
         text_scale = 0.18
+
+        # 데이터 채우기
         for i, info in enumerate(obstacle_arr.obstacle_infos):
             x = float(info.obst_x)
             y = float(info.obst_y)
             d = math.hypot(x, y)
+
+            # 점
             p = Point(x=x, y=y, z=0.0)
             pts.points.append(p)
+
+            # 선 (원점 → 점)
             lines.points.append(Point(x=0.0, y=0.0, z=0.0))
             lines.points.append(p)
+
+            # 텍스트
             txt = Marker()
             txt.header.frame_id = frame
             txt.header.stamp = now
@@ -352,7 +255,7 @@ class LidarObstacle:
             txt.action = Marker.ADD
             txt.pose.position.x = x
             txt.pose.position.y = y
-            txt.pose.position.z = 0.25
+            txt.pose.position.z = 0.25  # 점 위에
             txt.scale.z = text_scale
             txt.color.a = 1.0
             txt.color.r = 1.0
@@ -360,8 +263,12 @@ class LidarObstacle:
             txt.color.b = 1.0
             txt.text = f"{i}: ({x:.2f},{y:.2f}) d={d:.2f}m"
             ma.markers.append(txt)
+
+        # SPHERE_LIST / LINE_LIST 추가
         ma.markers.append(pts)
         ma.markers.append(lines)
+
+        # 퍼블리시
         self.marker_array_pub.publish(ma)
 
 

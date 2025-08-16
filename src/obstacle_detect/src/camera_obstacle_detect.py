@@ -77,7 +77,7 @@ class CamObstacleDetect:
         ], dtype=np.float32)
 
 
-        roll, pitch, yaw = 0., -0.01, -0.14
+        roll, pitch, yaw = 0., 0., -0.14
         x, y, z = 0.19, 0., -0.02
 
         R_veh2cam = np.transpose(rotation_from_euler(roll, pitch, yaw))

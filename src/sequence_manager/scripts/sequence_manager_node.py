@@ -37,7 +37,7 @@ class SequenceManager:
         self.static_avoid = None
         self.static_step = 0
         self.dynamic_stop_queue = []
-        self.dynamic_stop_queue_size = 5
+        self.dynamic_stop_queue_size = 10
         self.traffic_is_stop = None
         self.rotary_enter = None
         
@@ -294,6 +294,7 @@ class SequenceManager:
         self.steer_pub.publish(self.lane_steer)
         self.mode_pub.publish(Float64(0.0))
         if len(self.dynamic_stop_queue) == self.dynamic_stop_queue_size and False not in self.dynamic_stop_queue:
+            rospy.loginfo(f"{self.dynamic_stop_queue}")
             self.sequence = SequenceState.DYNAMIC_OBSTACLE
 
     def handle_static_obstacle(self):

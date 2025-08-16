@@ -43,5 +43,6 @@ catkin_install_python(
   PROGRAMS
   src/lidar_obstacle_detect.py
   src/camera_obstacle_detect.py
+  src/wall_ransac.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
