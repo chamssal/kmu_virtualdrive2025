@@ -1,0 +1,8 @@
+fov_deg: 230.0
+max_range: 2.0
+min_range: 0.08
+min_cluster_pts: 2
+max_cluster_pts: 60
+gap_deg_limit: 8.0
+range_jump_base: 0.15
+range_jump_scale: 0.10

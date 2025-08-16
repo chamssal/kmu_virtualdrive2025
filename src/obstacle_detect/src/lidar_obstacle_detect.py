@@ -14,16 +14,27 @@ class LidarObstacle:
     def __init__(self):
         rospy.init_node("lidar_obstacle")
 
-        # ---- 파라미터 (필요하면 launch에서 바꿔서 튜닝) ----
-        self.fov_deg         = rospy.get_param("~fov_deg", 230.0)     # 사용 FOV #TODO: 슬램할때랑 장애물할때 fov 다르게 가져갑시다
-        self.max_range       = rospy.get_param("~max_range", 4.0)     # m 2.5
-        self.min_range       = rospy.get_param("~min_range", 0.05)    # m 
+        # ---- 파라미터 ----
+        self.fov_deg         = rospy.get_param("~fov_deg", 230.0)     
+        self.max_range       = rospy.get_param("~max_range", 2.0)     
+        self.min_range       = rospy.get_param("~min_range", 0.05)    
         self.min_cluster_pts = rospy.get_param("~min_cluster_pts", 2) 
-        self.max_cluster_pts = rospy.get_param("~max_cluster_pts", 60) # 60 
-        self.gap_deg_limit   = rospy.get_param("~gap_deg_limit", 3.0)  # 연속 인덱스 간 최대 각도 간격(도) 8.0 
-        # 거리 점프 임계값: thr = base + scale * prev_r
+        self.max_cluster_pts = rospy.get_param("~max_cluster_pts", 60) 
+        self.gap_deg_limit   = rospy.get_param("~gap_deg_limit", 8.0)  
         self.range_jump_base = rospy.get_param("~range_jump_base", 0.15)
         self.range_jump_scale= rospy.get_param("~range_jump_scale", 0.10)
+        
+        """        
+        original
+        self.fov_deg         = rospy.get_param("~fov_deg", 230.0)     
+        self.max_range       = rospy.get_param("~max_range", 4.0)     
+        self.min_range       = rospy.get_param("~min_range", 0.05)    
+        self.min_cluster_pts = rospy.get_param("~min_cluster_pts", 2) 
+        self.max_cluster_pts = rospy.get_param("~max_cluster_pts", 60)
+        self.gap_deg_limit   = rospy.get_param("~gap_deg_limit", 8.0)  
+        self.range_jump_base = rospy.get_param("~range_jump_base", 0.15)
+        self.range_jump_scale= rospy.get_param("~range_jump_scale", 0.10)
+        """
 
         # ---- Pub/Sub ----
         rospy.Subscriber("/scan", LaserScan, self.callback, queue_size=1)
@@ -31,8 +42,6 @@ class LidarObstacle:
         self.obstacle_pub= rospy.Publisher("/lidar_obstacle_information", LidarObstacleInfoArray, queue_size=10)
         self.rotary_pub  = rospy.Publisher("/rotary_info", RotaryArray, queue_size=10)
         self.circle_pub  = rospy.Publisher("/raw_obstacles", Obstacles, queue_size=10)  # 판단 노드가 원하면 이걸 input으로 사용
-        
-        self.marker_pub  = rospy.Publisher("/visualization_marker", Marker, queue_size=10)
         self.marker_array_pub = rospy.Publisher("/lidar_obstacle_markers", MarkerArray, queue_size=10)  # ★ 추가
 
     def callback(self, msg: LaserScan):
@@ -49,16 +58,44 @@ class LidarObstacle:
         prev_r = None
         prev_th = None
 
+        # def finalize_cluster(s_i, e_i):
+        #     size = e_i - s_i + 1
+        #     if size < self.min_cluster_pts or size > self.max_cluster_pts:
+        #         return
+        #     mid_i = (s_i + e_i) // 2
+        #     mid_r = ranges[mid_i]
+        #     if not np.isfinite(mid_r) or mid_r < self.min_range or mid_r > self.max_range:
+        #         return
+        #     mid_th = angle_min + mid_i * angle_inc
+        #     # FOV 체크
+        #     if abs(mid_th) > fov_half:
+        #         return
+        #     x = mid_r * math.cos(mid_th)
+        #     y = mid_r * math.sin(mid_th)
+        #     obstacle_arr.obstacle_infos.append(LidarObstacleInfo(obst_x=x, obst_y=y))
+        
+        
         def finalize_cluster(s_i, e_i):
             size = e_i - s_i + 1
             if size < self.min_cluster_pts or size > self.max_cluster_pts:
+                return
+
+            # 양 끝점 좌표와 span 계산
+            r_s = ranges[s_i]; th_s = angle_min + s_i * angle_inc
+            r_e = ranges[e_i]; th_e = angle_min + e_i * angle_inc
+            if not (np.isfinite(r_s) and np.isfinite(r_e)):
+                return
+            xs, ys = r_s * math.cos(th_s), r_s * math.sin(th_s)
+            xe, ye = r_e * math.cos(th_e), r_e * math.sin(th_e)
+            span = math.hypot(xe - xs, ye - ys)
+
+            if span >= 1.0: #0.5
                 return
             mid_i = (s_i + e_i) // 2
             mid_r = ranges[mid_i]
             if not np.isfinite(mid_r) or mid_r < self.min_range or mid_r > self.max_range:
                 return
             mid_th = angle_min + mid_i * angle_inc
-            # FOV 체크
             if abs(mid_th) > fov_half:
                 return
             x = mid_r * math.cos(mid_th)
@@ -146,7 +183,6 @@ class LidarObstacle:
             c.velocity.y = 0.0
             msg.circles.append(c)
         self.circle_pub.publish(msg)
-        
         
     def publish_lidar_info_markers(self, obstacle_arr):
         """

@@ -16,10 +16,5 @@ catkin_package(
   # CATKIN_DEPENDS message_runtime  # .msg 정의할 때만 사용
 )
 
-catkin_install_python(PROGRAMS
-  src/obstacle_viz_node.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
-
 
 include_directories(${catkin_INCLUDE_DIRS})

@@ -1,8 +1,5 @@
 <!-- obstacle/launch/obstacle.launch -->
 <launch>
-  <!-- <node pkg="obstacle_detect" type="lidar_obstacle_detect.py"   name="lidar_obstacle" output="screen"/> -->
-  <node pkg="obstacle_detect" type="camera_obstacle_detect.py"  name="camera_obstacle" output="screen"/>
-
   <node pkg="obstacle" type="obstacle_controller_node.py" name="obstacle_controller" output="screen">
     <param name="lane_drive_vel_cmd" value="1000"/>
     <param name="obst_vel_cmd"       value="602.0"/>
@@ -12,6 +9,8 @@
     <param name="near_y_min"         value="0.2"/>
     <param name="first_lane"         value="true"/>
   </node>
+  <include file="$(find obstacle_detect)/launch/obstacle.launch" />
+
 
   <!-- <node pkg="sequence_manager" type="sequence_manager_node.py" name="sequence_manager" output="screen"/> -->
 </launch>

@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="obstacle_detect"
+          name="lidar_obstacle_detect2"
+          type="lidar_obstacle_detect.py"
+          output="screen">
+        <rosparam command="load" file="$(find obstacle_detect)/config/slam.yaml" />
+    </node>
+</launch>

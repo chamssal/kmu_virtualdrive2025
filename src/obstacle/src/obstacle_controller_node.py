@@ -50,10 +50,12 @@ class ObstacleController:
         # 시퀀스 매니저 호환(원하면 같이 사용 가능)
         self.static_speed_pub  = rospy.Publisher("/static/speed",  Float64, queue_size=1)
         self.static_steer_pub  = rospy.Publisher("/static/steer",  Float64, queue_size=1)
+        
         self.static_done_pub   = rospy.Publisher("/sequence/static_done",  Bool, queue_size=1)
+        self.dynamic_done_pub  = rospy.Publisher("/sequence/dynamic_done", Bool, queue_size=1)
         
         self.dynamic_stop_pub = rospy.Publisher("/dynamic/stop", Bool, queue_size=1)
-        self.dynamic_done_pub  = rospy.Publisher("/sequence/dynamic_done", Bool, queue_size=1)
+        self.static_dist_pub = rospy.Publisher("/static/dist", Float64, queue_size=1)
         
         self.state_pub = rospy.Publisher("/obstacle_controller/state", String, queue_size=1)
 
@@ -149,12 +151,12 @@ class ObstacleController:
     # ---------- Obstacle handling ----------
     def obst_cb(self, msg: ObstacleInfoArray):
         self.last_obst_time = rospy.Time.now()
-        if not msg.obstacles:  # 장애물 없으면
+        if not msg.obstacles:  
             self.type = "NONE"
             return
-        dists = np.array([math.hypot(o.x, o.y) for o in msg.obstacles]) # 각 장애물별 거리 array
-        idx = int(np.argmin(dists)) # 거리가 제일 가까운 장애물의 idx
-        info = msg.obstacles[idx] # 제일 가까운 장애물을 info로 초기화
+        dists = np.array([math.hypot(o.x, o.y) for o in msg.obstacles])
+        idx = int(np.argmin(dists)) 
+        info = msg.obstacles[idx] 
         dist = max(0.0, dists[idx] - 0.21) # 장애물과의 거리 0.21은 안전거리? 쯤으로 생각하시오
         
         if dist >= self.dynamic_engage_dist:
@@ -162,8 +164,6 @@ class ObstacleController:
             return
 
         is_dyn = bool(getattr(info, "is_dynamic", False))
-        # rospy.loginfo(f"[DEBUG] is_dynamic raw: {is_dyn}")
-
         new_type = "NONE"
         if is_dyn:
             new_type = "DYNAMIC"
@@ -177,15 +177,15 @@ class ObstacleController:
         if len(self.typeQueue) > self.typeThreshold:
             self.typeQueue.pop(0)        
         if len(self.typeQueue) == self.typeThreshold:
-            none_cnt = self.typeQueue.count("NONE")
             dynamic_cnt = self.typeQueue.count("DYNAMIC")
-            static_cnt = self.typeQueue.count("STATIC")
+            static_cnt = self.typeQueue.count("STATIC") 
+            self.typeQueue = []
         else:
             self.type = "NONE"
 
-        if dynamic_cnt >= 1:
+        if dynamic_cnt >= 3:
             self.type = "DYNAMIC"
-        elif static_cnt >= 2:
+        elif static_cnt >= 3:
             self.type = "STATIC"
         else:
             self.type = "NONE"
@@ -196,10 +196,11 @@ class ObstacleController:
         else:
             self.dynamic_stop_pub.publish(Bool(False))
         if self.type == "STATIC":
-            pass # 나중에 개발
+            self.static_dist_pub.publish(Float64(dist))
         else:
             return
-
+        
+        
 
     def handle_dynamic(self, info, dist):
         if not self.dynamic_active:

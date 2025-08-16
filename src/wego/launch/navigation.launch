@@ -7,7 +7,7 @@
     <include file="$(find wego_2d_nav)/launch/move_base.launch"/>
 
     <include file="$(find wego)/launch/teleop.launch"/>
-    <include file="$(find obstacle_detect)/launch/obstacle.launch"/>
+    <include file="$(find obstacle_detect)/launch/slam.launch"/>
     
 
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find wego)/rviz/yangyang.rviz" />

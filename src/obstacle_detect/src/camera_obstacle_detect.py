@@ -77,7 +77,7 @@ class CamObstacleDetect:
         ], dtype=np.float32)
 
 
-        roll, pitch, yaw = 0., 0., -0.12
+        roll, pitch, yaw = 0., -0.01, -0.14
         x, y, z = 0.19, 0., -0.02
 
         R_veh2cam = np.transpose(rotation_from_euler(roll, pitch, yaw))
@@ -146,6 +146,7 @@ class CamObstacleDetect:
 
             # 기존 로직 유지
             is_white = self.find_white_car(x_pix, y_pix)
+            is_white = self.find_white_car_new(cropped_img)
             _x = -float(obs[k, 1])
             _y =  float(obs[k, 0])
             if not np.isfinite(_x) or not np.isfinite(_y):
@@ -206,9 +207,14 @@ class CamObstacleDetect:
         # 90, 110, 160, 0, 255
         w_lo = np.array([0, 34, 80])
         w_hi = np.array([179, 255, 255])
+        
+        w_lo = np.array([0,0,200])
+        w_hi = np.array([179,60,255])
 
         # 색상범위에 대한 mask 값
         w_mask = cv2.inRange(self.hsv, w_lo, w_hi)
+        
+        cv2.imshow("hi", self.hsv)
 
         
         car = cv2.bitwise_and(self.gray, self.gray, mask=w_mask)
@@ -226,6 +232,45 @@ class CamObstacleDetect:
 
         # print(len(car[y - 20:y + 20, x - 20:x +20].nonzero()[0]))
         return len(car[y - 20:y + 20, x - 20:x +20].nonzero()[0]) > 500
+    
+        # 사람은 바지색 보고 판단하기
+    def find_white_car_new(self, img_roi, show=True):
+        if img_roi is None or img_roi.size == 0:
+            return False, (0,0,0), None
+
+        hsv = cv2.cvtColor(img_roi, cv2.COLOR_BGR2HSV)
+        
+        v_min = 80  # 높을수록 더 밝은 흰색을 봄
+        s_max = 90   # 낮을수록 더 하양으로 보는 컷이 낮아짐
+        ratio_thr = 0.45
+        
+        
+        # 흰색: S 낮고 V 높음 (H는 무시)
+        lower = np.array([0,   0,    v_min], dtype=np.uint8)
+        upper = np.array([179, s_max, 255  ], dtype=np.uint8)
+        mask = cv2.inRange(hsv, lower, upper)
+
+        # (선택) 작은 잡음 정리
+        kernel = getattr(self, "kernel3", cv2.getStructuringElement(cv2.MORPH_RECT, (3,3)))
+        mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel, iterations=1)
+        mask = cv2.morphologyEx(mask, cv2.MORPH_DILATE, kernel, iterations=1)
+
+        white_px = int(cv2.countNonZero(mask))
+
+        # 임계치 결정: px_thr가 주어지지 않으면 비율 기반으로 계산
+        h, w = mask.shape
+        px_thr = int(ratio_thr * h * w)
+
+        is_white = (white_px >= px_thr)
+        print(f"{white_px}, {px_thr}, {h*w}")
+            
+        if show:
+            cv2.imshow("roi", img_roi)
+            cv2.imshow("white_mask", mask)
+            cv2.waitKey(1)
+
+        return bool(is_white)
+
 
 if __name__ == '__main__':
     try:

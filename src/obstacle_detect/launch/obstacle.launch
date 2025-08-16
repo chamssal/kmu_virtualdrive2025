@@ -1,4 +1,13 @@
 <launch>
-    <node pkg="obstacle_detect" name="lidar_obstacle_detect2" type="lidar_obstacle_detect.py" output="screen"/>
-    <!-- <node pkg="obstacle_detect" name="camera_obstacle_detect" type="camera_obstacle_detect.py" output="screen"/> -->
+    <node pkg="obstacle_detect"
+          name="lidar_obstacle_detect2"
+          type="lidar_obstacle_detect.py"
+          output="screen">
+        <rosparam command="load" file="$(find obstacle_detect)/config/obstacle.yaml" />
+    </node>
+
+    <node pkg="obstacle_detect"
+          name="camera_obstacle_detect"
+          type="camera_obstacle_detect.py"
+          output="screen" />
 </launch>

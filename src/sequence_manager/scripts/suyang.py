@@ -22,7 +22,7 @@ class SequenceManager:
 
         #--------------------초기상태, 멤버 초기화--------------------
 
-        self.sequence = SequenceState.STATIC_OBSTACLE  # 초기값: SLAM 상태
+        self.sequence = SequenceState.SLAM  # 초기값: SLAM 상태
         self.speed_default = 1500 # 기본속도
         self.speed_turn = 1000 # 회전속도
         self.speed_obstacle = 1000 # 장애물회피 속도
@@ -33,9 +33,8 @@ class SequenceManager:
         self.idle_steer = 0.
         self.lane_steer = None
         self.lane_stopline = None
-        self.static_dist = None
-        self.static_avoid = None
-        self.static_step = 0
+        self.static_speed = None
+        self.static_steer = None
         self.dynamic_stop_queue = []
         self.dynamic_stop_queue_size = 5
         self.traffic_is_stop = None
@@ -60,12 +59,11 @@ class SequenceManager:
 
         self.lane_steer_sub = rospy.Subscriber("/lane/steer", Float64, self.lane_steer_CB)
         self.lane_stopline_sub = rospy.Subscriber("/lane/stopline", Bool, self.lane_stopline_CB)
-        self.static_dist_sub = rospy.Subscriber("/static/dist", Float64, self.static_dist_CB)
+        self.static_speed_sub = rospy.Subscriber("/static/speed", Float64, self.static_speed_CB)
+        self.static_steer_sub = rospy.Subscriber("/static/steer", Float64, self.static_steer_CB)
         self.dynamic_stop_sub = rospy.Subscriber("/dynamic/stop", Bool, self.dynamic_stop_CB)
         self.traffic_speed_sub = rospy.Subscriber("/traffic/semantic", String, self.traffic_semantic_CB)
         self.rotary_enter_sub = rospy.Subscriber("/rotary/enter", Bool, self.rotary_enter_CB)
-        
-        self.test_sub = rospy.Subscriber("/sequnce/test", Bool, self.test_CB)
 
         # --- 상태 변화 감지용 ---
         self.rotary_entry_speed = 2500
@@ -75,78 +73,9 @@ class SequenceManager:
         
         self.prev_sequence = None
         self.state_started_at = rospy.get_time()
-        
-        # --- 하드코딩용 상태 ---
-        self.hardcode_active = False          # 외부에서 확인할 플래그
-        self._hc_started_at = 0.0
-        self._hc_duration  = 0.0
-        self._hc_speed     = None             # Float64 값 (예: 1500)
-        self._hc_steer     = None             # Float64 값 (0.0~1.0)
-        self._hc_mode      = None             # lane/mode에 줄 값(옵션, None이면 안 보냄)
-        self._hc_seq_after = None             # 종료 후 전환할 시퀀스(옵션)
-
 
         self.rate = rospy.Rate(20)
         self.run()
-        
-    # -------------------- 하드코딩(수동 오버라이드) API --------------------
-
-    def start_hardcode(self, duration_sec, steer=None, speed=None, mode=None, sequence_after=None):
-        """
-        duration_sec 동안 steer/speed(/mode)를 강제로 퍼블리시.
-        - steer: 0.0~1.0 사이 권장(안 주면 그대로 두고 speed만 강제 가능)
-        - speed: Float64 수치 (예: 1500). None이면 안 보냄
-        - mode : lane/mode에 보낼 값(옵션). None이면 안 보냄
-        - sequence_after: 종료 후 바꿀 SequenceState (옵션)
-        """
-        now = rospy.get_time()
-        # 중복 호출 시 덮어씀
-        self._hc_started_at = now
-        self._hc_duration   = float(max(0.0, duration_sec))
-        self._hc_steer      = None if steer is None else float(max(0.0, min(1.0, steer)))
-        self._hc_speed      = None if speed is None else float(speed)
-        self._hc_mode       = mode
-        self._hc_seq_after  = sequence_after
-        self.hardcode_active = True
-        rospy.loginfo(f"[SequenceManager] Hardcode START: {duration_sec:.2f}s "
-                      f"steer={self._hc_steer}, speed={self._hc_speed}, mode={self._hc_mode}, "
-                      f"after={getattr(sequence_after,'name',None)}")
-
-    def cancel_hardcode(self):
-        """수동 오버라이드 즉시 해제"""
-        if self.hardcode_active:
-            self.hardcode_active = False
-            rospy.loginfo("[SequenceManager] Hardcode CANCELLED.")
-
-    def _apply_hardcode(self):
-        """
-        루프 말미에서 호출. 활성화 중이면 퍼블리시를 덮어써서 우선권을 갖게 함.
-        시간이 끝나면 자동 해제 및 필요시 시퀀스 전환.
-        """
-        if not self.hardcode_active:
-            return
-
-        t = rospy.get_time() - self._hc_started_at
-        if t <= self._hc_duration:
-            # 실행 중: 지정된 값만 덮어쓰기
-            if self._hc_mode is not None:
-                self.mode_pub.publish(Float64(self._hc_mode))
-            if self._hc_speed is not None:
-                self.speed_pub.publish(Float64(self._hc_speed))
-            if self._hc_steer is not None:
-                self.steer_pub.publish(Float64(self._hc_steer))
-        else:
-            # 종료 처리
-            self.hardcode_active = False
-            
-            if self.sequence == SequenceState.STATIC_OBSTACLE and self.static_avoid:
-                self.static_step += 1
-            
-            if self._hc_seq_after is not None:
-                rospy.loginfo(f"[SequenceManager] Hardcode DONE → sequence={self._hc_seq_after.name}")
-                self.sequence = self._hc_seq_after
-            else:
-                rospy.loginfo("[SequenceManager] Hardcode DONE.")
         
     #--------------------타이머 기반 상태 변경 함수--------------------
     
@@ -168,12 +97,6 @@ class SequenceManager:
 
     #--------------------각 미션 완료 콜백함수--------------------
 
-    def test_CB(self, msg):
-        if msg.data == True:
-            self.static_avoid = True
-        else:
-            pass
-        
     def slam_done_CB(self, msg):
         if msg.data == True:
             rosnode.kill_nodes(['/throttle_interpolator'])
@@ -214,10 +137,11 @@ class SequenceManager:
     def lane_stopline_CB(self, msg):
         self.lane_stopline = msg.data
 
-    def static_dist_CB(self, msg):
-        self.static_dist = msg.data
-        if self.static_dist < 0.7:
-            self.static_avoid = True
+    def static_speed_CB(self, msg):
+        self.static_speed = msg.data
+    
+    def static_steer_CB(self, msg):
+        self.static_steer = msg.data
 
     def dynamic_stop_CB(self, msg):
         self.dynamic_stop_queue.append(msg.data)
@@ -269,9 +193,6 @@ class SequenceManager:
             else:
                 rospy.logwarn_throttle(5.0, f"[SequenceManager] 알 수 없는 시퀀스: {self.sequence}")
 
-            if self.hardcode_active:
-                self._apply_hardcode()
-
             self.rate.sleep()
 
     #--------------------각 시퀀스 별 처리 함수--------------------
@@ -298,20 +219,19 @@ class SequenceManager:
 
     def handle_static_obstacle(self):
         rospy.loginfo_throttle(2.0, "[SequenceManager] 정적 장애물 회피 중...")
-        self.speed_pub.publish(Float64(self.speed_obstacle))
-        self.steer_pub.publish(Float64(self.lane_steer))
-        if self.static_avoid == True:
-            if not self.hardcode_active:
-                if self.static_step == 0:
-                    self.start_hardcode(0.36, 0.0, 1600)
-                elif self.static_step == 1:
-                    self.start_hardcode(0.71, 1.0, 1600)
-                elif self.static_step == 2:
-                    self.start_hardcode(0.25, 0.0, 1600)
-                else:
-                    self.static_avoid = False
-                    self.static_dist = 0
-                    self.static_step = 0
+
+        # ObstacleController가 발행하는 속도/조향 값 사용
+        if self.static_speed is not None and self.static_steer is not None:
+            self.speed_pub.publish(Float64(self.static_speed))
+            self.steer_pub.publish(Float64(self.static_steer))
+        else:
+            # 아직 데이터가 안 왔으면 안전하게 정지
+            self.speed_pub.publish(Float64(0.0))
+            self.steer_pub.publish(Float64(0.5))
+
+        # mode_pub은 차선 인식 모드 (0.0 기본)
+        self.mode_pub.publish(Float64(0.0))
+
 
     def handle_dynamic_obstacle(self):
         rospy.loginfo_throttle(2.0, "[SequenceManager] 동적 장애물 회피 중...")
