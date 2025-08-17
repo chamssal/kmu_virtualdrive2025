@@ -180,9 +180,9 @@ class Detection:
 
         elif mode == "right_only":
             xR = self._repr_x(r_lane[0])
-            if xR is None:
-                xR = 320 + lane_width_px // 2
-            pos = xR - lane_width_px // 2 - delta_px
+            if xR < 360:
+                xR = 400
+            pos = xR - lane_width_px // 2 - delta_px + 10
 
         else:
             # ---- 기존 로직 그대로 ----

@@ -66,7 +66,7 @@ class LaneFollowerNode:
             self.midrange = 260
         elif msg.data > 0:
             self.mode = "right_only"
-            self.midrange = 230
+            self.midrange = 280
         else:
             self.mode = "normal"
             self.midrange = 310
@@ -91,7 +91,7 @@ class LaneFollowerNode:
         self.stopline_flag = self.det.detect_stopline(
             self.perc.img,
             band_from_bottom=0,
-            band_height=80,
+            band_height=100,
             row_ratio_thr=0.4,
             hold_frames=3
         )

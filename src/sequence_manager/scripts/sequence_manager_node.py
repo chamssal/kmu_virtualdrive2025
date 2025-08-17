@@ -27,12 +27,13 @@ class SequenceManager:
         self.speed_turn = 1000 # 회전속도
         self.speed_obstacle = 1000 # 장애물회피 속도
         self.speed_slow = 800 # 느린속도
-        self.speed_rotary = 800 # 로타리 진행속도
+        self.speed_rotary = 800 # 로타리 진행속도 (진입시)
+        self.speed_rotary_out = 500 # 로타리 진행속도 (들어가고 나서)
 
         self.idle_speed = 0.
         self.idle_steer = 0.
         self.lane_steer = None
-        self.lane_stopline = None
+        self.lane_stopline = False
         self.static_dist = float("inf")
         self.static_avoid = None
         self.static_step = 0
@@ -40,10 +41,12 @@ class SequenceManager:
         self.dynamic_stop_queue_size = 10
         self.traffic_is_stop = None
         self.rotary_enter = None
+        self.rotary_out_once = True
         self.obstacle_on_lane = None
         self.front_wall = None
         self.prev_front_wall = None
         self.wall_cnt = 0
+        self.forced_once = True
         
         
         self.timer_threads = [] # 타이머 작업 저장용 (중복 실행 방지)
@@ -76,9 +79,9 @@ class SequenceManager:
         self.test_sub = rospy.Subscriber("/sequnce/test", Bool, self.test_CB)
 
         # --- 상태 변화 감지용 ---
-        self.rotary_entry_speed = 2500
-        self.rotary_entry_forward_time = 0.2
-        self.rotary_entry_turn_time = 0.3
+        self.rotary_entry_speed = 1200
+        self.rotary_entry_forward_time = 0.3
+        self.rotary_entry_turn_time = 0.45
         self.rotary_entry_steer = 1.0
         self.stopline_once = False
         
@@ -289,6 +292,8 @@ class SequenceManager:
                 self.handle_dynamic_obstacle()
             elif self.sequence == SequenceState.TRAFFIC_LIGHT:
                 self.handle_traffic_light()
+            elif self.sequence == SequenceState.TRAFFIC_LIGHT_GO:
+                self.handle_traffic_light_go()
             elif self.sequence == SequenceState.TURN_LEFT:
                 self.handle_turn_left()
             elif self.sequence == SequenceState.TURN_RIGHT:
@@ -297,10 +302,14 @@ class SequenceManager:
                 self.handle_rotary()
             elif self.sequence == SequenceState.ROTARY_ENTRY:
                 self.handle_rotary_entry()
+            elif self.sequence == SequenceState.ROTARY_OUT:
+                self.handle_rotary_out()
+            elif self.sequence == SequenceState.FORCED_STRAIGHT:
+                self.handle_forced_straight()
             else:
                 rospy.logwarn_throttle(5.0, f"[SequenceManager] 알 수 없는 시퀀스: {self.sequence}")
 
-            if self.hardcode_active and self.sequence == SequenceState.STATIC_OBSTACLE_OBSTACLE:
+            if self.hardcode_active and self.sequence == SequenceState.STATIC_OBSTACLE:
                 self._apply_hardcode()
 
             self.rate.sleep()
@@ -354,24 +363,25 @@ class SequenceManager:
         self.change_sequence_after(2.0, SequenceState.LANE_OBSTACLE)
 
     def handle_traffic_light(self):
-        rospy.loginfo_throttle(2.0, "[SequenceManager] 신호등 미션 실행 중...")
-        if self.traffic_is_stop:
-            rospy.loginfo_throttle(2.0, "[SequenceManager] 신호등미션 : 정지신호")
-            self.mode_pub.publish(Float64(1.0))
-            if self.lane_stopline:
-                self.speed_pub.publish(Float64(-0.))
-                self.steer_pub.publish(Float64(0.5))
-            else:
-                self.speed_pub.publish(Float64(self.speed_slow))
-                self.steer_pub.publish(self.lane_steer)
+        rospy.loginfo_throttle(2.0, "[SequenceManager] 신호등 미션 차선 대기...")
+        if self.lane_stopline:
+            self.mode_pub.publish(Float64(0.0))
+            self.steer_pub.publish(Float64(0.5))
+            self.speed_pub.publish(Float64(0.0))
+            if not self.traffic_is_stop:
+                self.change_sequence_after(0.5, SequenceState.TRAFFIC_LIGHT_GO)
         else:
-            rospy.loginfo_throttle(2.0, "[SequenceManager] 신호등 미션 : 좌회전")
-            self.mode_pub.publish(Float64(-1.0))
-            self.speed_pub.publish(Float64(self.speed_turn))
-            self.steer_pub.publish(self.lane_steer)
-            if self.lane_stopline:
-                self.change_sequence_after(5.0, SequenceState.TURN_RIGHT)
-
+            self.mode_pub.publish(Float64(0.0))
+            self.steer_pub.publish(Float64(self.lane_steer))
+            self.speed_pub.publish(Float64(self.speed_slow)) 
+                
+    def handle_traffic_light_go(self):
+        rospy.loginfo_throttle(2.0, "[SequenceManager] 신호등 미션 : 좌회전")
+        self.mode_pub.publish(Float64(-1.0))
+        self.speed_pub.publish(Float64(self.speed_default))
+        self.steer_pub.publish(Float64(self.lane_steer))
+        self.change_sequence_after(2.5, SequenceState.TURN_RIGHT)
+            
     def handle_turn_left(self):
         rospy.loginfo_throttle(2.0, "[SequenceManager] 차선 추종 중... : 좌편향")
         self.mode_pub.publish(Float64(-1.0))
@@ -381,8 +391,11 @@ class SequenceManager:
     def handle_turn_right(self):
         rospy.loginfo_throttle(2.0, "[SequenceManager] 차선 추종 중... : 우편향")
         self.mode_pub.publish(Float64(1.0))
-        self.speed_pub.publish(Float64(self.speed_turn+100))
+        self.speed_pub.publish(Float64(self.speed_turn))
         self.steer_pub.publish(self.lane_steer)
+        if self.forced_once:
+            self.change_sequence_after(10.0, SequenceState.FORCED_STRAIGHT)
+            self.forced_once = False
         
     def handle_rotary(self):
         self.wall_cnt = 99999
@@ -421,8 +434,22 @@ class SequenceManager:
         else:
             # 완료 → 본 로터리 시퀀스로 진입
             rospy.loginfo("[SequenceManager] ROTARY_ENTRY 완료 → ROTARY 전환")
-            self.steer_pub.publish(Float64(0.5))
-            self.sequence = SequenceState.TRAFFIC_LIGHT
+            self.rotary_out_once = True
+            self.sequence = SequenceState.ROTARY_OUT
+            
+    def handle_rotary_out(self):
+        self.mode_pub.publish(Float64(1.0))
+        self.speed_pub.publish(Float64(self.speed_rotary_out))
+        self.steer_pub.publish(Float64(self.lane_steer))
+        if self.rotary_out_once:
+            self.change_sequence_after(3.0, SequenceState.TRAFFIC_LIGHT)
+            self.rotary_out_once = False
+            
+    def handle_forced_straight(self):
+        self.mode_pub.publish(Float64(1.0))
+        self.speed_pub.publish(Float64(self.speed_turn))
+        self.steer_pub.publish(Float64(0.5))
+        self.change_sequence_after(2.5, SequenceState.TURN_RIGHT)
 
 
 if __name__ == "__main__":

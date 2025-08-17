@@ -17,5 +17,5 @@
         "functional": "cpp",
         "sstream": "cpp"
     },
-    "cmake.sourceDirectory": "/home/foscar/kmu_virtualdrive2025/src/wecar_msgs"
+    "cmake.sourceDirectory": "/home/foscar/kmu_virtualdrive2025/src/wecar_ros"
 }
