@@ -37,9 +37,13 @@
       <param name="recovery_alpha_slow" value="0.0"/>
       <param name="recovery_alpha_fast" value="0.0"/>
 
-      <param name="initial_pose_x" value="-26.383045"/>
+      <!-- <param name="initial_pose_x" value="-26.383045"/>
       <param name="initial_pose_y" value="-13.189935"/>
-      <param name="initial_pose_a" value="0.639"/>
+      <param name="initial_pose_a" value="0.639"/> -->
+
+       <param name="initial_pose_x" value="0.0"/>
+      <param name="initial_pose_y" value="0.0"/>
+      <param name="initial_pose_a" value="0.0"/>
         
       <param name="initial_cov_xx" value="0.01"/>
       <param name="initial_cov_yy" value="0.01"/>

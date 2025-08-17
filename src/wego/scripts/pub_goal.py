@@ -23,14 +23,23 @@ if __name__ == "__main__":
     # ped.velocity = Vector3(0.0, 0.0, 0.0)
     # ped.size = Vector3(0.5, 0.5, 1.7)
 
-    # === Object1 (unique_id = 51) ===
+    # # === Object1 (unique_id = 51) ===
+    # obj1 = ObjectStatus()
+    # obj1.unique_id = 51
+    # obj1.name = "woodbox_1"
+    # obj1.type = 2  # 예시: obstacle
+    # obj1.position = Point(-19.0, 4.5, 0.0)
+    # obj1.velocity = Vector3(0.0, 0.0, 0.0)
+    # obj1.size = Vector3(1.0, 1.0, 1.0)
+    
+    
     obj1 = ObjectStatus()
     obj1.unique_id = 51
     obj1.name = "woodbox_1"
-    obj1.type = 2  # 예시: obstacle
-    obj1.position = Point(-19.0, 4.5, 0.0)
+    obj1.type = 2
+    obj1.position = Point(-8.302, -4.799, 0.0)
     obj1.velocity = Vector3(0.0, 0.0, 0.0)
-    obj1.size = Vector3(1.0, 1.0, 1.0)
+    obj1.size = Vector3(0.5, 0.5, 1.7)
 
     # === Object2 (unique_id = 52) ===
     obj2 = ObjectStatus()
