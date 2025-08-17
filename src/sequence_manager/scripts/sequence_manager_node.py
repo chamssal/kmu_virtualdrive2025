@@ -22,7 +22,7 @@ class SequenceManager:
 
         #--------------------초기상태, 멤버 초기화--------------------
 
-        self.sequence = SequenceState.STATIC_OBSTACLE  # 초기값: SLAM 상태
+        self.sequence = SequenceState.SLAM  # 초기값: SLAM 상태
         self.speed_default = 1500 # 기본속도
         self.speed_turn = 1000 # 회전속도
         self.speed_obstacle = 1000 # 장애물회피 속도
@@ -391,10 +391,10 @@ class SequenceManager:
     def handle_turn_right(self):
         rospy.loginfo_throttle(2.0, "[SequenceManager] 차선 추종 중... : 우편향")
         self.mode_pub.publish(Float64(1.0))
-        self.speed_pub.publish(Float64(self.speed_turn))
+        self.speed_pub.publish(Float64(self.speed_turn + 250))
         self.steer_pub.publish(self.lane_steer)
         if self.forced_once:
-            self.change_sequence_after(10.0, SequenceState.FORCED_STRAIGHT)
+            self.change_sequence_after(9.2, SequenceState.FORCED_STRAIGHT)
             self.forced_once = False
         
     def handle_rotary(self):
@@ -447,7 +447,7 @@ class SequenceManager:
             
     def handle_forced_straight(self):
         self.mode_pub.publish(Float64(1.0))
-        self.speed_pub.publish(Float64(self.speed_turn))
+        self.speed_pub.publish(Float64(self.speed_turn+100))
         self.steer_pub.publish(Float64(0.5))
         self.change_sequence_after(2.5, SequenceState.TURN_RIGHT)
 

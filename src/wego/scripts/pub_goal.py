@@ -15,38 +15,29 @@ if __name__ == "__main__":
     msg.header.stamp = rospy.Time.now()
 
     # === Pedestrian (unique_id = 50) ===
-    # ped = ObjectStatus()
-    # ped.unique_id = 50
-    # ped.name = "pedestrian"
-    # ped.type = 1  # 예시: pedestrian
-    # ped.position = Point(-8.302, -4.081, 0.0)
-    # ped.velocity = Vector3(0.0, 0.0, 0.0)
-    # ped.size = Vector3(0.5, 0.5, 1.7)
+    ped = ObjectStatus()
+    ped.unique_id = 50
+    ped.name = "pedestrian"
+    ped.type = 1  # 예시: pedestrian
+    ped.position = Point(-3.32, 4.81, 0.0)
+    ped.velocity = Vector3(0.0, 0.0, 0.0)
+    ped.size = Vector3(0.5, 0.5, 1.7)
 
     # # === Object1 (unique_id = 51) ===
-    # obj1 = ObjectStatus()
-    # obj1.unique_id = 51
-    # obj1.name = "woodbox_1"
-    # obj1.type = 2  # 예시: obstacle
-    # obj1.position = Point(-19.0, 4.5, 0.0)
-    # obj1.velocity = Vector3(0.0, 0.0, 0.0)
-    # obj1.size = Vector3(1.0, 1.0, 1.0)
-    
-    
     obj1 = ObjectStatus()
     obj1.unique_id = 51
     obj1.name = "woodbox_1"
-    obj1.type = 2
-    obj1.position = Point(-8.302, -4.799, 0.0)
+    obj1.type = 2  # 예시: obstacle
+    obj1.position = Point(-3.41, -1.6, 0.0)
     obj1.velocity = Vector3(0.0, 0.0, 0.0)
-    obj1.size = Vector3(0.5, 0.5, 1.7)
+    obj1.size = Vector3(1.0, 1.0, 1.0)
 
     # === Object2 (unique_id = 52) ===
     obj2 = ObjectStatus()
     obj2.unique_id = 52
     obj2.name = "woodbox_2"
     obj2.type = 2
-    obj2.position = Point(-3.365, 4.799, 0.0)
+    obj2.position = Point(-8.32, -4.11, 0.0)
     obj2.velocity = Vector3(0.0, 0.0, 0.0)
     obj2.size = Vector3(1.0, 1.0, 1.0)
 
@@ -61,6 +52,4 @@ if __name__ == "__main__":
     pub.publish(msg)
     rospy.loginfo("Published /delivery_object with 1 pedestrian + 2 objects")
     rospy.spin()
-
-
 

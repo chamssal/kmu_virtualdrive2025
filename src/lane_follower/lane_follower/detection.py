@@ -176,12 +176,10 @@ class Detection:
         # --- 모드 분기 ---
         if mode == "left_only":
             xL = self._repr_x(l_lane[0])
-            pos = xL + lane_width_px // 2 - delta_px
+            pos = xL + lane_width_px // 2 - delta_px + 13
 
         elif mode == "right_only":
             xR = self._repr_x(r_lane[0])
-            if xR < 360:
-                xR = 400
             pos = xR - lane_width_px // 2 - delta_px + 10
 
         else:

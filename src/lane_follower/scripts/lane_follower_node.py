@@ -66,7 +66,7 @@ class LaneFollowerNode:
             self.midrange = 260
         elif msg.data > 0:
             self.mode = "right_only"
-            self.midrange = 280
+            self.midrange = 245
         else:
             self.mode = "normal"
             self.midrange = 310

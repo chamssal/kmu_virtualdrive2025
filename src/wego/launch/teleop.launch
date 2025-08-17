@@ -6,16 +6,12 @@
     args="0.0 0.0 0.12 0.0 0.0 0.0 1.0 base_link imu"/>
     <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_lidar"
     args="0.11 0.0 0.13 0.0 00 0.0 1.0 base_link velodyne"/>
-    <!-- slam을 위한 월드좌표계 변환 --> 
-    <!-- slam을 위한 월드좌표계 변환 -->
-    <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_map"
-      args="7.16641102416992 14.9759915771484 0 0 0 0 1 world map"/> -->
+
+
 
     <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_map"
-      args="4.6 -30.0 0 0 0 -1.5708 map world" />
-
-
-
+      args="19.0 -4.5 0 0 0 0 map world" />
+      
 
     <node pkg="wego" type="lidar_convert" name="lidar_convert"/>
 

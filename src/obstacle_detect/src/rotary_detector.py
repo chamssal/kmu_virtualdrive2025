@@ -18,11 +18,11 @@ class RotaryDetectorNode:
         rospy.init_node("rotary_obstacle", anonymous=False)
 
         # 파라미터
-        self.front_deg_min = np.deg2rad(-115.0)
-        self.front_deg_max = np.deg2rad(+115.0)
+        self.front_deg_min = np.deg2rad(-70.0)
+        self.front_deg_max = np.deg2rad(+50.0)
         self.max_dist      = rospy.get_param("~max_dist", 5.0)
         self.max_gap_deg   = rospy.get_param("~max_gap_deg", 8.0)
-        self.min_cluster   = rospy.get_param("~min_cluster", 2)
+        self.min_cluster   = rospy.get_param("~min_cluster", 20)
         self.max_cluster   = rospy.get_param("~max_cluster", 60)
 
         # Subs / Pubs
@@ -125,7 +125,7 @@ class RotaryDetectorNode:
         # 5) 회전교차로 진입 가능 여부
         enter_msg = Bool()
         if obstacle_arr.obstacle_infos:  # 장애물 감지 시
-            enter_msg.data = (min_dist > 1.5)
+            enter_msg.data = (min_dist > 0.6)
         else:  # 처음 또는 감지 안 된 경우
             enter_msg.data = False
         self.enter_pub.publish(enter_msg)
