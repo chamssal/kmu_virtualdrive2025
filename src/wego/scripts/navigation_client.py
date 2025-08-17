@@ -1,238 +1,126 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 import rospy
 import actionlib
 from math import radians, sin, cos
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
-from geometry_msgs.msg import Pose, PoseStamped, PoseWithCovarianceStamped, Quaternion
-from std_msgs.msg import Bool
+from geometry_msgs.msg import Quaternion
+from std_msgs.msg import Bool, Int16MultiArray
+from morai_msgs.msg import ObjectStatusList
 from actionlib_msgs.msg import GoalStatus
 
-# TF2 (선택)
-try:
-    import tf2_ros
-    from tf2_geometry_msgs import do_transform_pose
-    TF2_OK = True
-except Exception:
-    TF2_OK = False
-
-# MORAI msgs
-from morai_msgs.msg import ObjectStatusList, ObjectStatus
-
-
-def is_quat_zero(q: Quaternion) -> bool:
-    return abs(q.x) + abs(q.y) + abs(q.z) + abs(q.w) < 1e-9
-
-
-class DeliveryMissionFromObject:
+class DeliveryMission:
     def __init__(self):
-        rospy.init_node("delivery_mission_from_object")
+        rospy.init_node("delivery_mission")
 
         # ===== 파라미터 =====
-        self.delivery_topic   = rospy.get_param("~delivery_topic", "/delivery_object")
-        self.frame_id         = rospy.get_param("~frame_id", "map")
-        self.accept_updates   = rospy.get_param("~accept_updates", False)
-        self.wait_amcl        = rospy.get_param("~wait_amcl", True)
-        self.start_delay_sec  = rospy.get_param("~start_delay", 2.0)
+        self.frame_id = rospy.get_param("~frame_id", "map")
+        self.final_x  = rospy.get_param("~final_x", -9.588)
+        self.final_y  = rospy.get_param("~final_y", -12.119)
+        self.final_yaw= rospy.get_param("~final_yaw", 0.0)
 
-        # ID 필터
-        self.obstacle_ids     = rospy.get_param("~obstacle_ids", [51, 52])
-        self.pedestrian_ids   = rospy.get_param("~pedestrian_ids", [50])
-
-        # 최종 목적지 (옵션)
-        self.use_final_goal   = rospy.get_param("~use_final_goal", True)
-        self.final_x          = rospy.get_param("~final_x", -9.5884)
-        self.final_y          = rospy.get_param("~final_y", -12.1199)
-        self.final_yaw_deg    = rospy.get_param("~final_yaw", 0.0)
-
-        # ===== MoveBase 클라이언트 =====
+        # ===== MoveBase 액션 클라이언트 =====
         self.client = actionlib.SimpleActionClient("move_base", MoveBaseAction)
         rospy.loginfo("Waiting for move_base...")
         self.client.wait_for_server()
 
         # ===== 상태 =====
-        self.goals = []  # list[Pose]
-        self.current_index = 0
+        self.state = 0  # 0=obj1, 1=obj2, 2=pedestrian, 3=final
         self.sent_goal = False
-        self.mission_active = False
-        self.received_once = False
-        self.final_goal_appended = False
+
+        # 좌표 저장 (map 좌표 그대로 저장)
+        self.obj_poses = [None, None]  # obj1, obj2
+        self.ped_pose  = None
 
         # 완료 신호
-        self.slam_done_pub = rospy.Publisher("/sequence/slam_done", Bool, queue_size=1, latch=True)
+        self.done_pub = rospy.Publisher("/sequence/slam_done", Bool, queue_size=1, latch=True)
 
-        # TF 준비
-        if TF2_OK:
-            self.tfbuf = tf2_ros.Buffer()
-            self.tflis = tf2_ros.TransformListener(self.tfbuf)
-        else:
-            self.tfbuf = None
+        # 구독
+        rospy.Subscriber("/delivery_object", ObjectStatusList, self.cb_objects, queue_size=1)
+        rospy.Subscriber("/delivery_check", Int16MultiArray, self.cb_check, queue_size=1)
 
-        # AMCL 대기
-        self.amcl_ok = (not self.wait_amcl)
-        if self.wait_amcl:
-            rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self._amcl_cb, queue_size=1)
+        self.reach_flags = [0, 0, 0]
 
-        # MORAI object 구독
-        self.sub_obj = rospy.Subscriber(self.delivery_topic, ObjectStatusList, self.cb_object_list, queue_size=1)
-
-        rospy.loginfo("Started. Waiting objects on %s", self.delivery_topic)
         self.rate = rospy.Rate(10)
 
-    # ---------- AMCL ----------
-    def _amcl_cb(self, _):
-        if not self.amcl_ok:
-            self.amcl_ok = True
-            self.amcl_ready_time = rospy.Time.now()
-            rospy.loginfo("AMCL pose received. Will start after %.1fs delay.", self.start_delay_sec)
+    # ---------- 콜백 ----------
+    def cb_objects(self, msg: ObjectStatusList):
+        """delivery_object에서 좌표 추출 (이미 map 기준)"""
+        for ped in msg.pedestrian_list:
+            self.ped_pose = (ped.position.x, ped.position.y)
 
-    # ---------- 유틸 ----------
+        if len(msg.obstacle_list) >= 2:
+            self.obj_poses[0] = (msg.obstacle_list[0].position.x,
+                                 msg.obstacle_list[0].position.y)
+            self.obj_poses[1] = (msg.obstacle_list[1].position.x,
+                                 msg.obstacle_list[1].position.y)
+
+    def cb_check(self, msg: Int16MultiArray):
+        self.reach_flags = msg.data
+
+    # ---------- 헬퍼 ----------
     def _yaw_to_quat(self, yaw_deg: float) -> Quaternion:
+        from math import radians, sin, cos
         yaw = radians(yaw_deg)
         q = Quaternion()
         q.z = sin(yaw / 2.0)
         q.w = cos(yaw / 2.0)
         return q
 
-    def _fix_pose(self, p: Pose) -> Pose:
-        p.position.z = 0.0
-        if is_quat_zero(p.orientation):
-            p.orientation.w = 1.0
-        return p
-
-    def _build_final_pose(self) -> Pose:
-        p = Pose()
-        p.position.x = self.final_x
-        p.position.y = self.final_y
-        p.position.z = 0.0
-        p.orientation = self._yaw_to_quat(self.final_yaw_deg)
-        return p
-
-    def _maybe_transform(self, p: Pose, src_frame: str) -> Pose:
-        if not src_frame or src_frame == self.frame_id:
-            return p
-        if not TF2_OK:
-            rospy.logerr("TF2 not available but frame differs (%s -> %s).", src_frame, self.frame_id)
-            return None
-        try:
-            ps = PoseStamped()
-            ps.header.frame_id = src_frame
-            ps.header.stamp = rospy.Time(0)
-            ps.pose = p
-            tr = self.tfbuf.lookup_transform(self.frame_id, src_frame, rospy.Time(0), rospy.Duration(1.0))
-            return do_transform_pose(ps, tr).pose
-        except Exception as e:
-            rospy.logerr("TF transform failed %s -> %s: %s", src_frame, self.frame_id, e)
-            return None
-
-    # ---------- /delivery_object 콜백 ----------
-    def cb_object_list(self, msg: ObjectStatusList):
-        if self.received_once and not self.accept_updates:
-            rospy.logwarn("Already received; ignoring further updates.")
-            return
-
-        src_frame = getattr(getattr(msg, "header", None), "frame_id", "") or self.frame_id
-
-        obstacle_goals, pedestrian_goals = [], []
-
-        # 장애물 먼저
-        if hasattr(msg, "obstacle_list"):
-            for s in msg.obstacle_list:
-                if s.unique_id in self.obstacle_ids:
-                    p = self._make_pose(s, src_frame)
-                    if p: obstacle_goals.append(p)
-
-        # 사람 나중
-        if hasattr(msg, "pedestrian_list"):
-            for s in msg.pedestrian_list:
-                if s.unique_id in self.pedestrian_ids:
-                    p = self._make_pose(s, src_frame)
-                    if p: pedestrian_goals.append(p)
-
-        new_goals = obstacle_goals + pedestrian_goals
-
-        if not new_goals:
-            rospy.logwarn("No valid goals from /delivery_object.")
-            return
-
-        self.goals = new_goals
-        self.current_index = 0
-        self.sent_goal = False
-        self.mission_active = True
-        self.received_once = True
-        self.final_goal_appended = False
-
-        if not self.accept_updates:
-            self.sub_obj.unregister()
-
-        rospy.loginfo("Loaded %d goals (obstacles first, then pedestrians).", len(self.goals))
-
-    def _make_pose(self, s: ObjectStatus, src_frame: str) -> Pose:
-        p = Pose()
-        p.position.x = getattr(s.position, "x", 0.0)
-        p.position.y = getattr(s.position, "y", 0.0)
-        p.position.z = 0.0
-        p.orientation = self._yaw_to_quat(float(getattr(s, "heading", 0.0)))
-        p = self._fix_pose(p)
-        return self._maybe_transform(p, src_frame)
-
-    # ---------- move_base ----------
-    def publish_goal(self, pose: Pose):
+    def publish_goal(self, x, y, yaw_deg=0.0):
         goal = MoveBaseGoal()
         goal.target_pose.header.frame_id = self.frame_id
         goal.target_pose.header.stamp = rospy.Time.now()
-        goal.target_pose.pose = pose
+        goal.target_pose.pose.position.x = x
+        goal.target_pose.pose.position.y = y
+        goal.target_pose.pose.position.z = 0.0
+        goal.target_pose.pose.orientation = self._yaw_to_quat(yaw_deg)
         self.client.send_goal(goal)
-        rospy.loginfo("[GOAL SENT] x=%.2f, y=%.2f", pose.position.x, pose.position.y)
+        rospy.loginfo(f"[GOAL SENT] x={x:.2f}, y={y:.2f}")
+        self.sent_goal = True
 
     # ---------- 메인 루프 ----------
     def spin(self):
         while not rospy.is_shutdown():
-            if not self.mission_active:
-                self.rate.sleep(); continue
-
-            if not self.amcl_ok:
-                rospy.loginfo_throttle(2.0, "Waiting for /amcl_pose ...")
-                self.rate.sleep(); continue
-            if (rospy.Time.now() - getattr(self, "amcl_ready_time", rospy.Time.now())).to_sec() < self.start_delay_sec:
-                self.rate.sleep(); continue
-
-            # 목표 다 끝나면 최종 목적지 추가
-            if self.current_index >= len(self.goals):
-                if self.use_final_goal and not self.final_goal_appended:
-                    self.goals = [self._build_final_pose()]
-                    self.current_index = 0
-                    self.sent_goal = False
-                    self.final_goal_appended = True
-                    rospy.loginfo("All primary goals done. Proceeding to FINAL goal.")
-                    self.rate.sleep(); continue
-
-                rospy.loginfo("✅ All deliveries completed (including final).")
-                self.slam_done_pub.publish(Bool(True))
-                break
-
             state = self.client.get_state()
 
-            if not self.sent_goal:
-                self.publish_goal(self.goals[self.current_index])
-                self.sent_goal = True
+            if self.state == 0:
+                if not self.sent_goal and self.obj_poses[0]:
+                    self.publish_goal(*self.obj_poses[0])
+                elif state == GoalStatus.SUCCEEDED or self.reach_flags[1] == 1:
+                    rospy.loginfo("[REACHED] Object1")
+                    self.sent_goal = False
+                    self.state = 1
 
-            elif state == GoalStatus.SUCCEEDED:
-                rospy.loginfo("[REACHED] Goal %d", self.current_index + 1)
-                self.current_index += 1
-                self.sent_goal = False
+            elif self.state == 1:
+                if not self.sent_goal and self.obj_poses[1]:
+                    self.publish_goal(*self.obj_poses[1])
+                elif state == GoalStatus.SUCCEEDED or self.reach_flags[2] == 1:
+                    rospy.loginfo("[REACHED] Object2")
+                    self.sent_goal = False
+                    self.state = 2
 
-            elif state in [GoalStatus.ABORTED, GoalStatus.REJECTED]:
-                rospy.logwarn("⚠️ Failed to reach goal. Skipping.")
-                self.current_index += 1
-                self.sent_goal = False
+            elif self.state == 2:
+                if not self.sent_goal and self.ped_pose:
+                    self.publish_goal(*self.ped_pose)
+                elif state == GoalStatus.SUCCEEDED or self.reach_flags[0] > 0:
+                    rospy.loginfo("[REACHED] Pedestrian")
+                    self.sent_goal = False
+                    self.state = 3
+
+            elif self.state == 3:
+                if not self.sent_goal:
+                    self.publish_goal(self.final_x, self.final_y, self.final_yaw)
+                elif state == GoalStatus.SUCCEEDED:
+                    rospy.loginfo("✅ Final Goal Reached. Mission Complete.")
+                    self.done_pub.publish(Bool(True))
+                    break
 
             self.rate.sleep()
 
 
 if __name__ == "__main__":
     try:
-        node = DeliveryMissionFromObject()
+        node = DeliveryMission()
         node.spin()
     except rospy.ROSInterruptException:
         pass

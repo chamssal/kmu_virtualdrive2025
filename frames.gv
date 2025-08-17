@@ -1,10 +1,11 @@
 digraph G {
-"base_link" -> "imu"[label="Broadcaster: /base_link_to_imu\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1755327214.901 sec old)\nBuffer length: 0.000 sec\n"];
-"odom" -> "base_link"[label="Broadcaster: /ekf_se_odom\nAverage rate: 47.035 Hz\nMost recent transform: 1755327214.874 ( 0.027 sec old)\nBuffer length: 4.975 sec\n"];
-"base_link" -> "velodyne"[label="Broadcaster: /base_link_to_lidar\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1755327214.901 sec old)\nBuffer length: 0.000 sec\n"];
-"map" -> "odom"[label="Broadcaster: /amcl\nAverage rate: 9.811 Hz\nMost recent transform: 1755327214.931 ( -0.029 sec old)\nBuffer length: 4.892 sec\n"];
+"base_link" -> "velodyne"[label="Broadcaster: /base_link_to_lidar\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1755396358.007 sec old)\nBuffer length: 0.000 sec\n"];
+"odom" -> "base_link"[label="Broadcaster: /ekf_se_odom\nAverage rate: 43.679 Hz\nMost recent transform: 1755396358.004 ( 0.003 sec old)\nBuffer length: 4.991 sec\n"];
+"base_link" -> "imu"[label="Broadcaster: /base_link_to_imu\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1755396358.007 sec old)\nBuffer length: 0.000 sec\n"];
+"world" -> "map"[label="Broadcaster: /world_to_map\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1755396358.007 sec old)\nBuffer length: 0.000 sec\n"];
+"map" -> "odom"[label="Broadcaster: /amcl\nAverage rate: 10.015 Hz\nMost recent transform: 1755396358.005 ( 0.003 sec old)\nBuffer length: 4.893 sec\n"];
 edge [style=invis];
  subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
-"Recorded at time: 1755327214.901"[ shape=plaintext ] ;
- }->"map";
+"Recorded at time: 1755396358.007"[ shape=plaintext ] ;
+ }->"world";
 }

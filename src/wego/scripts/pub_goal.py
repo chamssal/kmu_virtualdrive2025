@@ -1,39 +1,57 @@
 #!/usr/bin/env python3
-import rospy
-from geometry_msgs.msg import PoseArray, Pose, Quaternion
-from math import radians
-import tf.transformations as tft
 
-def quat_from_yaw(yaw_deg=0.0) -> Quaternion:
-    """yaw(deg)를 받아 Quaternion으로 변환"""
-    q = tft.quaternion_from_euler(0.0, 0.0, radians(yaw_deg))
-    return Quaternion(x=q[0], y=q[1], z=q[2], w=q[3])
+import rospy
+from morai_msgs.msg import ObjectStatusList, ObjectStatus
+from geometry_msgs.msg import Point, Vector3
 
 if __name__ == "__main__":
-    rospy.init_node("pub_goal")   # 노드 이름
-    pub = rospy.Publisher("/delivery/goals", PoseArray, queue_size=1, latch=True)
-    rospy.sleep(0.5)  # 퍼블리셔 준비 대기
+    rospy.init_node("test_publish_delivery_object")
+    pub = rospy.Publisher("/delivery_object", ObjectStatusList, queue_size=1, latch=True)
+    rospy.sleep(0.5)
+    # world 좌표계 기준으로 작성
+    # ObjectStatusList 생성
+    msg = ObjectStatusList()
+    msg.header.frame_id = "world"
+    msg.header.stamp = rospy.Time.now()
 
-    pa = PoseArray()
-    pa.header.frame_id = "map"  # DeliveryMissionFromTopic도 frame_id=map 기준
-    pa.header.stamp = rospy.Time.now()
+    # === Pedestrian (unique_id = 50) ===
+    # ped = ObjectStatus()
+    # ped.unique_id = 50
+    # ped.name = "pedestrian"
+    # ped.type = 1  # 예시: pedestrian
+    # ped.position = Point(-8.302, -4.081, 0.0)
+    # ped.velocity = Vector3(0.0, 0.0, 0.0)
+    # ped.size = Vector3(0.5, 0.5, 1.7)
 
-    def add_goal(x, y, yaw_deg=0.0):
-        """목표 좌표 하나 추가"""
-        p = Pose()
-        p.position.x = x
-        p.position.y = y
-        p.position.z = 0.0
-        p.orientation = quat_from_yaw(yaw_deg)
-        pa.poses.append(p)
+    # === Object1 (unique_id = 51) ===
+    obj1 = ObjectStatus()
+    obj1.unique_id = 51
+    obj1.name = "woodbox_1"
+    obj1.type = 2  # 예시: obstacle
+    obj1.position = Point(-19.0, 4.5, 0.0)
+    obj1.velocity = Vector3(0.0, 0.0, 0.0)
+    obj1.size = Vector3(1.0, 1.0, 1.0)
 
-    # ========== 여기서 원하는 좌표들을 추가 ==========
-    add_goal(-14.201016426086426, -4.938479900360107, 0.0)
-    add_goal(-10.714090347290039, -8.343365669250488, 0.0)
-    add_goal(-13.778423309326172, -14.032683372497559, 0.0)
-    # ==============================================
+    # === Object2 (unique_id = 52) ===
+    obj2 = ObjectStatus()
+    obj2.unique_id = 52
+    obj2.name = "woodbox_2"
+    obj2.type = 2
+    obj2.position = Point(-3.365, 4.799, 0.0)
+    obj2.velocity = Vector3(0.0, 0.0, 0.0)
+    obj2.size = Vector3(1.0, 1.0, 1.0)
 
-    pub.publish(pa)
-    rospy.loginfo("✅ Published %d goals on /delivery/goals", len(pa.poses))
+    # ObjectStatusList에 추가
+    msg.num_of_pedestrian = 1
+    msg.num_of_obstacle = 2
+    # msg.pedestrian_list.append(ped)
+    msg.obstacle_list.append(obj1)
+    msg.obstacle_list.append(obj2)
 
+    # 발행
+    pub.publish(msg)
+    rospy.loginfo("Published /delivery_object with 1 pedestrian + 2 objects")
     rospy.spin()
+
+
+
