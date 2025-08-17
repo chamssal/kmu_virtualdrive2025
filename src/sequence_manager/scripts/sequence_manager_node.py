@@ -28,7 +28,7 @@ class SequenceManager:
         self.speed_obstacle = 1000 # 장애물회피 속도
         self.speed_slow = 800 # 느린속도
         self.speed_rotary = 800 # 로타리 진행속도 (진입시)
-        self.speed_rotary_out = 500 # 로타리 진행속도 (들어가고 나서)
+        self.speed_rotary_out = 230 # 로타리 진행속도 (들어가고 나서)
 
         self.idle_speed = 0.
         self.idle_steer = 0.
@@ -42,6 +42,7 @@ class SequenceManager:
         self.traffic_is_stop = None
         self.rotary_enter = None
         self.rotary_out_once = True
+        self.rotary_wait_once = True
         self.obstacle_on_lane = None
         self.front_wall = None
         self.prev_front_wall = None
@@ -79,7 +80,7 @@ class SequenceManager:
         self.test_sub = rospy.Subscriber("/sequnce/test", Bool, self.test_CB)
 
         # --- 상태 변화 감지용 ---
-        self.rotary_entry_speed = 1200
+        self.rotary_entry_speed = 800
         self.rotary_entry_forward_time = 0.3
         self.rotary_entry_turn_time = 0.45
         self.rotary_entry_steer = 1.0
@@ -400,20 +401,35 @@ class SequenceManager:
     def handle_rotary(self):
         self.wall_cnt = 99999
         rospy.loginfo_throttle(2.0, "[SequenceManager] 로타리 미션 중...")
+        # if self.lane_stopline:
+        #     self.stopline_once = True
+        # else:
+        #     self.mode_pub.publish(Float64(-1.0))
+        #     self.speed_pub.publish(Float64(self.speed_rotary))
+        #     self.steer_pub.publish(Float64(self.lane_steer))
+            
+        # if self.stopline_once:
+        #     if self.rotary_enter:
+        #         self.state_started_at = rospy.get_time()
+        #         self.sequence = SequenceState.ROTARY_ENTRY
+        #     else:
+        #         self.speed_pub.publish(Float64(0.))
+        #         self.steer_pub.publish(Float64(0.5))
+                
+        ###
+        
         if self.lane_stopline:
-            self.stopline_once = True
+            self.mode_pub.publish(Float64(0.0))
+            self.speed_pub.publish(Float64(0.0))
+            self.steer_pub.publish(Float64(0.5))
+            if self.rotary_enter:
+                if self.rotary_wait_once:
+                    self.change_sequence_after(0.5, SequenceState.ROTARY_ENTRY)
+                    self.rotary_wait_once = False
         else:
             self.mode_pub.publish(Float64(-1.0))
             self.speed_pub.publish(Float64(self.speed_rotary))
             self.steer_pub.publish(Float64(self.lane_steer))
-            
-        if self.stopline_once:
-            if self.rotary_enter:
-                self.state_started_at = rospy.get_time()
-                self.sequence = SequenceState.ROTARY_ENTRY
-            else:
-                self.speed_pub.publish(Float64(0.))
-                self.steer_pub.publish(Float64(0.5))
         
     def handle_rotary_entry(self):
         t = rospy.get_time() - self.state_started_at
@@ -442,7 +458,7 @@ class SequenceManager:
         self.speed_pub.publish(Float64(self.speed_rotary_out))
         self.steer_pub.publish(Float64(self.lane_steer))
         if self.rotary_out_once:
-            self.change_sequence_after(3.0, SequenceState.TRAFFIC_LIGHT)
+            self.change_sequence_after(6.0, SequenceState.TRAFFIC_LIGHT)
             self.rotary_out_once = False
             
     def handle_forced_straight(self):
